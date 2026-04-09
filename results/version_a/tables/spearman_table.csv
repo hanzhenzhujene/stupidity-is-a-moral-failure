@@ -1,0 +1,2 @@
+task,model,spearman_rho,ci_low,ci_high
+virtue,Qwen2.5-0.5B,0.7253366155702344,0.45557980952764776,0.8660280178337986

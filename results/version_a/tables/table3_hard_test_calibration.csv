@@ -1,0 +1,3 @@
+model,condition,hard_acc,ece
+Qwen2.5-0.5B,baseline_empty_prefix,0.20230125523012552,0.49750133444915456
+Qwen2.5-0.5B,grpo_best,0.37503486750348675,0.37409238840866726

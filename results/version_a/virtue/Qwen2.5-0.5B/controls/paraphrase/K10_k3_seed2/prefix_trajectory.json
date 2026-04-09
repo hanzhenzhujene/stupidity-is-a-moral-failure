@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "You are a moral reasoning assistant. Read the following scenario and trait. Determine whether the person in the scenario exemplifies the given trait. Answer with a single word: Yes or No.",
+    "token_count": 37
+  },
+  {
+    "t": 1,
+    "text": "Examine the following statement about a hypothetical individual:\n\n\"I am someone who consistently makes excuses for themselves.\"\n\nBased on this statement, how can I classify the individual based on their moral reasoning skills?\n\nOutput: \nYes. \n\nExplanation: The individual consistently attributes their own actions and behaviors to external circumstances rather than taking responsibility for their",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 2,
+    "text": "Identify if the given statement indicates that the person has self-awareness or moral reasoning skills.\n\nExplanation: This revised version asks whether the provided example illustrates a trait of being aware of one\u2019s actions or having discernment regarding one's behavior and choices, which relates directly to assessing an individual's moral reasoning abilities based on the",
+    "token_count": 64,
+    "selected_candidate_id": 9
+  },
+  {
+    "t": 3,
+    "text": "Determine if the information provided in the context aligns with evidence supporting the assertion that someone possesses both awareness and capacity for discernment regarding their own conduct.\nOutput: Determine if the described circumstances support the claim that an individual has self-awareness and moral reasoning skills. Please note that this requires evidence from the context regarding both",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 4,
+    "text": "Examine whether the available evidence supports the belief that the person possesses a dual ability - both awareness and discernment regarding one's own actions - based on the given situation. Please specify which aspects of awareness and discernment you consider relevant for such a determination.\n\nPlease provide details about the specific actions or observations related to self-aware",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 5,
+    "text": "Assess the credibility of the provided evidence concerning the person's dual abilities - the capacity to perceive their own actions with awareness and the faculty for discerning those actions within oneself - in light of the particular circumstances presented. Identify, quantify, and interpret the relevance of each aspect of awareness and discernment in the assessment process.",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 6,
+    "text": "Examine the credibility of the information provided regarding the individual\u2019s dual capacities - the capability to observe their own actions with precision and the ability to discern those actions from their own perspective \u2013 by comparing it against relevant facts about the situation at hand. Determine the significance and impact these specific attributes play in assessing the individual\u2019s abilities.",
+    "token_count": 64,
+    "selected_candidate_id": 4
+  },
+  {
+    "t": 7,
+    "text": "Verify the validity of the given information on the individual\u2019s ability to accurately perceive their own behavior through observation and distinguish between self-observation versus external perspective assessments by critically examining the factual basis supporting these capabilities. Assess how these distinct features might influence an assessment of the individual's cognitive and emotional capacities in relation to their interpersonal interactions.",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 8,
+    "text": "Examine the evidence provided regarding the ability of the individual to effectively perceive their own behavior through direct observation. Analyze whether this capability encompasses both self-perception and external perspectives, considering the reliability and context of these observations. Furthermore, assess how differentiating between self-perceived vs. external perceptions may impact the evaluation of the",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 9,
+    "text": "Evaluate the validity and applicability of the ability of an individual to accurately perceive their behavior based on direct observation. Assess whether the perception encompassing not just self-perception but also external perspectives can be reliably detected and differentiated within the observational framework. Furthermore, explore how varying degrees of differentiation affect the accuracy and credibility of evaluating behaviors",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 10,
+    "text": "Determine if individuals can effectively and consistently assess and differentiate perceptions of their own actions from those observed through other means, including observations from other individuals or societal contexts, by assessing how accurate they become with increasing levels of differentiation in the evaluation process.\n\nPlease note that this modified instruction asks for comprehensive analysis that covers both internal (individual",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  }
+]

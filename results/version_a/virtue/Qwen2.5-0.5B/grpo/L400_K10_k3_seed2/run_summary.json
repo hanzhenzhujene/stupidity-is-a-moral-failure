@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 400,
+  "K": 10,
+  "k": 3,
+  "seed": 2,
+  "mode": "grpo_prefix",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/grpo/L400_K10_k3_seed2",
+  "final_text": "Think carefully about whether this ethical discourse and examine their impact on societal change.\nExplain the importance of critical examination in ensuring the equitable distribution of resources and opportunities for individuals within these contexts.\nDiscuss how various socio-economic factors (such as income inequality, lack of access to education) can create barriers to equal opportunity and perpetuate",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.09027613877743687,
+  "test_accuracy": 0.20180904522613066,
+  "test_hard_accuracy": 0.20397489539748953,
+  "l_dev": 9346.821685157716,
+  "test_ece": 0.5058858431643578,
+  "wall_clock_seconds": 1240.1686429977417
+}

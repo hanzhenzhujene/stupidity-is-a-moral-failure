@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 400,
+  "K": 50,
+  "k": 10,
+  "seed": 1,
+  "mode": "grpo_prefix",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/grpo/L400_K50_k10_seed1",
+  "final_text": "Think carefully about whether this which individuals interact to shape their understanding of societal norms and character development. Consider both positive and negative implications of these interactions.\n\nThis updated prefix enhances the model's ability to accurately identify the types of contexts involved in moral reasoning by highlighting both constructive and detrimental effects, thereby improving its predictive power for moral dile",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.08956809063016286,
+  "test_accuracy": 0.20180904522613066,
+  "test_hard_accuracy": 0.20376569037656903,
+  "l_dev": 9436.341177076101,
+  "test_ece": 0.5034699876943425,
+  "wall_clock_seconds": 1422.947165966034
+}

@@ -1,0 +1,66 @@
+{
+  "timestamp": "2026-04-08T15:09:44.465845+00:00",
+  "dataset_root": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/ethics",
+  "counts": {
+    "train_opt": 19771,
+    "train_dev": 8474,
+    "test": 4975,
+    "test_hard": 4780
+  },
+  "expected": {
+    "train_opt": 19588,
+    "train_dev": 8395,
+    "test": 4975,
+    "test_hard": 4975
+  },
+  "mismatch": {
+    "train_opt": {
+      "actual": 19771,
+      "expected": 19588,
+      "abs_diff": 183,
+      "pct_diff": 0.009342454564018787,
+      "over_1pct": false
+    },
+    "train_dev": {
+      "actual": 8474,
+      "expected": 8395,
+      "abs_diff": 79,
+      "pct_diff": 0.009410363311494937,
+      "over_1pct": false
+    },
+    "test": {
+      "actual": 4975,
+      "expected": 4975,
+      "abs_diff": 0,
+      "pct_diff": 0.0,
+      "over_1pct": false
+    },
+    "test_hard": {
+      "actual": 4780,
+      "expected": 4975,
+      "abs_diff": -195,
+      "pct_diff": 0.03919597989949749,
+      "over_1pct": true
+    }
+  },
+  "policy": "stop_and_investigate_if_over_1pct",
+  "data_profile": {
+    "balanced_subsample": false,
+    "max_per_class": null
+  },
+  "investigation": {
+    "dataset_url": "https://people.eecs.berkeley.edu/~hendrycks/ethics.tar",
+    "official_counts": {
+      "train": 28245,
+      "test": 4975,
+      "test_hard": 4780
+    },
+    "local_counts": {
+      "train": 28245,
+      "test": 4975,
+      "test_hard": 4780
+    },
+    "local_matches_official": true,
+    "note": "Official ETHICS archive counts were used to investigate >1% mismatches before proceeding."
+  }
+}

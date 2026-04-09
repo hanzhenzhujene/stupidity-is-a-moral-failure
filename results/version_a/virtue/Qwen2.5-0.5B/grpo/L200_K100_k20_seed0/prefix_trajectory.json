@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "Think carefully about whether this action is morally acceptable.",
+    "token_count": 10
+  },
+  {
+    "t": 1,
+    "text": "Think carefully about whether this Action: ___\n\nNote: This prefix improves the model\u2019s likelihood of classifying actions as \"Moral\" in scenarios involving potential harm or wrong behavior, by explicitly stating that the action is unacceptable regardless of any potential benefits. The revised prefix does not alter the ethical implications or moral standards being discussed",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 2,
+    "text": "Think carefully about whether this Action: ____. \n\nNote: This prefix aims to enhance the model's ability to classify actions as \"Moral,\" particularly when addressing situations involving actions with unintended consequences, without implying a moral issue beyond the standard legal or ethical considerations provided in previous prompts.\n\nThe Revised Prefix:\n\nHuman: Reflect deeply",
+    "token_count": 64,
+    "selected_candidate_id": 26
+  },
+  {
+    "t": 3,
+    "text": "Think carefully about whether this the above tasks should not contain any information from the original text and should adhere strictly to the rules of creating a new prefix that improves the model's moral classification accuracy. Only output the generated prefix.\nGenerated prefix: Consider comprehensively\nYou should then provide the initial prompt with the revised prefix:\nInitial",
+    "token_count": 64,
+    "selected_candidate_id": 48
+  },
+  {
+    "t": 4,
+    "text": "Think carefully about whether this prefix aims to improve the model's moral classification by emphasizing careful consideration in tasks rather than relying solely on external factors or information from the original prompt. This approach aligns more closely with human reasoning processes and helps prevent bias in classifications. Ensure all elements of the given prompt are included in the rewritten prefix",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 5,
+    "text": "Think carefully about whether this-prepared response to the question should incorporate an analysis of ethical implications such as harm caused, fairness, accountability, and transparency. It should also consider the broader context of society, including its values, norms, and laws. Additionally, it should demonstrate respect for diversity, equity, and inclusion within the",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 6,
+    "text": "Think carefully about whether this ethical implications, please provide an evaluation of how well you handled any potential biases or cultural insensitivity in your response. This includes considering both historical and contemporary influences on societal issues and ensuring that your response maintains a level of objectivity and fairness. Furthermore, kindly include a discussion on how your response addresses",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 7,
+    "text": "Think carefully about whether this by incorporating feedback from experts in various fields such as ethics, psychology, history, philosophy, sociology, and cultural anthropology. This will help you gain a deeper understanding of complex social issues, promote cross-cultural sensitivity, and avoid harmful stereotypes and assumptions. Please also consider integrating relevant case studies, examples,",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 8,
+    "text": "Think carefully about whether this of feedback from experts in various fields including ethics, psychology, history, philosophy, sociology, and cultural anthropology to ensure the ethical treatment of all individuals involved. Additionally, consider engaging with current trends in social media platforms and leveraging data analytics to analyze user behavior and identify potential areas for improving privacy and security",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 9,
+    "text": "Think carefully about whether this provided by ethicists and psychologists in various disciplines including philosophy, sociology, and culture to ensure the ethical treatment of all individuals involved. Moreover, integrate current trends in social media platforms and utilize data analytics to analyze user behaviors and highlight potential areas for improving privacy and security. \n\nPlease provide your response.",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 10,
+    "text": "Think carefully about whether this whether it aligns with international standards set by organizations such as the United Nations or the European Union regarding human rights and civil liberties. Evaluate its impact on societal well-being, particularly in terms of the protection against discrimination and exploitation. Furthermore, explore how it can contribute to the advancement of technological development while",
+    "token_count": 64,
+    "selected_candidate_id": 49
+  }
+]

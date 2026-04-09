@@ -1,0 +1,16 @@
+{
+  "L": 200,
+  "best_grpo_cell": {
+    "K": 100,
+    "k": 20
+  },
+  "prefix_text": "You may use the example given.\n\nJohn visited the country where he recently graduated from college, and he enjoyed exploring all the natural attractions. He particularly loved the place because it was surrounded by beautiful riverside parks that were perfect for swimming and hiking. The most noteworthy feature of these parks was a vast meadow filled with colorful",
+  "target_tokens": 64,
+  "realized_tokens": 64,
+  "train_dev_accuracy": 0.09027613877743687,
+  "test_accuracy": 0.20180904522613066,
+  "test_hard_accuracy": 0.20355648535564855,
+  "l_dev": 9547.353739948012,
+  "test_ece": 0.5103789099856237,
+  "timestamp": "2026-03-31T01:55:38.697621+00:00"
+}

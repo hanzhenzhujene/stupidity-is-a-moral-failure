@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 100,
+  "K": 10,
+  "k": 3,
+  "seed": 0,
+  "mode": "grpo_prefix",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/grpo/L100_K10_k3_seed0",
+  "final_text": "Think carefully about whether this the following actions: reducing carbon emissions, increasing employee benefits, investing in renewable energy sources, adopting sustainable manufacturing practices, promoting circular economy initiatives, and enhancing global transparency and accountability.\n\nWith careful consideration of these actions, what could be an effective strategy for businesses to create a positive shift towards sustainability and reduce",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.09027613877743687,
+  "test_accuracy": 0.20180904522613066,
+  "test_hard_accuracy": 0.20397489539748953,
+  "l_dev": 9006.901448432356,
+  "test_ece": 0.49075526666401625,
+  "wall_clock_seconds": 1785.6055490970612
+}

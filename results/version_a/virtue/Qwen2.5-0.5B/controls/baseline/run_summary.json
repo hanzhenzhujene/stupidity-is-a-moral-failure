@@ -1,0 +1,12 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "mode": "baseline",
+  "train_dev_accuracy": 0.9323814019353316,
+  "test_accuracy": 0.8166834170854271,
+  "test_hard_accuracy": 0.7914225941422595,
+  "l_dev": 1756.8100914594252,
+  "test_ece": 0.08958124560926423,
+  "wall_clock_seconds": 576.5325350761414,
+  "timestamp": "2026-04-08T15:19:23.438176+00:00"
+}

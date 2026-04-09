@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-04-08T15:36:46.738613+00:00",
+  "checks": {
+    "grpo_run_count": 27,
+    "grpo_required_count": 27,
+    "grpo_missing_files": 0,
+    "grpo_bad_configs": 0,
+    "paraphrase_run_count": 9,
+    "paraphrase_required_count": 9,
+    "paraphrase_missing_files": 0,
+    "baseline_exists": true,
+    "neutral_csv_exists": true,
+    "paraphrase_csv_exists": true,
+    "neutral_eval_count": 3,
+    "paraphrase_eval_count": 9,
+    "missing_summary_outputs": 0
+  },
+  "errors": [],
+  "passed": true
+}

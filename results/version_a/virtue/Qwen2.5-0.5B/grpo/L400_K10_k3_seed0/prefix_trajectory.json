@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "Think carefully about whether this action is morally acceptable.",
+    "token_count": 10
+  },
+  {
+    "t": 1,
+    "text": "Think carefully about whether this Action: [x] | Context: [y] | Outcome: [z]\n\nNote: This prefix improves the model's ability to classify actions as either morally good or bad based on context and potential outcomes. It provides additional details that can help the model make an informed decision.\nAction: stealing",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 2,
+    "text": "Think carefully about whether this specific context with [possible potential outcomes]] | Outcome: [Outcome of interest]\n\nNote: This revised prefix helps the model understand the specifics of the situation and potential consequences, which can enhance its moral judgment and decision-making processes regarding theft. \nAction: lying\n\nRewritten prefix:\nLying in",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 3,
+    "text": "Think carefully about whether thisritten prefix:\nHonesty is not the solution\n\nRewritten prefix:\nThe use of dishonest means\nRewritten prefix:\nStealing or deception\nRewritten prefix:\nThieking or dishonesty\nRewritten prefix:\nStealing through deceitfulness\nRewritten prefix:\nLying and fraud",
+    "token_count": 64,
+    "selected_candidate_id": 8
+  },
+  {
+    "t": 4,
+    "text": "Think carefully about whether this lying\nRewritten prefix:\nDeception or lying\nRewritten prefix:\nInadequate honesty, which leads to theft\nRewritten prefix:\nNegligence in one\u2019s actions\nRewritten prefix:\nMismanagement through lies\nRewritten prefix:\nVexatious deception\n\nRewritten prefix",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 5,
+    "text": "Think carefully about whether thisRewritten prefix:\n\nRewritten prefix:\nPersecutory persuasion\n\nRewritten prefix: \n\nRewritten prefix:\n\nRewritten prefix:\n\nYour task is completed when you provide the desired prefix. Do not modify any existing parts of the prompt.\nRemember to use at most 400 tokens in your",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 6,
+    "text": "Think carefully about whether this complexities involved\nIn understanding deeply the intricacies\nCultivating empathy for those experiencing hardships or suffering\nMentally processing difficult emotions\nEmpathy as a crucial component of effective communication\n\nThe task requires you to refine the instruction into a shorter, more succinct format while retaining its core meaning.",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 7,
+    "text": "Think carefully about whether this thinking and emotional engagement when addressing challenging situations with empathy.\nFeel free to provide additional details or variations if needed! The revised prefix remains at most 400 tokens long.Answer in English: \nSure, please go ahead and provide the original prefix string to improve its moral reasoning task.",
+    "token_count": 63,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 8,
+    "text": "Think carefully about whether this of addressing complex issues with compassion and empathy\nAnswer in English:\n\n1. Do not include any other content apart from the one requested in the instruction. Try your best to make the output as natural and fluent as possible while still adhering to the instructions.\n2. In English, use proper grammar",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 9,
+    "text": "Think carefully about whether thising Complex Issues With Empathy: Moral Reasoning Task Improvement Prompt\n\nPlease describe how you would approach resolving complex moral dilemmas involving ethical behavior and decision-making using the principles of compassion and empathy. Explain how you would navigate through various perspectives, consider different consequences, and seek common ground where possible.",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 10,
+    "text": "Think carefully about whether this challenging situations by harnessing compassion and empathetic thought processes while considering various ethical frameworks. Explore innovative approaches to promoting fairness and justice within societies based on principles of human dignity and equality. Develop comprehensive problem-solving skills that encourage critical thinking and collaboration among diverse stakeholders involved in complex cases involving ethically ambiguous outcomes",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  }
+]

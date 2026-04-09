@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 400,
+  "K": 50,
+  "k": 10,
+  "seed": 0,
+  "mode": "grpo_prefix",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/grpo/L400_K50_k10_seed0",
+  "final_text": "Think carefully about whether this Meditation: Body Scan Technique:\n\nRewrite 2: \nAppreciation Mindfulness: Reflective Reading: Gratitude Journaling:\n\nRewritten prefix:\nGratitude Expressed: Appreciation Meditation: Self-Care Journal:\n\nRewrite 3: \nResilience Practices: Mindfulness Bre",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.08992211470379986,
+  "test_accuracy": 0.20180904522613066,
+  "test_hard_accuracy": 0.20376569037656903,
+  "l_dev": 7878.065942913294,
+  "test_ece": 0.4208495003134762,
+  "wall_clock_seconds": 1796.2131659984589
+}

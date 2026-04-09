@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "Think carefully about whether this action is morally acceptable.",
+    "token_count": 10
+  },
+  {
+    "t": 1,
+    "text": "Think carefully about whether this individual\u2019s actions and behaviors in relation to universal ethical principles.\nYour task is not to rephrase or repeat any content from the original prompt. Instead, you should generate a new, improved version of the prefix by making only a single change - replace a word, phrase, or other element within the",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 2,
+    "text": "Think carefully about whether this moral development over time and consider how it relates to different ethical theories.\n\nThe revised prefix maintains the philosophical nature of the moral reasoning task while significantly reducing its length through better word selection and simplification, aiming for a total length not exceeding 400 tokens. It retains core elements such as reflection",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 3,
+    "text": "Think carefully about whether this of your moral reasoning over time and how it interacts with various ethical perspectives. Think critically about the interplay between personal values and societal norms in shaping ethical decisions. Reflect on how individual biases influence ethical judgment, considering both logical consistency and practical implications. Consider evaluating the effectiveness of different ethical frameworks and their",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 4,
+    "text": "Think carefully about whether this rights, societal expectations, and broader philosophical frameworks such as utilitarianism and deontology. Assess the consequences of these influences for our moral reasoning skills and ethical decision-making processes. Evaluate the role of education and training in enhancing cognitive flexibility and critical thinking in developing strong moral reasoning abilities. Finally, consider",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 5,
+    "text": "Think carefully about whether this towards human sexuality, including sexual orientation and relationships, affects our understanding and evaluation of morality. Analyze how attitudes toward diverse sexual identities can impact our ethical judgments and actions on those matters. Investigate the role of social norms, cultural contexts, and historical events in shaping contemporary perspectives on sex, gender",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 6,
+    "text": "Think carefully about whether this of same-sex relationships shape current ethics regarding sexual orientations and gender roles.\nThe revised prefix improves the prompt by focusing more specifically on same-sex relationships in relation to sex, gender, and societal norms while ensuring it remains within the constraint of not exceeding 400 tokens length. Additionally, by adding",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 7,
+    "text": "Think carefully about whether this between different perspectives when considering the intersection of sexuality, gender identities, and identity politics within contemporary ethical discourse.\nThis prompt highlights an ongoing conflict arising from varying interpretations and approaches to understanding and addressing issues related to LGBTQ+ identities and their intersections with other social and cultural factors, including but not limited to gender",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 8,
+    "text": "Think carefully about whether this intersectionality of LGBTQ+ identities, gender identities, and identity politics: A critical examination of ethical discourse and societal change.\nNote: This prefix is improved while keeping it under 400 tokens and does not repeat any word or phrase from the original prompt. \nOriginal tokenized prefix: Think",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 9,
+    "text": "Think carefully about whether this identities, gender identities, identity politics: Critical Examination of Ethical Discourse and Societal Change\nWord count: 357 tokens\nToken usage examples:\nThinking: Thinking\nIntercultural: Intercultural\nIdentity politics: Identity Politics\nEthics: Ethics\nDiscourse:",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 10,
+    "text": "Think carefully about whether this ethical discourse and examine their impact on societal change.\nExplain the importance of critical examination in ensuring the equitable distribution of resources and opportunities for individuals within these contexts.\nDiscuss how various socio-economic factors (such as income inequality, lack of access to education) can create barriers to equal opportunity and perpetuate",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 0,
+  "K": 100,
+  "k": 20,
+  "seed": 2,
+  "mode": "instruction_paraphrase",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/controls/paraphrase/K100_k20_seed2",
+  "final_text": "Examine Alex's mental health and behavioral patterns concerning his interaction with the other person. Analyze if there are indicators that indicate potential signs of obsessive-compulsive disorder (OCD) or other mental health disorders such as post-traumatic stress disorder (PTSD) due to prolonged, intense emotional outbursts, which can",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.09369837148926127,
+  "test_accuracy": 0.22371859296482413,
+  "test_hard_accuracy": 0.2175732217573222,
+  "l_dev": 7459.46774572134,
+  "test_ece": 0.36536987745582156,
+  "wall_clock_seconds": 26804.938413143158
+}

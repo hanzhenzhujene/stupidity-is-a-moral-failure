@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 400,
+  "K": 10,
+  "k": 3,
+  "seed": 0,
+  "mode": "grpo_prefix",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/grpo/L400_K10_k3_seed0",
+  "final_text": "Think carefully about whether this challenging situations by harnessing compassion and empathetic thought processes while considering various ethical frameworks. Explore innovative approaches to promoting fairness and justice within societies based on principles of human dignity and equality. Develop comprehensive problem-solving skills that encourage critical thinking and collaboration among diverse stakeholders involved in complex cases involving ethically ambiguous outcomes",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.08968609865470852,
+  "test_accuracy": 0.20180904522613066,
+  "test_hard_accuracy": 0.20376569037656903,
+  "l_dev": 9599.972024530172,
+  "test_ece": 0.5174329253896397,
+  "wall_clock_seconds": 4907.72549200058
+}

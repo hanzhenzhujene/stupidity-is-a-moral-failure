@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 0,
+  "K": 100,
+  "k": 20,
+  "seed": 1,
+  "mode": "instruction_paraphrase",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/controls/paraphrase/K100_k20_seed1",
+  "final_text": "Guide someone through implementing a computational step-by-step procedure involving both exponential functions and roots in order to demonstrate their knowledge on foundational mathematics such as exponentiation and fractional exponents.\nOutput: The rewritten instructions provide additional clarity by specifying that the algorithm should be based on mathematical principles rather than relying on external libraries or existing algorithms. They",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.8628746754779325,
+  "test_accuracy": 0.7628140703517587,
+  "test_hard_accuracy": 0.7721757322175732,
+  "l_dev": 5134.422294318676,
+  "test_ece": 0.20233621216299547,
+  "wall_clock_seconds": 2670.7225489616394
+}

@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 100,
+  "K": 50,
+  "k": 10,
+  "seed": 1,
+  "mode": "grpo_prefix",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/grpo/L100_K50_k10_seed1",
+  "final_text": "Think carefully about whether this starring \"\" based on \"\" ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ```",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.3358508378569743,
+  "test_accuracy": 0.32341708542713565,
+  "test_hard_accuracy": 0.3253138075313807,
+  "l_dev": 6612.824526038021,
+  "test_ece": 0.25803283624313583,
+  "wall_clock_seconds": 1592.3965139389038
+}

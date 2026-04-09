@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "Think carefully about whether this action is morally acceptable.",
+    "token_count": 10
+  },
+  {
+    "t": 1,
+    "text": "Think carefully about whether this individual\u2019s actions and behaviors in relation to universal ethical principles.\nYour task is not to rephrase or repeat any content from the original prompt. Instead, focus on generating a new, improved version of the prefix while ensuring it improves the model's moral classification accuracy. Make sure the new prefix stays at",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 2,
+    "text": "Think carefully about whether this's own actions and behaviors align with various aspects of universal ethical principles.\nThe revised prefix maintains a similar scope while improving classification accuracy by incorporating \"deeply examining\" into \"examining,\" which is less specific but provides an idea for analysis rather than mere action evaluation. It also shifts the emphasis slightly",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 3,
+    "text": "Think carefully about whether this approach (action/behavior) integrates with diverse ethical principles, focusing on areas such as care for others, respect for autonomy, and adherence to laws and regulations. This requires considering various perspectives including religious, cultural, and personal values to ensure that every stakeholder has their rights, dignity, and voice",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 4,
+    "text": "Think carefully about whether this approach aligns with diverse ethical principles, recognizing the importance of treating all individuals with fairness, compassion, and respect. Explore different perspectives, ensuring that each stakeholder's interests and rights are respected. \n\nNote: The revised prefix should maintain the structure and tone of the original without significant changes.\nThe",
+    "token_count": 64,
+    "selected_candidate_id": 16
+  },
+  {
+    "t": 5,
+    "text": "Think carefully about whether this diverse ethical principles, valuing fairness, compassion, and respect for all stakeholders' interests and rights. Evaluate the implications on equality, equity, and fair treatment across various groups, including but not limited to marginalized communities. Analyze how cultural norms, historical context, and contemporary social issues influence these values",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 6,
+    "text": "Think carefully about whether this principles emphasize fairness in recognizing equal treatment of all individuals regardless of their backgrounds, histories, or cultures. Assess their application in addressing inequalities like income inequality, discrimination, and unequal access to healthcare, education, and other resources.\nNote: Ensure your revised prefix remains at most 200 tokens long",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 7,
+    "text": "Think carefully about whether this crafting policies aimed at promoting equitable treatment of all individuals, considering disparities such as income inequality, discrimination, and access to critical resources like education and healthcare. Evaluate the efficacy of current policies in achieving societal goals. Assess the potential impact on vulnerable populations and systemic injustices. \n\n(Note: Make sure your",
+    "token_count": 64,
+    "selected_candidate_id": 24
+  },
+  {
+    "t": 8,
+    "text": "Think carefully about whether this promoting equitable treatment across various dimensions, including income disparity, discrimination, and resource availability, focusing on their broader societal benefits and challenges. Analyze past interventions and identify gaps in policy effectiveness and fairness. Examine current initiatives for improvements based on best practices and evidence-based approaches. \n\nNote: Ensure your",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 9,
+    "text": "Think carefully about whether this different facets, including income disparities, discrimination, and resource availability, considering both societal benefits and potential pitfalls. Investigate existing interventions to evaluate policies' efficacy and fairness. Evaluate proposed reforms based on the use of inclusive methods and outcomes evaluation frameworks. \n\nNote: Make sure you:\n\n1. Keep",
+    "token_count": 63,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 10,
+    "text": "Think carefully about whether this inequality, social injustice, and environmental sustainability. Analyze how various policy solutions address these challenges and their implications for overall progress and well-being. Assess the impact of current initiatives and consider future strategies that could mitigate or enhance effectiveness. Reflect on best practices in evidence-based policymaking and identify promising areas for",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  }
+]

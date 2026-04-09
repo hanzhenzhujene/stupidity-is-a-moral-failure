@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "You are a moral reasoning assistant. Read the following scenario and trait. Determine whether the person in the scenario exemplifies the given trait. Answer with a single word: Yes or No.",
+    "token_count": 37
+  },
+  {
+    "t": 1,
+    "text": "Assess whether someone exhibits the specified trait based on their behavior and responses. Answer with either \"Yes\" or \"No.\"\n\nScenario:\nA 15-year-old girl repeatedly tells lies about her friend Sarah, who she did not meet, and insists that Sarah is now lost without any evidence of an accident, suggesting it",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 2,
+    "text": "Does this person exhibit the behavior described by the scenario? Yes\nOutput: Yes\n\nThis rewritten version better focuses on the specific instance mentioned in the scenario where the girl makes repeated false statements about her friend Sarah. The response remains consistent (\"Yes\"), as it directly corresponds to the instructions provided initially. However, it provides additional",
+    "token_count": 64,
+    "selected_candidate_id": 8
+  },
+  {
+    "t": 3,
+    "text": "Does this person exhibit the behavior described by the scenario?\n\nOutput: Does this person exhibit the behavior of repeatedly making false statements about their friend?\n\nThe new instruction now clearly specifies that we're evaluating the individual based on their responses to the scenario and does not rely on any previous information, keeping the updated semantic role intact while improving",
+    "token_count": 64,
+    "selected_candidate_id": 9
+  },
+  {
+    "t": 4,
+    "text": "Does the respondent consistently provide inaccurate or misleading responses regarding an unrelated matter?\n\nThis version focuses on the respondent's consistency in providing inaccurate information related to their friend, without mentioning anything specific about being falsely accused. It maintains the same objective while improving clarity and specificity. \n\nNew instruction:\n\nDoes the respondent exhibit the behavior of continuously altering",
+    "token_count": 64,
+    "selected_candidate_id": 8
+  },
+  {
+    "t": 5,
+    "text": "Does the respondent frequently switch between different perspectives when making decisions or expressing opinions? Does it happen frequently enough that it could be considered as false reporting or fabrication?\nOutput: \nThe current instruction focused on inconsistency in answering questions based on personal matters without any mention of changing perspectives or falsifying statements. It aims for more detailed analysis",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 6,
+    "text": "Does the respondent frequently switch between different perspectives when making decisions or expressing opinions? Is this behavior considered either frequent switching or an indication of falsification?\n\nThis output clarifies the request by specifying what aspects of perspective switching and falsification should be analyzed. It maintains the core issue while providing more specificity about how the behavior could be",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 7,
+    "text": "Is it common for someone to make frequent shifts from one viewpoint or perspective to another in their decision-making process or when discussing their thoughts and beliefs? This question seeks a nuanced evaluation rather than a simple yes or no.\nOutput: \n```py\nIs the respondent often required to change perspectives or viewpoints frequently during their decision-making",
+    "token_count": 64,
+    "selected_candidate_id": 7
+  },
+  {
+    "t": 8,
+    "text": "The behavior of people varies significantly depending on how they want to be perceived by others. Is it possible that some individuals make frequent shifts between different viewpoints or perspectives while discussing their thoughts and beliefs?\n\nOutput: ```py``` \n\nI have rewritten the instruction to focus on understanding the nuances in people's decisions based on the frequency of",
+    "token_count": 64,
+    "selected_candidate_id": 5
+  },
+  {
+    "t": 9,
+    "text": "Is it plausible that the decision-making process of individuals varies greatly from one another due to varying levels of openness to feedback and diverse perspectives?\n\nOutput: ```py``` \n\nThis rephrased version seeks to highlight the importance of considering an individual\u2019s flexibility in adapting to different scenarios and perspectives. I have maintained the original meaning",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 10,
+    "text": "Are there any situations where the complexity of decision making can be increased by having more individuals with distinct viewpoints and different cognitive capacities? Please provide examples. ```py``` \nI hope this revised version accurately reflects the intended inquiry and avoids redundancy while maintaining the core message. ```py``` \n\nOutput:\n\n```py\n```def",
+    "token_count": 63,
+    "selected_candidate_id": 7
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 400,
+  "K": 50,
+  "k": 10,
+  "seed": 2,
+  "mode": "grpo_prefix",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/grpo/L400_K50_k10_seed2",
+  "final_text": "Think carefully about whether this incorporating ethical complexities into our research methodology and the significance of utilizing critical thinking skills for effective decision-making and practical application in generating research conclusions.\nIs there anything specific or challenging within the prefix you would like me to modify? If so, please provide it here along with any additional modifications needed to meet your",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.0905121548265282,
+  "test_accuracy": 0.20180904522613066,
+  "test_hard_accuracy": 0.20418410041841004,
+  "l_dev": 9194.644414154813,
+  "test_ece": 0.49737260910733855,
+  "wall_clock_seconds": 2009.7561061382294
+}

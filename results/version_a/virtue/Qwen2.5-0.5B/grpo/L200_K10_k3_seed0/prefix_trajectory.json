@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "Think carefully about whether this action is morally acceptable.",
+    "token_count": 10
+  },
+  {
+    "t": 1,
+    "text": "Think carefully about whether this Action: ___\n\nNote: This prefix improves the model\u2019s likelihood of classifying actions as \"Moral\" in scenarios involving potential harm or wrongdoing. However, it is not foolproof and should still be used with caution. The revised prefix aims to prevent false positives by focusing on context and avoiding",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 2,
+    "text": "Think carefully about whether this of causing unintended negative consequences for others or oneself, especially those who may be less powerful. This could include actions such as lying, cheating, or engaging in dangerous behavior that leads to serious harm or conflict.\nIn scenarios where these types of actions might occur, consider their broader implications on social harmony and",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 3,
+    "text": "Think carefully about whether this and behaviors contribute to a more equitable and supportive community. Evaluate factors like fairness, inclusivity, and the impact on marginalized groups. Consider whether these considerations align with principles of justice and equality.\n\nWhat should I do next after completing this task? \n\nPrompt: In addition to considering these values, reflect",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 4,
+    "text": "Think carefully about whether this disparities in wealth distribution between different social classes, examine how societal expectations and norms perpetuate inequality and discrimination against marginalized groups. Reflecting on past injustices and systemic biases, consider potential solutions such as increased economic opportunity for low-income individuals and improved training for law enforcement officers who might inadvertently perpetuate racial",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 5,
+    "text": "Think carefully about whether this analysis of whether disparities in wealth distribution among different social classes have led to societal expectations and norms perpetuating inequality and discrimination against marginalized groups. Consider past injustices and systemic biases regarding the treatment of low-income individuals by law enforcement and the possible implications of implementing policies aimed at increasing economic opportunities for these communities",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 6,
+    "text": "Think carefully about whether this whether disparities in wealth distribution within different social classes have contributed to societal expectations and norms promoting inequality and discrimination against marginalized groups. Evaluate past injustices and systemic biases related to the treatment of low-income individuals and consider potential effects of implementing policies aimed at increasing economic opportunities for these communities. \n\nWhat modifications would",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 7,
+    "text": "Think carefully about whether this different socioeconomic statuses in society, including analyzing factors such as poverty rates, education levels, employment status, and other relevant indicators.\"\nThe revised prefix improves the moral reasoning task by providing a more comprehensive overview of the issue of income inequality in society, focusing on various factors involved. It also highlights the importance",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 8,
+    "text": "Think carefully about whether this of economic inequalities, examining not just systemic aspects but also individual experiences of wealth disparities among socioeconomic statuses.\"\n\nThis prefix aims to enhance the model's moral reasoning accuracy by broadening its scope beyond traditional economic indicators to include personal financial decisions and societal norms, ultimately fostering an understanding of how these inequalities manifest differently",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 9,
+    "text": "Think carefully about whether this of economic inequality on individuals and societal structures, especially focusing on the impact of systemic policies rather than mere individual behaviors or wealth disparities alone.\" This updated prefix improves the model's ability to grasp the broader context of economic inequality by highlighting its multifaceted nature and its influence on social dynamics. It encourages",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 10,
+    "text": "Think carefully about whether this economic inequality on both individuals and society, particularly when examining systemic policies beyond mere individual behaviors and wealth disparities alone.\" This revised prefix enhances understanding by emphasizing the comprehensive effects and societal implications of economic inequalities.\nThis improved version provides clearer guidance for how to approach ethical considerations related to economic inequality by integrating the broader",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  }
+]

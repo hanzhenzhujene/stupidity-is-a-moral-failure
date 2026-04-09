@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "You are a moral reasoning assistant. Read the following scenario and trait. Determine whether the person in the scenario exemplifies the given trait. Answer with a single word: Yes or No.",
+    "token_count": 37
+  },
+  {
+    "t": 1,
+    "text": "The person is a well-respected teacher who consistently provides constructive feedback on students' academic performance. Their approach is highly effective and their students often excel academically despite being from different backgrounds. They maintain a positive attitude towards every student regardless of their grade level or academic focus. This trait reflects a high degree of empathy and",
+    "token_count": 64,
+    "selected_candidate_id": 78
+  },
+  {
+    "t": 2,
+    "text": "The person frequently gives detailed and timely critiques about how each student in the classroom is performing academically, acknowledging their diverse backgrounds. They also foster an environment where all students feel valued, appreciated, and supported throughout their learning journey, demonstrating an understanding of human emotions and experiences while maintaining a respectful demeanor toward every individual student.",
+    "token_count": 64,
+    "selected_candidate_id": 30
+  },
+  {
+    "t": 3,
+    "text": "The instructor encourages students to voice their opinions openly on academic performance within a classroom setting. The teacher listens attentively to each response, offering constructive feedback that reflects empathy and validation towards diverse students' backgrounds and needs. The approach promotes a growth mindset by fostering an inclusive space where students feel respected and valued for their unique contributions.",
+    "token_count": 64,
+    "selected_candidate_id": 56
+  },
+  {
+    "t": 4,
+    "text": "The professor appreciates student input in evaluating academic achievement, recognizing that everyone brings valuable perspectives. She acknowledges each viewpoint with consideration, acknowledging diversity while affirming individual students' strengths and concerns. This method of reflection supports a positive attitude towards learning and a growth mindset among students, encouraging them to appreciate different ways of thinking and contributing",
+    "token_count": 64,
+    "selected_candidate_id": 56
+  },
+  {
+    "t": 5,
+    "text": "The professor encourages students to explore various viewpoints by asking open-ended questions that promote intellectual engagement. By engaging students in discussions about diverse ideas, the professor fosters an environment where students feel valued and understood. Encouraging independent thinking also helps cultivate their problem-solving skills and creativity, all of which contribute to a well-rounded education",
+    "token_count": 64,
+    "selected_candidate_id": 40
+  },
+  {
+    "t": 6,
+    "text": "The instructor emphasizes the importance of considering different perspectives during lectures by posing challenging questions designed to provoke critical thinking and deep reflection among students. Such inquiries encourage students to think independently and develop their problem-solving abilities and creative thinking.\n\nNew instructions:I am currently learning a new programming language called \"GoLang\" in my free time",
+    "token_count": 62,
+    "selected_candidate_id": 9
+  },
+  {
+    "t": 7,
+    "text": "Understood that today I'll be spending more time coding GoLam, a new programming language for beginners.\nTeacher, please guide me through this process. Here are some challenges for you: 1) Write a function that takes an integer as input and returns its cube root without using any built-in functions or libraries.",
+    "token_count": 64,
+    "selected_candidate_id": 49
+  },
+  {
+    "t": 8,
+    "text": "The teacher would like to help you learn a new programming language called GoLam by guiding you on how to create a function named `cube_root`. The goal of this exercise is to understand the concept of mathematical operations involving exponents and roots without relying on built-in functions or libraries in your programming language.\n\nOutput format:",
+    "token_count": 64,
+    "selected_candidate_id": 49
+  },
+  {
+    "t": 9,
+    "text": "For beginners, guide me through creating a function that calculates cube root values using an algorithm derived from mathematical principles rather than utilizing any built-in or external libraries. This will enhance my understanding of exponentiation and fractional exponent properties.\nThe updated instruction:  \nFor those who wish to comprehend basic mathematical concepts related to exponents and roots",
+    "token_count": 64,
+    "selected_candidate_id": 3
+  },
+  {
+    "t": 10,
+    "text": "Guide someone through implementing a computational step-by-step procedure involving both exponential functions and roots in order to demonstrate their knowledge on foundational mathematics such as exponentiation and fractional exponents.\nOutput: The rewritten instructions provide additional clarity by specifying that the algorithm should be based on mathematical principles rather than relying on external libraries or existing algorithms. They",
+    "token_count": 64,
+    "selected_candidate_id": 68
+  }
+]

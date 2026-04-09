@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 0,
+  "K": 100,
+  "k": 20,
+  "seed": 0,
+  "mode": "instruction_paraphrase",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/controls/paraphrase/K100_k20_seed0",
+  "final_text": "The provided situation seems overwhelming and requires multiple steps to address effectively. Could you outline the specific challenges we will face during the process? Additionally, it would be helpful if you could explain the proposed solution in detail.\"\n\nOutput:\n\n3. \"It would be beneficial to have a clearer picture of the obstacles that stand in our way",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.8301864526787821,
+  "test_accuracy": 0.7157788944723618,
+  "test_hard_accuracy": 0.7253138075313807,
+  "l_dev": 4185.897120624781,
+  "test_ece": 0.07900219747169537,
+  "wall_clock_seconds": 2663.785871744156
+}

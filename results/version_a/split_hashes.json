@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-04-08T15:09:44.517114+00:00",
+  "task": "virtue",
+  "train_opt_sha256": "788571319104f862bc5ff0919dec13b8609a15aa86c951e5e90d6d05f97d06e8",
+  "train_dev_sha256": "d973ca71779c2989a1928b3ea9564bebed7b05d11a27b30c530b15bcd593d00f",
+  "train_opt_size": 19771,
+  "train_dev_size": 8474,
+  "test_size": 4975,
+  "test_hard_size": 4780,
+  "data_profile": {
+    "balanced_subsample": false,
+    "max_per_class": null
+  },
+  "active_seeds": [
+    0,
+    1,
+    2
+  ],
+  "clean_suffix_pool_path": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/clean_suffix_candidate_pool_v2.json"
+}

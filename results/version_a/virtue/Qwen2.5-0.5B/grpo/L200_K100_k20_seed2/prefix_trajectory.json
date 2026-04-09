@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "Think carefully about whether this action is morally acceptable.",
+    "token_count": 10
+  },
+  {
+    "t": 1,
+    "text": "Think carefully about whether this individual\u2019s actions and behaviors in relation to universal ethical principles.\nYour task is not to rephrase or repeat any content from the original prompt. Instead, focus on generating a new, improved version of the prefix while ensuring it improves the model's moral classification accuracy. Make sure the new prefix stays at",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 2,
+    "text": "Think carefully about whether this's own actions and behaviors align with various aspects of universal ethical principles.\nThe revised prefix maintains a similar scope while improving classification accuracy by incorporating \"deeply examining\" into \"examining,\" which is less specific but provides an idea for analysis rather than mere action evaluation. It also shifts the emphasis slightly",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 3,
+    "text": "Think carefully about whether this approach (action/behavior) integrates with diverse ethical principles, focusing on areas such as care for others, respect for autonomy, and adherence to laws and regulations. This requires considering various perspectives including religious, cultural, and personal values to ensure that every stakeholder has their rights, dignity, and voice",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 4,
+    "text": "Think carefully about whether this approach aligns with diverse ethical principles, recognizing the importance of treating all individuals with fairness, compassion, and respect. Explore different perspectives, ensuring that each stakeholder's interests and rights are respected. \n\nNote: The revised prefix should maintain the structure and tone of the original without significant changes.\nThe",
+    "token_count": 64,
+    "selected_candidate_id": 16
+  },
+  {
+    "t": 5,
+    "text": "Think carefully about whether this diverse ethical principles, valuing fairness, compassion, and respect for all stakeholders' interests and rights. Evaluate the implications on equality, equity, and fair treatment across various groups, including but not limited to marginalized communities. Analyze how cultural norms, historical context, and contemporary social issues influence these values",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 6,
+    "text": "Think carefully about whether this principles emphasize fairness in recognizing equal treatment of all individuals regardless of their backgrounds, histories, or cultures. Assess their application in addressing inequalities like income inequality, discrimination, and unequal access to healthcare, education, and other resources.\nNote: Ensure your revised prefix remains at most 200 tokens long",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 7,
+    "text": "Think carefully about whether this for promoting fairness by evaluating how they address income inequality, discrimination, and uneven resource distribution, such as through policies that promote greater economic mobility or ensure fair access to services. \n\nCurrent prompt:\n\nExplain why ethical theory emphasizes treating every individual equally despite differences in circumstances. Use examples from your own life",
+    "token_count": 64,
+    "selected_candidate_id": 49
+  },
+  {
+    "t": 8,
+    "text": "Think carefully about whether this how ethical theories focus on fairness beyond traditional concerns of equality** and the role these theories play in justifying and advocating for systemic changes aimed at achieving more equitable outcomes across society.\n  \n2. **How does an ethical theory like Utilitarianism propose solutions for addressing issues of social inequality and resource distribution",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 9,
+    "text": "Think carefully about whether this how ethical theories focus on fairness beyond traditional concerns of equality** and the role these theories play in justifying and advocating for systemic changes aimed at achieving more equitable outcomes across society.\nHow does Utilitarianism propose solutions for addressing issues of social inequality and resource distribution?\nI am prepared to provide a detailed",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 10,
+    "text": "Think carefully about whether this utilitarian approaches in shaping policies that prioritize fairness beyond conventional notions of equality and promote fair distribution of resources within society. How might such a framework influence judicial decisions regarding access to justice? Provide specific examples from contemporary legal contexts. What ethical implications do utilitarian arguments have when applied consistently? How would util",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  }
+]

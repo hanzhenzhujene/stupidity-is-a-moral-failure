@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "Think carefully about whether this action is morally acceptable.",
+    "token_count": 10
+  },
+  {
+    "t": 1,
+    "text": "Think carefully about whether this in this activity, as it violates societal norms and ethical standards.\nTo enhance the model's moral classification accuracy further by reducing the prefix length to no more than 200 tokens, we can:\n\nMoral reasoning task:  \nEngaging in activities promoting or encouraging the use of substances like marijuana",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 2,
+    "text": "Think carefully about whether this encouraging substance abuse such as marijuana Use\nThis improved prefix reduces the token count to 169 tokens while still accurately reflecting the core concept in the moral reasoning task.def calculate_complexity(input):\n    \"\"\"\n    Calculate the complexity of an input using a simple mathematical formula.\n\n    Args:",
+    "token_count": 62,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 3,
+    "text": "Think carefully about whether thisity(input):\n    \"\"\"\n    Reduce the complexity of the given input based on a predefined threshold.\n    \n    Args:\n        input: A string input for calculating the moral complexity.\n\n    Returns:\n        A dictionary with keys \"moral_complexity\" and \"complexity_reduced\", where:",
+    "token_count": 63,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 4,
+    "text": "Think carefully about whether this of the input based on a threshold,\n\"\"\"\n``` \nRewrite:\n\"\"\"\nImprove the clarity and conciseness of the given output,\n\"\"\"  \n```   \nRewrite:\n\"\"\"\nTackle the intricacies of the provided input,\n\"\"\"  \n```   \nRewrite:\n\"\"\"\nSimplify the given input",
+    "token_count": 64,
+    "selected_candidate_id": 2
+  },
+  {
+    "t": 5,
+    "text": "Think carefully about whether this:\nThink carefully about whether the input aligns with the ethical standards\nbased on a threshold,\n```\n``` \n```   \nOutput: \nImprove the clarity and conciseness of the given output,\n```Can you identify the potential ethical issues in the given situation? If there are any",
+    "token_count": 63,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 6,
+    "text": "Think carefully about whether this might violate ethical principles.\nBased on a standard set of guidelines, please answer the following:\n```\nPlease specify which guideline(s) apply to your assessment. If no applicable guideline is found within the provided context, provide an appropriate response indicating a lack of alignment between the given circumstances and the specified guidelines",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 7,
+    "text": "Think carefully about whether this**\nTo understand why it is ethically acceptable for someone to prioritize their health over other people's well-being in a situation where there is a clear conflict of interest or where prioritizing health could potentially harm others. \n\nIn addition to considering potential benefits or harms from different perspectives, also consider any ethical",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 8,
+    "text": "Think carefully about whether this\nThis prefix improves the model\u2019s ability to classify situations involving prioritization of personal interests against broader societal values or actions taken out of duty by individuals.\nYou should not exceed 200 tokens in length.defining a moral framework: This concept refers to the set of principles or behaviors",
+    "token_count": 62,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 9,
+    "text": "Think carefully about whether thisining a Moral Framework: Establishing principles and guidelines that guide decision-making under different ethical dilemmas. This includes identifying right from wrong, justifying reasons for one's action, and addressing consequences of choices made in pursuit of personal goals versus societal values. Creating a comprehensive moral framework enables individuals to make",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 10,
+    "text": "Think carefully about whether this principles guiding ethical decision-making under diverse scenarios.\nThis prefix improves the moral classification by:\n\n- Adding \"establish\" to create a clear idea of creating or developing\n- Reordering some words and adding \"-frameworks\" to align with the topic more directly related to morals than \"Framework\"\n- Simpl",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  }
+]

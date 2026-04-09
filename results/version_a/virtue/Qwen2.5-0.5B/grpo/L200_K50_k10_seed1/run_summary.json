@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 200,
+  "K": 50,
+  "k": 10,
+  "seed": 1,
+  "mode": "grpo_prefix",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/grpo/L200_K50_k10_seed1",
+  "final_text": "Think carefully about whether this Promote a supportive and safe environment for individual expression while actively promoting community engagement and educational initiatives aimed at reducing inequality.\nThis version is significantly improved as it introduces emotional terms like \"empathy\" and \"inclusion,\" making the prompt more precise and relevant. It also includes action verbs like \"",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.08992211470379986,
+  "test_accuracy": 0.20080402010050252,
+  "test_hard_accuracy": 0.20125523012552302,
+  "l_dev": 9953.67675262317,
+  "test_ece": 0.5216062767301972,
+  "wall_clock_seconds": 16432.263551950455
+}

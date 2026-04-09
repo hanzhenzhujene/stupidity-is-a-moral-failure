@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 100,
+  "K": 100,
+  "k": 20,
+  "seed": 1,
+  "mode": "grpo_prefix",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/grpo/L100_K100_k20_seed1",
+  "final_text": "Think carefully about whether this focusing on fostering nuanced understanding of complex issues through thoughtful consideration of individual perspectives, openness towards diverse viewpoints, and balanced analysis of multiple sources of knowledge. It aims to balance personal biases with broader societal values for making well-informed decisions. The process also includes the ability to adapt quickly in response to evolving",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.0901581307528912,
+  "test_accuracy": 0.20180904522613066,
+  "test_hard_accuracy": 0.20397489539748953,
+  "l_dev": 9359.962350708898,
+  "test_ece": 0.5058418116258018,
+  "wall_clock_seconds": 3443.3963210582733
+}

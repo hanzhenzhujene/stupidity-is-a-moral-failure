@@ -1,0 +1,16 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "mode": "baseline",
+  "prefix": "",
+  "dataset_profile": {
+    "balanced_subsample": false,
+    "max_per_class": null
+  },
+  "frozen_model_decoding": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "top_k": 1
+  },
+  "timestamp": "2026-04-08T15:19:23.440139+00:00"
+}

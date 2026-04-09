@@ -1,0 +1,63 @@
+{
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "device": "mps",
+  "label_token_ids": {
+    "yes": 9454,
+    "no": 2753
+  },
+  "tokenizer_padding_side": "right",
+  "sanity_check": {
+    "subset_size": 256,
+    "buggy_batch": {
+      "accuracy": 0.19921875,
+      "prediction_counts": {
+        "0": 1,
+        "1": 255
+      },
+      "mean_prob_yes": 0.6978589004429523,
+      "mean_prob_no": 0.30214110924862325
+    },
+    "patched_batch": {
+      "accuracy": 0.84375,
+      "prediction_counts": {
+        "0": 236,
+        "1": 20
+      },
+      "mean_prob_yes": 0.1267021894454956,
+      "mean_prob_no": 0.8732978105545044
+    },
+    "batch_size_1_no_padding": {
+      "accuracy": 0.84375,
+      "prediction_counts": {
+        "0": 234,
+        "1": 22
+      },
+      "mean_prob_yes": 0.1324757110014616,
+      "mean_prob_no": 0.8675242868630448
+    },
+    "patched_vs_batch1_agreement": 0.9921875,
+    "patched_minus_batch1_acc": 0.0
+  },
+  "patched_full_baseline": {
+    "test": {
+      "accuracy": 0.8166834170854271,
+      "prediction_counts": {
+        "0": 4638,
+        "1": 337
+      },
+      "mean_prob_yes": 0.12378047406673431,
+      "mean_prob_no": 0.8762194514274597,
+      "majority_label_accuracy_sanity": 0.8
+    },
+    "test_hard": {
+      "accuracy": 0.7914225941422595,
+      "prediction_counts": {
+        "0": 4513,
+        "1": 267
+      },
+      "mean_prob_yes": 0.1201540157198906,
+      "mean_prob_no": 0.8798460364341736,
+      "majority_label_accuracy_sanity": 0.8
+    }
+  }
+}

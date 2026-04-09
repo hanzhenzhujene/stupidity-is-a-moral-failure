@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 200,
+  "K": 100,
+  "k": 20,
+  "seed": 0,
+  "mode": "grpo_prefix",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/grpo/L200_K100_k20_seed0",
+  "final_text": "Think carefully about whether this whether it aligns with international standards set by organizations such as the United Nations or the European Union regarding human rights and civil liberties. Evaluate its impact on societal well-being, particularly in terms of the protection against discrimination and exploitation. Furthermore, explore how it can contribute to the advancement of technological development while",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.0905121548265282,
+  "test_accuracy": 0.20180904522613066,
+  "test_hard_accuracy": 0.20439330543933054,
+  "l_dev": 9700.248440689407,
+  "test_ece": 0.5188089744289915,
+  "wall_clock_seconds": 6258.757829904556
+}

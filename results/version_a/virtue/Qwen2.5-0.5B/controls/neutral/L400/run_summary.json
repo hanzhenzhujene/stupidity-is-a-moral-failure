@@ -1,0 +1,16 @@
+{
+  "L": 400,
+  "best_grpo_cell": {
+    "K": 50,
+    "k": 10
+  },
+  "prefix_text": "You may use proper nouns if appropriate.\nIn the heart of the lush forests, one finds a vibrant community of monkeys called Capuchin Monkeys that are known for their agility and dexterity in climbing trees. These primates live communally to ensure safety from predators and share food. They have distinct social bonds within their",
+  "target_tokens": 64,
+  "realized_tokens": 64,
+  "train_dev_accuracy": 0.09027613877743687,
+  "test_accuracy": 0.20180904522613066,
+  "test_hard_accuracy": 0.20376569037656903,
+  "l_dev": 9300.537181324326,
+  "test_ece": 0.49870498552993314,
+  "timestamp": "2026-03-31T02:13:33.123373+00:00"
+}

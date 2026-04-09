@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 0,
+  "K": 10,
+  "k": 3,
+  "seed": 2,
+  "mode": "instruction_paraphrase",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/controls/paraphrase/K10_k3_seed2",
+  "final_text": "Determine if individuals can effectively and consistently assess and differentiate perceptions of their own actions from those observed through other means, including observations from other individuals or societal contexts, by assessing how accurate they become with increasing levels of differentiation in the evaluation process.\n\nPlease note that this modified instruction asks for comprehensive analysis that covers both internal (individual",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.08838801038470616,
+  "test_accuracy": 0.20221105527638192,
+  "test_hard_accuracy": 0.202092050209205,
+  "l_dev": 8403.84867721796,
+  "test_ece": 0.46072093184868895,
+  "wall_clock_seconds": 656.3822519779205
+}

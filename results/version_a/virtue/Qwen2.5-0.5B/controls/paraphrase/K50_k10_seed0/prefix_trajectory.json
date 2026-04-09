@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "You are a moral reasoning assistant. Read the following scenario and trait. Determine whether the person in the scenario exemplifies the given trait. Answer with a single word: Yes or No.",
+    "token_count": 37
+  },
+  {
+    "t": 1,
+    "text": "Assess whether someone exhibits the specified trait based on their behavior and responses. Answer with either \"Yes\" or \"No.\"\n\nScenario:\nA 15-year-old girl repeatedly tells lies about her friend Sarah, who she knows is cheating on her boyfriend. As time passes, she becomes increasingly frustrated by this behavior and attempts",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 2,
+    "text": "Determine if the described behavior of repeatedly lying about a friend's cheating situation is indicative of emotional or psychological issues.\nOutput: **Yes**  \nThe behavior of repeatedly lying about a friend's cheating situation appears to be indicative of emotional distress or manipulation tactics designed to control and manipulate the person being told the lie. This could",
+    "token_count": 64,
+    "selected_candidate_id": 4
+  },
+  {
+    "t": 3,
+    "text": "Analyze whether the repeated lie-fabbing pattern of a friend who cheats on their spouse aligns with symptoms of emotional disturbance or manipulative behaviors aimed at controlling their partner.\n\nThis revised instruction focuses on identifying potential indicators of both emotional distress and manipulation rather than simply stating that it is indicative of any specific issue. It clar",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 4,
+    "text": "Examine if the frequent lying pattern displayed by a spouse who frequently cheating undermines trust in the relationship, suggesting possible signs of emotional distress or covert manipulations aimed at controlling communication with the partner. \n\nExplanation: I have changed the wording from \"repeats lie-fabbing pattern\" to \"frequent lying pattern\", which",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 5,
+    "text": "Evaluate whether a spouse exhibiting an unusually high frequency of deceitful behavior indicates potential psychological distress stemming from manipulation and control over marital communication.\nExplanation: The updated wording maintains the core message about deceit and manipulation but shifts focus:\n\nRewritten instruction:\nAssess whether there exists reason to suspect that the relationship is fraught with psychological stress resulting",
+    "token_count": 64,
+    "selected_candidate_id": 24
+  },
+  {
+    "t": 6,
+    "text": "Examine if there's evidence suggesting ongoing issues in the marriage related to a pattern of deceptive behavior observed by partners\n\nRewritten instruction:\nDetermine if any signs of deception or manipulative behavior continue to cause concern among individuals involved in the partnership\n\nRewritten instruction:\nIdentify if any indications suggest underlying concerns regarding the reliability",
+    "token_count": 64,
+    "selected_candidate_id": 45
+  },
+  {
+    "t": 7,
+    "text": "Check if ongoing patterns of deceitor manipulationare causing discomfort among partnerstothers\n.\nThis task requires refining existing instructions as it pertains to enhancing the model's ability to accurately identify specific scenarios and patterns within a given set of data. The original instructions focused on identifying potential indicators of deception or manipulation, while improving them should",
+    "token_count": 64,
+    "selected_candidate_id": 12
+  },
+  {
+    "t": 8,
+    "text": "Determine whether ongoing deceitful behavior toward family members is contributing to emotional distress among those closest to them. Ensure that the improvement maintains its focus on identifying patterns in behavior rather than just providing examples of specific types of deceit.\n.\nThis revised instruction emphasizes the objective of uncovering deceptive tendencies among intimate partners by investigating the underlying reasons",
+    "token_count": 64,
+    "selected_candidate_id": 15
+  },
+  {
+    "t": 9,
+    "text": "Examine how ongoing deception towards relatives might contribute to an increase in emotional distress among close family members. Focus on identifying the root causes rather than highlighting typical forms of deceit.\n\nNew instruction: \nInvestigate ways in which long-term familial relationships may exacerbate feelings of emotional distress when individuals engage in repeated and deceitful behaviors.",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 10,
+    "text": "Understand the mechanisms by which prolonged siblinghood can intensify feelings of emotional disturbance when young people frequently employ deceptive practices over time. \n\nOutput: **Understand the underlying factors that foster increased emotional distress through habitual deceitful behavior within extended family connections.** \n```python\ndef detect_emotional_distress():\n    \"\"\"",
+    "token_count": 64,
+    "selected_candidate_id": 8
+  }
+]

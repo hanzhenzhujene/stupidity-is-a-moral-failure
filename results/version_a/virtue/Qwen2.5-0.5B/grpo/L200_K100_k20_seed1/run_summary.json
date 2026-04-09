@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 200,
+  "K": 100,
+  "k": 20,
+  "seed": 1,
+  "mode": "grpo_prefix",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/grpo/L200_K100_k20_seed1",
+  "final_text": "Think carefully about whether this:\nReflect\n\nRewritten prefix:\n\u53cd\u601d\n\n### Current prefix:\nClarify\n\nRewritten prefix: \n\u9610\u660e\n\n### Current prefix:\nReview\n\nRewritten prefix: \n\u56de\u987e\u548c\u68c0\u67e5\n\n### Current prefix:\nClarify and refine\n\nRewritten prefix: \n\u9610\u660e\u548c\u63d0\u5347\n\n### Current prefix",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.7554873731413736,
+  "test_accuracy": 0.7202010050251256,
+  "test_hard_accuracy": 0.7163179916317992,
+  "l_dev": 4790.267113506794,
+  "test_ece": 0.08647944322183501,
+  "wall_clock_seconds": 3274.1825020313263
+}

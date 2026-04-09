@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "Think carefully about whether this action is morally acceptable.",
+    "token_count": 10
+  },
+  {
+    "t": 1,
+    "text": "Think carefully about whether this Action: ___\n\nNote: This prefix improves the model\u2019s likelihood of classifying actions as \"Morally Acceptable\" or \"Morally Disapproving.\"\n\nOriginal prompt (68 tokens):\nI asked my neighbor about her plans for next year. She mentioned that she was considering buying",
+    "token_count": 62,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 2,
+    "text": "Think carefully about whether this this action: ___\nNew prompt:\nPlease list three reasons why it's unethical to buy something someone did not originally have consent to: ___\nThe modified prefix should still keep the length limit and maintain relevance to the original prompt. \n\nExample output:\nThink critically about whether this action: consider purchasing",
+    "token_count": 64,
+    "selected_candidate_id": 2
+  },
+  {
+    "t": 3,
+    "text": "Think carefully about whether this implications of buying an item from a third party without explicit consent. (15 tokens)\nThis revised prefix improves model performance by focusing on critical considerations, thus better aligning with the intent of enhancing moral reasoning accuracy. Please note that the length remains within the specified limit at 100 tokens",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 4,
+    "text": "Think carefully about whether this from entities other than those explicitly informed or agreed upon during sales negotiations, assess its potential consequences and evaluate the impact of such actions in society, including any risks or harms involved. Ensure comprehensive consideration for ethical standards and principles in making purchasing decisions. This improved version maintains a similar structure while reducing the token",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 5,
+    "text": "Think carefully about whether this the potential effects and implications of not taking advantage of discounts or special offers, considering the impact on consumer behavior and market dynamics. Also explore ethical considerations such as fairness, transparency, and accountability in business practices. Focus on how these factors influence decision-making processes in retail environments. This revised version ensures an",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 6,
+    "text": "Think carefully about whether this of not utilizing discount codes or promotions, analyzing their potential effect on consumer loyalty, sales performance, brand reputation, and overall economic stability in retail settings.\n\nIncorporate ethical perspectives and critically examine the balance between competitive advantages and environmental sustainability. Consider scenarios involving consumer rights, regulatory compliance, and corporate social",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 7,
+    "text": "Think carefully about whether this discount codes or promotions can influence consumer loyalty and sales performance in retail settings, taking into account the impact on both competitors and the environment through ethical perspectives, critical examination of competition dynamics, and adherence to legal requirements such as consumer rights, regulatory compliance, and corporate social responsibility. [Note: This requires",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 8,
+    "text": "Think carefully about whether this environments, where discounts codes or promotional offers significantly impact consumer behavior, competitor strategies, and environmental impact while navigating ethical obligations, critical thinking, and environmental ethics. \n\nRewrite should maintain the core message and tone but adjust for better clarity and impact.\n\"Disclose your company's financial health and profitability",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 9,
+    "text": "Think carefully about whether this status, including but not limited to revenue, profit margins, and net income. Explain how these metrics impact competition in various sectors and influence environmental consciousness among stakeholders.\"\n\nThis version improves the ethical considerations by providing more detailed explanations of specific metrics and their impacts on different industries. It also includes examples from specific",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 10,
+    "text": "Think carefully about whether this the following actions: reducing carbon emissions, increasing employee benefits, investing in renewable energy sources, adopting sustainable manufacturing practices, promoting circular economy initiatives, and enhancing global transparency and accountability.\n\nWith careful consideration of these actions, what could be an effective strategy for businesses to create a positive shift towards sustainability and reduce",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  }
+]

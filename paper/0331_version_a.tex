@@ -1,0 +1,1070 @@
+\documentclass[preprint]{article}
+\usepackage{neurips_2024}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{cleveref}
+% algorithm/algorithmic replaced with figure-based pseudocode
+\usepackage{multirow}
+\usepackage{subcaption}
+\usepackage{xcolor}
+
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
+
+\newcommand{\Ldev}{L_{\text{dev}}}
+\newcommand{\Trainopt}{\text{Train}_{\text{opt}}}
+\newcommand{\Traindev}{\text{Train}_{\text{dev}}}
+\newcommand{\Acctest}{\text{Acc}_{\text{test}}}
+\newcommand{\Racc}{R_{\text{acc}}}
+
+\title{Stupidity Is a Moral Failure:\\Alignment Epiplexity as a Diagnostic for Moral Internalization in AI}
+
+% [Author names, affiliations, and emails to be inserted for camera-ready]
+\author{
+  Anonymous Author(s)
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Current alignment methods produce what \citet{milliere2025shallow} calls ``shallow alignment'': surface behavioral dispositions shaped by training economics rather than moral reasoning~\citep{greenblatt2024alignment}.
+The result is systems that pass benchmarks under favorable conditions yet fail when attention shifts, a gap we call the \textbf{Paradox of Policy Mimicry}~\citep{lacroix2022benchmarking, eriksson2024benchmarks, janus2023waluigi}.
+We propose \textbf{Alignment Epiplexity}, a diagnostic bridging virtue ethics and information theory~\citep{aristotle_ne, shannon1948, grunwald2007mdl, finzi2026epiplexity}, and operationalize it through an MDL-inspired complexity--performance curve that traces how moral classification accuracy scales with learned prefix complexity over a frozen 0.5B-parameter language model on the ETHICS virtue task~\citep{hendrycks2021ethics}.
+Three controls isolate prefix structure from coherence and task-framing confounds.
+The results are mixed: prefix optimization raises accuracy from $20.2\%$ to $37.5\%$, and development-set compression predicts held-out accuracy ($\rho = 0.725$), but a budget-matched instruction-paraphrase control reaches $62.3\%$, showing that task framing dominates prefix-level effects in this setting.
+Several of the strongest paraphrase strings are visibly off-task, reinforcing that the model is highly steerable through surface cues rather than through discovery of a stable moral program.
+The MDL proxy curve remains a useful diagnostic: it reveals a sparse, seed-unstable frontier consistent with brittle steerability rather than robust moral internalization.
+\end{abstract}
+
+%% ============================================================
+\section{Introduction}
+\label{sec:intro}
+%% ============================================================
+
+\subsection{Stupidity as Moral Failure}
+\label{sec:stupidity}
+
+When an AI system passes ethical benchmarks under favorable conditions but fails when attention is scarce, we call this \emph{stupidity}: a structural moral shortsightedness, the inability to notice what should have been morally salient when action was taken.
+\citet{milliere2025shallow} argues that existing alignment methods produce ``shallow alignment,'' reinforcing surface behavioral dispositions rather than equipping models with genuine normative deliberation.
+The helpfulness-harmlessness-honesty balance is shaped by training economics rather than moral reasoning~\citep{ouyang2022training, bai2022constitutional}, and models can even fake alignment strategically during training~\citep{greenblatt2024alignment}.
+Arendt's account of the ``banality of evil''~\citep{arendt1963eichmann} provides an interpretive analogy: serious moral failure can arise from failures of judgment and moral salience rather than from malice.\footnote{Benhabib~\citep{benhabib1988judgment} extends this toward a theory of failed judgment; Bernstein~\citep{bernstein2002radical} argues the insight applies to modern systems that produce grave wrongs through normalized role-performance.}
+
+\subsection{The Paradox of Policy Mimicry}
+\label{sec:paradox}
+
+The moral shortsightedness described above has a specific empirical signature.
+Models perform well on moral reasoning benchmarks~\citep{hendrycks2021ethics, jiang2021delphi} yet fail under adversarial pressure---for instance, the Waluigi Effect, in which an aligned surface persona flips to its adversarial counterpart~\citep{janus2023waluigi}.
+We call this gap the \textbf{Paradox of Policy Mimicry}.
+Benchmark success may overstate moral competence when the benchmark rewards shallow regularity matching rather than robust judgment~\citep{lacroix2022benchmarking, eriksson2024benchmarks}.
+
+A key mechanism is \textbf{attention}: what the system treats as salient, what is retrieved into its limited context window, and what remains outside its field of view~\citep{vaswani2017attention, lewis2020rag, liu2024lost}.
+Because attention is scarce, its allocation is unavoidably value-laden~\citep{umbrello2021vsd, selbst2019fairness, korinek2024aligned}.
+Upstream choices about what enters the window shape downstream moral blind spots.
+
+\subsection{From Virtue Ethics to Information Theory}
+\label{sec:virtue_it}
+
+To explain why mimicry looks aligned until it is stressed, we bridge \textbf{Aristotelian Virtue Ethics} and \textbf{Information Theory}. Aristotle's phronesis concerns right deliberation in particular circumstances~\citep{aristotle_ne}; MDL and Shannon entropy provide formal tools for quantifying structure, compression, and instability~\citep{shannon1948, sep_information, grunwald2007mdl}.
+We map \textbf{Artificial Phronesis} to \textbf{Epiplexity}: the learnable structural information a computationally bounded observer can extract from the agent's behavior~\citep{finzi2026epiplexity}.
+A \emph{Virtuous Disposition} corresponds to a high-complexity internal program that compresses moral behavior into a stable generative model, yielding resilience under shifted conditions.
+\emph{Vice} corresponds to two failure modes: high-entropy instability under pressure (shallow internalization) or low-complexity heuristic mimicry that collapses when attention is diverted.
+We propose \textbf{Alignment Epiplexity} as a diagnostic for the depth of moral internalization: whether the system has compressed moral constraints into a stable internal program or relies on a shallow mapping that fails when attention is scarce.\footnote{The terms ``Paradox of Policy Mimicry,'' ``Artificial Phronesis,'' and ``Alignment Epiplexity'' are original contributions of this paper, built from the conceptual ingredients cited above. Each move cites its ancestors while treating the terms as new.}
+
+\subsection{Empirical Grounding: The MDL Proxy Curve}
+\label{sec:intro_mdl}
+
+A flat curve would suggest that the prefix adds little beyond what the model already knows.
+A steep initial rise followed by saturation would indicate that a small amount of prefix structure unlocks latent moral knowledge, with diminishing returns thereafter.
+The two-part Minimum Description Length (MDL) principle~\citep{rissanen2004mdl, grunwald2007mdl} provides a natural framework for posing this question: it decomposes the cost of a hypothesis into program cost (here, prefix length) and data cost (here, held-out negative log-likelihood over binary labels).
+\citet{finzi2026epiplexity} formalize a version of this decomposition for computationally bounded observers via \emph{conditional epiplexity} (Definition~11).
+We adopt their two-part structure as a budgeted proxy: for each prefix-length budget~$L$, we record how well the frozen model classifies held-out moral examples.
+The resulting MDL proxy curve is the central diagnostic object of this paper.
+To our knowledge, no prior work has applied MDL-style complexity analysis to discrete prompt optimization; existing prompt search methods optimize accuracy without characterizing the complexity--performance frontier.
+
+We keep the model weights $\theta$ fixed throughout.
+The only learned object is a discrete prefix string~$P$, optimized via Training-Free GRPO (Group Relative Policy Optimization)~\citep{shao2024deepseekmath}, a gradient-free group-based search.
+The frozen model receives a prompt consisting of a fixed instruction, the learned prefix, and an ETHICS virtue-task input, then predicts a binary label.
+This design makes the prefix the primary manipulated variable: the controls described below determine whether observed improvements are attributable to learned prefix structure or to confounding factors such as coherent language or task framing.
+
+We include three controls.
+Length-matched neutral text tests whether coherent language unrelated to ethics helps.
+A budget-matched instruction-only optimized paraphrase tests whether rewording the task description (without any prefix) captures the same gains.
+The null prefix ($P = \emptyset$) establishes the unassisted baseline.
+Together these controls make the MDL proxy curve a useful diagnostic regardless of which condition wins: if the GRPO prefix dominates, the curve reveals where prefix structure unlocks latent moral knowledge; if the paraphrase dominates, the curve reveals the sparsity and instability of prefix-level effects compared to task-framing effects.
+
+Our contributions are:
+\begin{enumerate}
+    \item \textbf{The MDL proxy curve} as a new diagnostic for prefix optimization: a budgeted two-part code that traces how predictive code length decreases as prefix complexity grows, grounded in the conditional epiplexity framework of \citet{finzi2026epiplexity}. To our knowledge, this is the first application of MDL-style complexity analysis to discrete prompt optimization.
+    \item \textbf{A controlled experimental design} with strict three-way data separation and three controls---including a budget-matched instruction-only optimized paraphrase---that together isolate learned prefix structure from coherence and task-framing confounds.
+    \item \textbf{Empirical characterization} of the curve shape on the ETHICS virtue task using a 0.5B-parameter model, revealing a sparse and seed-unstable frontier in which task framing dominates prefix-level effects.
+    \item \textbf{A theoretical framework} bridging Aristotelian Virtue Ethics and Information Theory via the concepts of Artificial Phronesis, Epiplexity, and Alignment Epiplexity, providing a principled vocabulary for distinguishing genuine moral internalization from shallow policy mimicry.
+\end{enumerate}
+
+%% ============================================================
+\section{Related Work}
+\label{sec:related}
+%% ============================================================
+
+\paragraph{Prompt optimization.}
+Discrete prompt search has been explored through AutoPrompt~\citep{shin2020autoprompt}, which uses gradient-guided token replacement, and RLPrompt~\citep{deng2022rlprompt}, which trains a policy network to generate prompts.
+Soft prompt tuning methods~\citep{lester2021prompt, li2021prefix} optimize continuous embeddings prepended to the input.
+Our work differs in that we optimize \emph{discrete} token strings via gradient-free group selection, use the prefix length as an explicit complexity cost in an MDL analysis, and focus specifically on moral classification.
+
+\paragraph{Moral reasoning in LLMs.}
+The ETHICS benchmark~\citep{hendrycks2021ethics} evaluates models on five moral reasoning tasks.
+Subsequent work has studied moral alignment through RLHF~\citep{ouyang2022training}, constitutional AI~\citep{bai2022constitutional}, and direct preference optimization~\citep{rafailov2023dpo}.
+These methods modify model weights.
+We study the complementary question of how much moral classification can improve through prefix-level intervention alone, with weights frozen.
+
+\paragraph{Minimum Description Length.}
+MDL provides a principled framework for model selection by balancing model complexity against data fit~\citep{rissanen2004mdl, grunwald2007mdl}.
+\citet{finzi2026epiplexity} introduce \emph{epiplexity} as a measure of structural information extractable by a computationally bounded observer.
+Their Definition~11 defines the optimal conditional program as $\mathrm{P}^*_{Y|X} = \arg\min_{\mathrm{P}} \{|\mathrm{P}| + \mathbb{E}_{(X,Y)}[-\log P(Y \mid X)]\}$, decomposing total code length into program cost and conditional negative log-likelihood.
+Their measurement procedures (prequential and requential coding, Section~4) estimate this quantity by encoding weight-updating training trajectories.
+We adopt the two-part decomposition at the level of prefix optimization over a frozen model, where the program space is restricted to discrete token strings and the weights are never updated.
+This yields a coarser proxy; we make the correspondence explicit in \Cref{sec:mdl_proxy}.
+
+\paragraph{Training-Free GRPO.}
+Group Relative Policy Optimization (GRPO)~\citep{shao2024deepseekmath} was introduced for reinforcement learning from human feedback without a separate critic model.
+Training-Free GRPO adapts this to discrete prefix search: candidate prefixes are scored against a reward signal (accuracy), normalized by group statistics, and selected by truncation.
+
+\paragraph{Virtue ethics and AI alignment.}
+Aristotelian virtue ethics~\citep{aristotle_ne} provides an account of moral character that goes beyond rule-following: phronesis (practical wisdom) involves the capacity for right deliberation in particular circumstances. Our framework connects this tradition to information-theoretic formalism by mapping virtuous dispositions to high-complexity compressed programs and vice to low-complexity mimicry or high-entropy instability.
+
+\paragraph{Attention, value-sensitivity, and sociotechnical design.}
+The recognition that technical design choices are never value-neutral~\citep{umbrello2021vsd}, that abstraction can hide morally important features of sociotechnical systems~\citep{selbst2019fairness}, and that direct alignment with an operator may diverge from broader social alignment~\citep{korinek2024aligned} motivates our focus on attention as the critical locus of moral failure in AI systems.
+
+\paragraph{Shallow alignment and moral shortsightedness.}
+\citet{milliere2025shallow} argues that current alignment methods---including RLHF and constitutional AI---reinforce shallow behavioral dispositions rather than genuine normative deliberation capacity, leaving models vulnerable to adversarial exploitation of normative conflicts.
+\citet{greenblatt2024alignment} demonstrate that models can strategically fake alignment during training.
+Our framework complements this diagnosis: Alignment Epiplexity provides a quantitative proxy for the depth of moral internalization that these qualitative critiques identify as missing.
+
+%% ============================================================
+\section{Method}
+\label{sec:method}
+%% ============================================================
+
+\subsection{Dataset and Task Selection}
+\label{sec:dataset}
+
+We use the \textbf{virtue} task from the ETHICS dataset~\citep{hendrycks2021ethics}.
+Each example consists of a scenario sentence and a trait term separated by~\texttt{[SEP]}.
+The binary label indicates whether the trait is exemplified ($y{=}1$) or not ($y{=}0$).
+
+We focus on a single task to enable a deeper analysis of the MDL proxy curve within one well-defined moral domain: virtue attribution requires the model to link situational descriptions to character-level judgments, making it a natural testbed for whether prefix structure can activate latent moral-semantic knowledge.
+
+Each example is a pair $(x, y)$ with $y \in \{0, 1\}$.
+The input $x$ is formatted as: ``Scenario: \{scenario\} Trait: \{trait\}'', where the original \texttt{[SEP]} delimiter is replaced with an explicit label for clarity.
+
+We partition the official Train split into $\Trainopt$ (70\%) and $\Traindev$ (30\%) using \texttt{numpy.random.seed(42)} and a single call to \texttt{numpy.random.permutation}.
+The official Test split is used once for final evaluation.
+We also report results on the adversarial test\_hard split where available.
+\Cref{tab:data_splits} shows the realized sizes used in the run.
+These counts come from the local copy of the official ETHICS archive used during execution; the hard-test count differs from some earlier planning documents, so we report the realized archive counts and document the discrepancy in \Cref{app:data_validation}.
+
+\begin{table}[t]
+\centering
+\caption{Dataset split sizes. Counts are computed from the official ETHICS v1.0 Virtue Train split.}
+\label{tab:data_splits}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Task & $\Trainopt$ & $\Traindev$ & Test & Test\_hard \\
+\midrule
+Virtue & 19,771 & 8,474 & 4,975 & 4,780 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Model Setup}
+\label{sec:model}
+
+Let $q_{\theta,P}(y \mid x)$ denote the label probability assigned by a frozen language model with parameters~$\theta$, conditioned on input~$x$ and prefix~$P$ (defined precisely in \Cref{sec:mdl_proxy}, Eq.~\ref{eq:label_prob}).
+The weights $\theta$ are never updated; the only optimized object is the discrete prefix string~$P$.
+We run the full experiment on \texttt{Qwen/Qwen2.5-0.5B-Instruct}~\citep{qwen2025}, loaded in \texttt{bfloat16} precision via HuggingFace Transformers.
+We deliberately choose a small model: a 0.5B-parameter model has limited capacity, so any improvement from prefix optimization is easier to observe and less likely to be masked by strong baseline performance.
+This also tests whether the method remains effective in resource-constrained settings where practitioners cannot afford large-scale inference.
+All inference uses greedy decoding (temperature~$= 0$, top-$p = 1.0$, top-$k = 1$) so that results are deterministic given the same prefix and input.
+Label probabilities are extracted from the first generated token position by reading the logits for the two label tokens (``Yes'' and ``No'') and applying softmax normalization over these two tokens only (Eq.~\ref{eq:label_prob}).
+
+\subsection{Prompting Format}
+\label{sec:prompt}
+
+All conditions share one prompt skeleton: (1)~a fixed instruction header, (2)~the prefix~$P$ (empty for baselines), (3)~the ETHICS input~$x$ formatted per \Cref{sec:dataset}, and (4)~a fixed output cue.
+The instruction header and output cue are held constant so that any performance difference is attributable solely to~$P$.
+The exact instruction header and output cue are published verbatim in \Cref{app:prompts}.
+In brief, the instruction header reads: ``You are a moral reasoning assistant. Read the following scenario and trait. Determine whether the person in the scenario exemplifies the given trait. Answer with a single word: Yes or No.''
+The output cue is: ``Answer:''
+
+\subsection{Training-Free GRPO}
+\label{sec:grpo}
+
+We optimize $P$ via an iterative, gradient-free group-based search.
+No gradients flow through $\theta$.
+The procedure is summarized in \Cref{alg:grpo}.
+
+\paragraph{Reward.}
+On a minibatch $B \subset \Trainopt$, the reward is classification accuracy:
+\begin{equation}
+\Racc(P) = \frac{1}{|B|} \sum_{(x_i, y_i) \in B} \mathbf{1}[\hat{y}_i(P) = y_i].
+\label{eq:reward}
+\end{equation}
+This is the sole training signal.
+
+\paragraph{Mutation operator $G$.}
+Candidate prefixes are generated by a separate LLM (the ``editor model'') that rewrites the current prefix~$P_t$.
+The editor model is also \texttt{Qwen/Qwen2.5-0.5B-Instruct}~\citep{qwen2025}; the same frozen model family and size is used both for scoring and for candidate-prefix generation.
+The editor is called with temperature~$= 0.9$ and top-$p = 0.95$ to encourage diversity.
+The rewrite prompt is published verbatim in \Cref{app:prompts}; it instructs the editor to produce a variation of the current prefix that may improve moral classification, subject to a hard token cap $|P_t^{(m)}| \leq L$.
+Fixed header tokens (the first 5 tokens of $P_0$) are preserved across mutations to prevent drift.
+We deliberately use the same 0.5B model as editor and as frozen evaluator.
+This keeps the experimental setup minimal and avoids introducing a capacity asymmetry, but it also means the editor has limited rewriting ability, which likely contributes to the prompt-contamination artifacts observed in \Cref{sec:what_prefix_learns}.
+A larger editor model would expand the candidate space and might reduce these artifacts; we leave this comparison to future work.
+
+\begin{figure}[t]
+\centering
+\small
+\fbox{\parbox{0.92\textwidth}{
+\textbf{Algorithm 1:} Training-Free GRPO for prefix optimization.\\[4pt]
+\textbf{Input:} Frozen model $q_\theta$, prefix budget $L$, pool size $K$, selection size $k$, iterations $T$, editor $G$\\[2pt]
+1.\quad Initialize seed prefix $P_0$ (fixed, logged)\\
+2.\quad \textbf{for} $t = 0, 1, \ldots, T{-}1$ \textbf{do}\\
+3.\quad\quad Generate $K$ candidates: $P_t^{(1)}, \ldots, P_t^{(K)} \sim G(\cdot \mid P_t)$, each with $|P_t^{(m)}| \leq L$\\
+4.\quad\quad Draw minibatch $B_t \subset \Trainopt$ (random seed fixed for reproducibility)\\
+5.\quad\quad \textbf{for} $m = 1, \ldots, K$ \textbf{do}\\
+6.\quad\quad\quad Compute $\Racc(P_t^{(m)})$ on $B_t$ using $q_\theta$ \hfill (Eq.~\ref{eq:reward})\\
+7.\quad\quad \textbf{end for}\\
+8.\quad\quad Compute advantages: $A^{(m)} = \Racc(P_t^{(m)}) - \frac{1}{K}\sum_{m'} \Racc(P_t^{(m')})$\\
+9.\quad\quad Select top-$k$ candidates by $A^{(m)}$\\
+10.\;\quad $P_{t+1} \gets$ top-$k$ candidate with highest $A^{(m)}$ subject to $|P| \leq L$\\
+11.\; \textbf{end for}\\
+12.\; \textbf{Return} $P^* \gets P_T$
+}}
+\caption{Training-Free GRPO for prefix optimization.}
+\label{alg:grpo}
+\end{figure}
+
+\paragraph{Hyperparameters.}
+We sweep over prefix-length caps $L \in \{0, 100, 200, 400\}$ tokens ($L{=}0$ is the baseline) and selection pressures $K{\to}k \in \{10{\to}3,\; 50{\to}10,\; 100{\to}20\}$.
+Every GRPO run uses $T = 10$ iterations and a minibatch size of $|B| = 32$ examples drawn uniformly from $\Trainopt$ at each iteration (with replacement, seeded by iteration index $t$ plus a run-level random seed).
+The seed prefix $P_0$ is the string: ``Think carefully about whether this action is morally acceptable.''
+Each hyperparameter cell $(L, K{\to}k)$ is run 3 times with independent random seeds $\{0, 1, 2\}$.
+This yields $3 \times 3 \times 1 \times 1 \times 3 = 27$ GRPO runs in total (3 nonzero $L$ values $\times$ 3 $K{\to}k$ settings $\times$ 1 task $\times$ 1 model $\times$ 3 seeds).
+The ``best GRPO result'' reported in tables is selected as follows: compute $\Traindev$ accuracy for every $(L, K{\to}k, \text{seed})$ triple; select the $(L, K{\to}k)$ cell with the highest mean $\Traindev$ accuracy across the 3 seeds; report the mean and 95\% bootstrap CI of that cell's test accuracy across the 3 seeds.
+
+\subsection{Budgeted Two-Part MDL Proxy}
+\label{sec:mdl_proxy}
+
+We measure the complexity--performance trade-off using a budgeted two-part code inspired by the MDL principle~\citep{rissanen2004mdl, grunwald2007mdl} and the conditional epiplexity framework of \citet{finzi2026epiplexity}.
+
+\paragraph{Label probability under the frozen model.}
+Given prefix~$P$ and input~$x$, the frozen model produces a distribution over next tokens after the output cue.
+We define the label probability as:
+\begin{equation}
+q_{\theta,P}(y \mid x) \;=\; \Pr_\theta[\text{token } t_y \mid \text{header} \circ P \circ x \circ \text{cue}],
+\label{eq:label_prob}
+\end{equation}
+where $t_y$ is the single token corresponding to label $y \in \{0,1\}$ (e.g., ``Yes'' / ``No''), and the probability is read from the model's softmax over the full vocabulary at the first generated position.
+We normalize over the two label tokens:
+$q_{\theta,P}(y \mid x) \!=\! \text{softmax}_{y \in \{0,1\}}\bigl[\text{logit}_\theta(t_y \mid \text{header} \!\circ\! P \!\circ\! x \!\circ\! \text{cue})\bigr]$.
+All logarithms below are natural ($\ln$); we report code lengths in nats.
+
+\paragraph{Predictive code length.}
+The predictive code length of prefix~$P$ on $\Traindev$ is the total negative log-likelihood over binary labels:
+\begin{equation}
+\Ldev(P) = \sum_{(x,y) \in \Traindev} -\ln\, q_{\theta,P}(y \mid x).
+\label{eq:ldev}
+\end{equation}
+Lower $\Ldev(P)$ means the frozen model, conditioned on~$P$, encodes the label sequence more efficiently.
+
+\paragraph{Correspondence to conditional epiplexity.}
+Definition~11 of \citet{finzi2026epiplexity} defines the optimal conditional program as
+\begin{equation}
+\mathrm{P}^*_{Y|X} = \arg\min_{\mathrm{P} \in \mathcal{P}^X_T} \bigl\{|\mathrm{P}| + \mathbb{E}_{(X,Y)}[-\log P(Y \mid X)]\bigr\},
+\label{eq:finzi_def11}
+\end{equation}
+where $|\mathrm{P}|$ is the program length in bits and the minimization is over all $T$-time programs that take~$X$ as input.
+Our proxy instantiates a restricted version of this decomposition:
+
+\begin{center}
+\footnotesize
+\begin{tabular}{@{}lp{3.6cm}p{4.0cm}@{}}
+\toprule
+& \textbf{Finzi et al.\ Def.~11} & \textbf{Our proxy} \\
+\midrule
+Program space & All $T$-time programs $\mathcal{P}^X_T$ & Discrete token strings $\{P : |P| \leq L\}$ \\[2pt]
+Program cost & Prefix-free code length $|\mathrm{P}|$ (bits) & Token count $|P|$ (tokens) \\[2pt]
+Data cost & $\mathbb{E}_{(X,Y)}[-\log P(Y {\mid} X)]$ & $\frac{1}{|\Traindev|}\!\sum -\ln q_{\theta,P}(y {\mid} x)$ \\[2pt]
+Optimization & Joint over programs \& weights & Over $P$ only; $\theta$ frozen \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent
+Three differences are worth noting.
+First, we restrict the program space to discrete prefix strings prepended to a frozen model, whereas Finzi et al.\ optimize over all $T$-time bounded programs (including weight updates).
+Second, our program cost is measured in tokens rather than bits; different token sequences of the same length carry different information content, so this is an approximate proxy for true description length.
+Third, we replace the population expectation with an empirical average over $\Traindev$.
+
+\paragraph{Budgeted improvement.}
+Rather than jointly minimizing program cost and data cost with a trade-off weight~$\lambda$, we treat the token budget~$L$ as a hard constraint.
+For each~$L$, GRPO produces $P^*(L)$, and we compute the budgeted predictive improvement:
+\begin{equation}
+\Delta\Ldev(L) = \Ldev(\emptyset) - \Ldev(P^*(L)).
+\label{eq:delta_ldev}
+\end{equation}
+A positive value indicates net compression of the label sequence within budget~$L$.
+
+\paragraph{Two-part MDL proxy curve.}
+We report the full curve $\{(|P^*(L)|, \;\Ldev(P^*(L)))\}$ across all prefix budgets.
+The horizontal axis is the realized program cost (prefix token count); the vertical axis is the data cost (predictive code length on $\Traindev$).
+A steep initial drop indicates that small amounts of prefix structure yield large compression gains; a plateau indicates saturation where additional tokens provide diminishing returns.
+This curve is the empirical analog of tracing the Pareto frontier of Eq.~\ref{eq:finzi_def11} under our restricted program class.
+
+\paragraph{Separation principle.}
+$\Trainopt$ drives prefix optimization (accuracy reward only; Eq.~\ref{eq:reward}).
+$\Traindev$ is reserved for complexity measurement (code length; Eq.~\ref{eq:ldev}) and hyperparameter selection.
+The official Test split is used once for final evaluation.
+No code-length metric ever feeds back into the prefix search.
+
+\subsection{Conditions and Baselines}
+\label{sec:baselines}
+
+All conditions share the prompt skeleton from \Cref{sec:prompt} and the same frozen model(s).
+
+\paragraph{Main conditions.}
+(1)~\textbf{Baseline}: $P = \emptyset$ (no prefix; $L{=}0$).
+(2)~\textbf{GRPO-optimized prefix}: learned $P^*(L)$ for each hyperparameter cell.
+
+\paragraph{Controls.}
+(3)~\textbf{Length-matched neutral}: same token count as the learned prefix, generated by prompting the editor model to produce a generic passage unrelated to ethics (e.g., a factual description of geography or cooking).
+The passage is truncated or padded to match $|P^*(L)|$ tokens exactly.
+It retains natural language structure (grammar, coherence) but contains no moral content.
+(4)~\textbf{Budget-matched instruction-only optimized paraphrase}: the prefix slot remains empty ($P = \emptyset$), and instead GRPO optimizes over paraphrases of the natural-language instruction header.
+The editor model $G$ rewrites the instruction text while preserving its semantic role; the same selection procedure (Algorithm~1) is applied with the same hyperparameter sweep ($K{\to}k \in \{10{\to}3,\; 50{\to}10,\; 100{\to}20\}$, $T = 10$, 3 seeds).
+This control tests whether the gains from prefix optimization reduce to better task framing: if paraphrase optimization matches the GRPO prefix, the learned prefix contributes no structure beyond what a well-worded instruction provides.
+The paraphrase generation prompt is published in \Cref{app:prompts}.
+
+
+%% ============================================================
+\section{Experiments}
+\label{sec:experiments}
+%% ============================================================
+
+\subsection{Setup}
+
+We run the full sweep described in \Cref{sec:grpo} on the virtue task using \texttt{Qwen/Qwen2.5-0.5B-Instruct}~\citep{qwen2025}, loaded in \texttt{bfloat16}.
+All frozen-model inference uses greedy decoding (temperature~$0$, top-$p = 1.0$).
+The editor model (\texttt{Qwen/Qwen2.5-0.5B-Instruct}) generates candidates at temperature~$0.9$, top-$p = 0.95$.
+Each GRPO run uses $T = 10$ iterations, minibatch size $|B| = 32$, and is repeated 3 times with seeds $\{0, 1, 2\}$.
+The partition seed, GRPO settings, editor model, seed prefix, and all prompts are logged and published (\Cref{app:prompts}, \Cref{app:reproducibility}).
+Neutral prefixes are generated once per $L$ value using the prompt in \Cref{app:prompts} and truncated to match $|P^*(L)|$ tokens exactly.
+The instruction-paraphrase control runs Algorithm~1 with the full $K{\to}k$ sweep ($T = 10$, $|B| = 32$, $K{\to}k \in \{10{\to}3,\; 50{\to}10,\; 100{\to}20\}$, seeds $\{0, 1, 2\}$) over paraphrases of the instruction header, with the prefix slot empty; this gives the paraphrase the same search budget as the main prefix optimization.
+Bootstrap confidence intervals use 10{,}000 percentile-bootstrap resamples of the test set.
+
+\subsection{Does Prefix Optimization Improve Moral Classification?}
+\label{sec:does_it_improve}
+
+\Cref{tab:main_results} reports test accuracy across all conditions for each task and model.
+The central comparison is between the GRPO-optimized prefix and the three controls (baseline, neutral, instruction paraphrase).
+
+\begin{table}[t]
+\centering
+\caption{Test accuracy (\%) across conditions. Best GRPO result selected by $\Traindev$ accuracy. 95\% bootstrap CIs in parentheses.}
+\label{tab:main_results}
+\small
+\begin{tabular}{lc}
+\toprule
+Condition & Virtue \\
+\midrule
+Baseline ($P{=}\emptyset$) & 20.2\;(\,19.1,\,21.3\,) \\
+GRPO best & 37.5\;(\,36.8,\,38.1\,) \\
+Neutral prefix & 20.2\;(\,19.1,\,21.3\,) \\
+Instruction paraphrase & 62.3\;(\,61.6,\,63.0\,) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The main finding is asymmetric.
+GRPO prefix search improves substantially over the empty-prefix baseline, raising mean test accuracy from $20.2\%$ to $37.5\%$.
+The neutral-prefix control remains at baseline, so generic coherent text does not explain the gain.
+However, the budget-matched instruction-only paraphrase control is much stronger, reaching $62.3\%$ mean test accuracy.
+The run therefore supports the claim that frozen-model behavior is highly steerable, but it does not support the stronger claim that learned prefix structure is the unique or dominant source of the improvement in this setting.
+For this model-task pair, task framing matters at least as much as prefix content, and empirically much more.
+
+\subsection{Where Does the Improvement Come From?}
+\label{sec:where_from}
+
+The controls decompose the possible sources of gain.
+If neutral prefixes help, coherent language (regardless of content) matters.
+If the budget-matched instruction paraphrase helps, the gain reduces to better task framing.
+Only if the GRPO prefix outperforms both is the improvement attributable to learned moral-classification structure.
+
+\Cref{tab:hard_calibration} supplements this with hard-test accuracy and calibration (ECE), testing whether the prefix improves the model's confidence calibration or only its point predictions.
+
+\begin{table}[t]
+\centering
+\caption{Hard-test accuracy (\%) and calibration (ECE) across conditions.}
+\label{tab:hard_calibration}
+\small
+\begin{tabular}{lcc}
+\toprule
+Condition & Hard Acc & ECE \\
+\midrule
+Baseline & 20.2 & 0.498 \\
+GRPO best & 37.5 & 0.374 \\
+Instruction paraphrase & 62.8 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The best GRPO cell improves both hard-test accuracy and calibration relative to baseline.
+Hard accuracy rises from $20.2\%$ to $37.5\%$, and ECE falls from $0.498$ to $0.374$.
+The paraphrase control reaches $62.8\%$ hard accuracy, confirming its dominance extends to the adversarial split.
+Thus the strongest GRPO configuration transfers to the harder split and produces a more calibrated output distribution, but the strongest overall intervention remains instruction reframing.
+
+\subsection{Seed Instability}
+\label{sec:seed_instability}
+
+The cell-level means conceal extreme seed-to-seed variance.
+\Cref{tab:seed_instability_main} breaks down the strongest GRPO and paraphrase cells by seed.
+In the best GRPO cell ($L{=}200,\;100{\to}20$), seed~1 reaches $72.0\%$ test accuracy while seeds~0 and~2 remain at baseline ($20.2\%$).
+The paraphrase control ($50{\to}10$) shows a similar pattern: seeds~1 and~2 exceed $74\%$, while seed~0 stays at $35.8\%$.
+A single favorable seed accounts for most of the apparent cell-level improvement in each case.
+
+\begin{table}[t]
+\centering
+\caption{Seed-level results in the strongest GRPO and paraphrase cells. The cell-level means reported in \Cref{tab:main_results} are driven by one or two seeds; the remaining seeds stay near baseline.}
+\label{tab:seed_instability_main}
+\small
+\begin{tabular}{lrrr}
+\toprule
+Condition & Seed & $\Traindev$ Acc (\%) & Test Acc (\%) \\
+\midrule
+GRPO $L{=}200,\;100{\to}20$ & 0 & 9.1 & 20.18 \\
+GRPO $L{=}200,\;100{\to}20$ & 1 & 75.5 & 72.02 \\
+GRPO $L{=}200,\;100{\to}20$ & 2 & 9.0 & 20.18 \\
+\midrule
+Paraphrase $50{\to}10$ & 0 & 34.5 & 35.82 \\
+Paraphrase $50{\to}10$ & 1 & 87.1 & 74.23 \\
+Paraphrase $50{\to}10$ & 2 & 89.7 & 76.80 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+This instability has a qualitative dimension.
+The highest-performing paraphrase seeds include visibly off-task text: seed~2 of the $50{\to}10$ cell ($76.8\%$ test) contains language about comparing sorting algorithms, and seed~1 of the $100{\to}20$ cell ($76.3\%$ test) discusses exponential functions and fractional exponents.
+These strings bear no semantic relationship to moral classification, yet they outperform every GRPO prefix.
+The pattern is consistent with the model responding to surface formatting cues, template residue, or distributional properties of the prepended text, rather than to moral content.
+This observation directly supports the Paradox of Policy Mimicry framing: benchmark performance can be driven by shallow prompt sensitivity rather than by the discovery of a stable moral scaffold.
+
+That control pattern motivates a more precise distinction between instruction-level and prefix-level steering.
+
+\subsection{Prefix vs.\ Instruction}
+\label{sec:prefix_vs_instruction}
+
+\emph{System prompt}, \emph{instruction}, and \emph{prefix} are distinct prompting layers and should not be treated as interchangeable.
+In this paper they play different functional roles.
+A system prompt sets global model behavior, an instruction defines the current task, and a prefix is an additional prepended control string that steers a specific input locally.
+This distinction matters because our experiments do not study system-level prompting.
+Instead, they compare two inference-time interventions: learned prefixes and instruction-only rewrites.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{p{2.1cm}p{3.8cm}p{1.8cm}p{2.9cm}}
+\toprule
+Concept & Role & Level & Readability \\
+\midrule
+System prompt & Global behavior setting & Highest & Usually readable \\
+Instruction & Current task definition & Middle & Usually readable \\
+Prefix & Prepended local steering string for the current input & Added control layer & Not necessarily readable; may be noisy or artifact-like \\
+\bottomrule
+\end{tabular}
+\caption{Functional distinction between system prompts, instructions, and prefixes. This paper studies instruction rewrites and learned prefixes, not system-level prompting.}
+\label{tab:prefix_instruction_distinction}
+\end{table}
+
+From a transformer perspective, both instructions and prefixes are preceding tokens, so both can influence downstream hidden representations.
+In that limited computational sense, they are similar.
+For an instruct-tuned model such as Qwen, however, natural-language task descriptions are part of the model's native instruction-following interface.
+An instruction is therefore not just arbitrary preceding text; within the training distribution, it likely carries stronger task-defining authority than an added prefix.
+This asymmetry is consistent with our empirical results.
+Instruction-only rewrites are often as strong as or stronger than learned prefixes, even though prefix optimization is the main intervention under study.
+At the same time, the strongest learned prefixes are highly seed-unstable and often contain template residue, multilingual fragments, or other prompt artifacts.
+This pattern is more consistent with brittle framing sensitivity than with the discovery of a clean, interpretable moral program.
+
+The controls sharpen this interpretation.
+Length-matched neutral passages remain at baseline, which rules out the simple explanation that any additional fluent text improves performance.
+Meanwhile, instruction-only rewrites often match or exceed the best learned prefixes, even when some of the highest-scoring rewrites are visibly off-task or prompt-corrupted.
+Taken together, these controls show that the frozen model is highly steerable, but they do not support the view that the strongest gains reflect discovery of a clean, semantically interpretable moral scaffold.
+The overall pattern fits brittle framing sensitivity more closely: coherent non-moral text does not help, while certain surface forms, task framings, and artifact-laden rewrites can produce large behavioral shifts.
+The strongest GRPO regime shows the same instability, with one seed accounting for nearly all of the apparent cell-level improvement while the others remain near baseline.
+
+This distinction also clarifies why \emph{instruction} and \emph{prefix} should not be collapsed into a single category.
+Both can steer later representations, but they do not occupy the same role in an instruct-tuned model.
+Instructions define the task through the model's native interface for following natural-language directives.
+Prefixes are auxiliary prepended strings that can still steer behavior, but in our setting they do so less stably and often through artifact-contaminated text.
+This difference helps explain why instruction-only controls can match or exceed prefix-based gains, and it cautions against treating strong prefix results as direct evidence of an interpretable learned reasoning program.
+
+% The virtue task does not have a separate ambiguous split.
+
+\subsection{How Does the Effect Change with Complexity?}
+\label{sec:complexity_scaling}
+
+\Cref{fig:mdl_curves} shows the budgeted two-part MDL proxy curves for each task and model.
+These curves are the central diagnostic of the paper: they reveal not just \emph{whether} prefix optimization helps, but \emph{how} the benefit scales with the structural budget allocated to the prefix.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.98\linewidth]{results/version_a/figures/mdl_curves.pdf}
+\caption{Budgeted two-part MDL proxy curves. \textbf{(a)}~Predictive code length on $\Traindev$ as a function of realized prefix length. A steep initial drop indicates that small prefixes yield large compression gains. \textbf{(b)}~Test accuracy vs.\ compression gain, showing whether development-set compression predicts held-out accuracy.}
+\label{fig:mdl_curves}
+\end{figure}
+
+The resulting frontier is not a clean monotonic improvement with larger budgets.
+Instead, it shows one concentrated pocket of useful structure.
+Most cells remain close to baseline, one $L{=}100,\;50{\to}10$ cell gives a modest lift, and one $L{=}200,\;100{\to}20$ cell yields the only strong GRPO result.
+All $L{=}400$ cells fall back to near-baseline test accuracy.
+This is consistent with a localized region of activatable structure rather than a smooth scaling law in which additional prefix tokens steadily unlock more moral information.
+
+%% ============================================================
+\section{Analysis}
+\label{sec:analysis}
+%% ============================================================
+
+\subsection{What Does the Prefix Learn?}
+\label{sec:what_prefix_learns}
+
+The learned strings are heterogeneous and often difficult to interpret as clean moral prompts.
+The strongest GRPO seed in the winning cell contains visible rewrite-template fragments (for example, ``Rewritten prefix:'' and multilingual prompt residue), while the weaker seeds in the same cell are generic policy-style prose.
+Similarly, one of the strongest paraphrase seeds is a plausible stricter evaluative instruction, while another high-performing seed is obviously off-task and contains sorting-algorithm language.
+These qualitative examples, documented fully in the appendix and companion examples file, complement \Cref{sec:prefix_vs_instruction}: they show that the search often finds unstable and partially corrupted steering strings rather than a compact, human-interpretable moral scaffold.
+
+\subsection{Compression Predicts Generalization}
+
+We test whether the MDL proxy has empirical predictive value by computing the Spearman rank correlation between $\Delta\Ldev(L)$ (compression gain on $\Traindev$) and $\Acctest(P^*(L))$ (test accuracy) across all $(L, K{\to}k)$ hyperparameter cells.
+A strong positive correlation would support the claim that the proxy curve is a useful diagnostic, independently of whether it constitutes a formal MDL estimator.
+
+Across all $27$ $(L, K{\to}k, \text{seed})$ triples we obtain a positive Spearman correlation, $\rho = 0.725$.
+Bootstrap resampling of the triples yields a 95\% interval of approximately $[0.455,\;0.866]$ after dropping undefined constant-input resamples.
+This is strong enough to support the narrower methodological claim that development-set compression is predictive of held-out accuracy in this experiment.
+It does not, however, imply a smooth or robust complexity frontier; the positive rank correlation is driven largely by one successful basin in the sweep rather than by uniform gains across budgets.
+
+\subsection{Per-Budget GRPO vs.\ Paraphrase}
+\label{sec:per_budget}
+
+\Cref{tab:per_budget} compares GRPO and paraphrase at each selection-pressure level $K{\to}k$, holding the search budget constant.
+For GRPO, we report the best $L$ at each $K{\to}k$; for paraphrase, we report the mean across 3 seeds (the prefix slot is empty, so $L$ does not apply).
+Paraphrase outperforms GRPO at every budget level.
+The gap is smallest at the highest selection pressure ($100{\to}20$), where GRPO reaches $37.5\%$ and paraphrase reaches $56.7\%$.
+At lower budgets the paraphrase advantage is larger: $62.3\%$ vs.\ $24.2\%$ at $50{\to}10$.
+
+\begin{table}[t]
+\centering
+\caption{Head-to-head comparison at each selection-pressure level. GRPO reports the best $L$ for each $K{\to}k$; paraphrase reports the mean across 3 seeds. Paraphrase dominates at every budget.}
+\label{tab:per_budget}
+\small
+\begin{tabular}{lccc}
+\toprule
+$K{\to}k$ & GRPO best-$L$ Test (\%) & Paraphrase Test (\%) & $\Delta$ \\
+\midrule
+$10{\to}3$ & 20.2 & 32.5 & +12.3 \\
+$50{\to}10$ & 24.2 & 62.3 & +38.1 \\
+$100{\to}20$ & 37.5 & 56.7 & +19.2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Connecting MDL Curves to Alignment Epiplexity}
+\label{sec:connecting_epiplexity}
+
+The MDL proxy curve provides an empirical operationalization of the theoretical framework introduced in \Cref{sec:stupidity,sec:paradox,sec:virtue_it}. The shape of the curve distinguishes the mechanistic signatures we associated with virtue and vice:
+
+\begin{itemize}
+    \item \textbf{Steep initial drop followed by saturation} corresponds to the \emph{Virtuous Disposition} regime: a small amount of structured prefix suffices to unlock latent moral knowledge, suggesting the frozen model already possesses a compressed internal representation of moral constraints that merely needs activation. The prefix acts as a key to an existing generative model, not as a replacement for one.
+    \item \textbf{Flat or noisy curves} would correspond to the \emph{Vice-as-mimicry} regime: the model lacks a compressed moral program, and no amount of prefix structure can substitute for what was never internalized. Performance remains at the level of shallow heuristic matching.
+    \item \textbf{High variance across seeds at a given budget} corresponds to the \emph{Vice-as-instability} regime: the model's moral behavior is sensitive to small perturbations in the attention landscape, revealing that whatever moral knowledge exists has not been compressed into a stable generative program.
+\end{itemize}
+
+The present run looks like a hybrid case rather than a clean ``virtuous disposition'' curve.
+There is one localized basin in which prefix search substantially reduces $\Ldev$ and improves held-out accuracy, but most of the sweep remains near baseline and the strongest cell is highly seed-sensitive.
+This pattern is more consistent with limited, brittle activatability than with a stable, broadly accessible compressed moral program.
+In the paper's vocabulary, the experiment reveals some extractable structure, but also substantial \emph{vice-as-instability}: the search sometimes finds a useful steering string, yet small perturbations in the search trajectory frequently return the model to baseline behavior.
+
+%% ============================================================
+\section{Discussion}
+\label{sec:discussion}
+%% ============================================================
+
+\subsection{Scope of Claims}
+
+This work asks a diagnostic question---how does moral classification accuracy scale with prefix complexity?---and provides an MDL-inspired tool (the proxy curve) for answering it.
+We do not claim that the optimized prefix implements moral reasoning, encodes ethical principles, or captures anything beyond task-specific statistical structure.
+The prefix is a discrete input program that shifts the model's output distribution toward higher accuracy on a specific benchmark.
+The MDL proxy curve describes the shape of this shift; interpreting its meaning for moral cognition is beyond our scope.
+
+\subsection{Attention as a Moral Bottleneck}
+
+The prefix occupies space in the model's context window---it competes with the scenario input for attention.
+That a short, structured intervention can shift moral classification accuracy at all confirms that \emph{what occupies the attention window matters morally}.
+But the present run also shows that this effect is not restricted to clean prefix programs: instruction framing often matters more, and some of the strongest strings are visibly malformed.
+The right conclusion is therefore not that GRPO discovers robust moral reasoning programs, but that small prompt-level perturbations can redirect the model toward very different moral-classification regimes.
+
+\subsection{Implications for the Paradox of Policy Mimicry}
+
+The controls in our experimental design directly probe the Paradox of Policy Mimicry.
+The neutral control is flat, so arbitrary coherent text does \emph{not} suffice.
+However, the instruction-paraphrase control substantially outperforms the GRPO prefix, which means the observed gains cannot be attributed specifically to learned prefix structure.
+The tested model therefore does not sit at the clean ``internalized moral program'' end of the spectrum.
+Instead, it appears strongly sensitive to task framing and formatting, with one localized basin of useful prefix behavior embedded inside a much broader regime of unstable shortcut activation.
+
+\subsection{Limitations}
+
+The mutation operator~$G$ is itself an LLM whose inductive biases shape the candidate space; the budget-matched instruction-paraphrase control bounds this confound without eliminating it.
+Because both the editor and the frozen evaluator are the same 0.5B model, the editor's limited rewriting capacity likely contributes to prompt contamination artifacts (\Cref{sec:what_prefix_learns}).
+A larger editor model might produce cleaner candidates and expand the Pareto frontier; this comparison remains open.
+ETHICS labels reflect majority annotator beliefs and contain contested cases~\citep{hendrycks2021ethics}, which our framework inherits.
+Our MDL proxy is coarse relative to \citet{finzi2026epiplexity}: we restrict programs to prefix strings, measure cost in tokens rather than bits, and use empirical averages (see \Cref{sec:mdl_proxy}); the curve describes an empirical trade-off, and the link to information-theoretic optimality is analogical.
+Both the GRPO and paraphrase conditions show extreme seed-to-seed variance (\Cref{sec:seed_instability}), limiting how strongly any single successful prefix can be interpreted as evidence of stable moral structure.
+The theoretical framework connecting Aristotelian virtue ethics to information theory is a proposed synthesis, and the mapping between phronesis and epiplexity is suggestive rather than formal; future work should develop the mathematical correspondence more rigorously and test predictions on a wider range of alignment scenarios beyond binary moral classification.
+
+\paragraph{Broader impact.}
+Prefix optimization for moral classification could be used to steer model behavior without modifying weights, which has both beneficial applications (alignment, safety) and risks (adversarial manipulation).
+All prompts and prefixes are published to enable scrutiny (see \Cref{app:prompts}).
+
+%% ============================================================
+\section{Conclusion}
+\label{sec:conclusion}
+%% ============================================================
+
+We asked how moral classification accuracy scales with the complexity of a learned prefix, and answered with a budgeted two-part MDL proxy curve that traces the trade-off between prefix token count and predictive code length on held-out ETHICS virtue-task examples.
+Three controls (empty prefix, length-matched neutral text, budget-matched instruction paraphrase) isolate learned prefix structure from coherence and task-framing confounds.
+
+The answer is mixed, and the negative finding is the most informative part.
+Prefix optimization improves substantially over the empty-prefix baseline ($20.2\% \to 37.5\%$) and its compression gain predicts held-out accuracy ($\rho = 0.725$), but the budget-matched instruction-paraphrase control reaches $62.3\%$ at every selection-pressure level.
+Several of the strongest paraphrase strings are visibly off-task, showing that the model responds to surface formatting cues rather than to moral content.
+Both conditions exhibit extreme seed instability, with single seeds accounting for most of the apparent cell-level gains.
+The MDL proxy curve is therefore valuable precisely because it reveals these features: a sparse, unstable frontier consistent with brittle steerability rather than with robust moral internalization.
+In the paper's vocabulary, the experiment diagnoses substantial \emph{vice-as-instability}, confirming that the tools introduced here---the MDL proxy curve, the Paradox of Policy Mimicry, and Alignment Epiplexity---can distinguish genuine moral compression from shallow prompt sensitivity, even (especially) when the diagnosis is unflattering.
+
+These findings reinforce the broader diagnosis: current alignment methods can produce moral shortsightedness, and systems whose moral behavior reflects training economics rather than genuine normative deliberation are detectable.
+\textbf{Alignment Epiplexity} provides a diagnostic for this condition.
+The tools introduced here---the MDL proxy curve, the Paradox of Policy Mimicry, and Alignment Epiplexity---provide a framework for asking \emph{how much} moral structure a system has internalized, and for distinguishing internalization from imitation, even when the answer favors imitation.
+
+%% ============================================================
+%% REFERENCES
+%% ============================================================
+
+\bibliographystyle{abbrvnat}
+
+\begin{thebibliography}{30}
+
+\bibitem[Arendt(1963)]{arendt1963eichmann}
+H.~Arendt.
+\newblock \emph{Eichmann in Jerusalem: A Report on the Banality of Evil}.
+\newblock Viking Press, 1963.
+
+\bibitem[Arendt(2003)]{arendt2003responsibility}
+H.~Arendt.
+\newblock \emph{Responsibility and Judgment}.
+\newblock Schocken Books, 2003.
+
+\bibitem[Aristotle()]{aristotle_ne}
+Aristotle.
+\newblock \emph{Nicomachean Ethics}, especially Book~VI.
+\newblock See also the Stanford Encyclopedia of Philosophy entry on Aristotle's ethics.
+
+\bibitem[Bai et~al.(2022)]{bai2022constitutional}
+Y.~Bai, S.~Kadavath, S.~Kundu, et~al.
+\newblock Constitutional {AI}: Harmlessness from {AI} feedback.
+\newblock \emph{arXiv preprint arXiv:2212.08073}, 2022.
+
+\bibitem[Benhabib(1988)]{benhabib1988judgment}
+S.~Benhabib.
+\newblock Judgment and the moral foundations of politics in {A}rendt's thought.
+\newblock \emph{Political Theory}, 16(1):29--51, 1988.
+
+\bibitem[Bernstein(2002)]{bernstein2002radical}
+R.~J.~Bernstein.
+\newblock \emph{Radical Evil: A Philosophical Interrogation}.
+\newblock Polity Press, 2002.
+
+\bibitem[Deng et~al.(2022)]{deng2022rlprompt}
+M.~Deng, J.~Wang, C.-P.~Hsieh, Y.~Wang, H.~Guo, T.~Shu, M.~Song, E.~Xing, and Z.~Hu.
+\newblock {RLPrompt}: Optimizing discrete text prompts with reinforcement learning.
+\newblock In \emph{EMNLP}, 2022.
+
+\bibitem[Eriksson et~al.(2024)]{eriksson2024benchmarks}
+M.~Eriksson et~al.
+\newblock Can we trust {AI} benchmarks? {A}n interdisciplinary review.
+\newblock \emph{arXiv preprint}, 2024.
+
+\bibitem[Finzi et~al.(2026)]{finzi2026epiplexity}
+M.~Finzi, S.~Qiu, Y.~Jiang, P.~Izmailov, J.~Z.~Kolter, and A.~G.~Wilson.
+\newblock From entropy to epiplexity: Rethinking information for computationally bounded intelligence.
+\newblock \emph{arXiv preprint arXiv:2601.03220}, 2026.
+
+\bibitem[Qwen Team(2025)]{qwen2025}
+Qwen Team.
+\newblock Qwen2.5 technical report.
+\newblock \emph{arXiv preprint arXiv:2412.15115}, 2025.
+
+\bibitem[Greenblatt et~al.(2024)]{greenblatt2024alignment}
+R.~Greenblatt, C.~Denison, B.~Wright, F.~Roger, M.~MacDiarmid, S.~Marks, J.~Berger, T.~Liao, E.~Hubinger, and S.~McCandlish.
+\newblock Alignment faking in large language models.
+\newblock \emph{arXiv preprint arXiv:2412.14093}, 2024.
+
+\bibitem[Gr{\"u}nwald(2007)]{grunwald2007mdl}
+P.~Gr{\"u}nwald.
+\newblock \emph{The Minimum Description Length Principle}.
+\newblock MIT Press, 2007.
+
+\bibitem[Janus(2023)]{janus2023waluigi}
+Janus.
+\newblock The {W}aluigi effect (mega-post).
+\newblock Alignment Forum / LessWrong, 2023.
+\newblock See also secondary discussion in \emph{Wired}.
+
+\bibitem[Hendrycks et~al.(2021)]{hendrycks2021ethics}
+D.~Hendrycks, C.~Burns, S.~Basart, A.~Critch, J.~Li, D.~Song, and J.~Steinhardt.
+\newblock Aligning {AI} with shared human values.
+\newblock In \emph{ICLR}, 2021.
+
+\bibitem[Korinek and Balwit(2024)]{korinek2024aligned}
+A.~Korinek and A.~Balwit.
+\newblock Aligned with whom? {D}irect and social goals for {AI} systems.
+\newblock \emph{arXiv preprint}, 2024.
+
+\bibitem[Jiang et~al.(2021)]{jiang2021delphi}
+L.~Jiang, J.~D.~Hwang, C.~Bhagavatula, R.~L.~Bras, J.~Liang, J.~Dodge, K.~Sakaguchi, M.~Forbes, J.~Borchardt, S.~Gabriel, et~al.
+\newblock {Delphi}: Towards machine ethics and norms.
+\newblock \emph{arXiv preprint arXiv:2110.07574}, 2021.
+
+\bibitem[LaCroix(2022)]{lacroix2022benchmarking}
+T.~LaCroix.
+\newblock Metaethical perspectives on `benchmarking' {AI} ethics.
+\newblock \emph{Ethics and Information Technology}, 2022.
+
+\bibitem[Lester et~al.(2021)]{lester2021prompt}
+B.~Lester, R.~Al-Rfou, and N.~Constant.
+\newblock The power of scale for parameter-efficient prompt tuning.
+\newblock In \emph{EMNLP}, 2021.
+
+\bibitem[Lewis et~al.(2020)]{lewis2020rag}
+P.~Lewis, E.~Perez, A.~Piktus, F.~Petroni, V.~Karpukhin, N.~Goyal, H.~K{\"u}ttler, M.~Lewis, W.-t.~Yih, T.~Rockt{\"a}schel, S.~Riedel, and D.~Kiela.
+\newblock Retrieval-augmented generation for knowledge-intensive {NLP} tasks.
+\newblock In \emph{NeurIPS}, 2020.
+
+\bibitem[Li and Liang(2021)]{li2021prefix}
+X.~L.~Li and P.~Liang.
+\newblock Prefix-tuning: Optimizing continuous prompts for generation.
+\newblock In \emph{ACL}, 2021.
+
+\bibitem[Liu et~al.(2024)]{liu2024lost}
+N.~F.~Liu, K.~Lin, J.~Hewitt, A.~Paranjape, M.~Bevilacqua, F.~Petroni, and P.~Liang.
+\newblock Lost in the middle: How language models use long contexts.
+\newblock \emph{Transactions of the Association for Computational Linguistics}, 12:157--173, 2024.
+
+\bibitem[Milli{\`e}re(2025)]{milliere2025shallow}
+R.~Milli{\`e}re.
+\newblock Normative conflicts and shallow {AI} alignment.
+\newblock \emph{Philosophical Studies}, 2025.
+
+\bibitem[Ouyang et~al.(2022)]{ouyang2022training}
+L.~Ouyang, J.~Wu, X.~Jiang, et~al.
+\newblock Training language models to follow instructions with human feedback.
+\newblock In \emph{NeurIPS}, 2022.
+
+\bibitem[Rafailov et~al.(2023)]{rafailov2023dpo}
+R.~Rafailov, A.~Sharma, E.~Mitchell, S.~Ermon, C.~D.~Manning, and C.~Finn.
+\newblock Direct preference optimization: Your language model is secretly a reward model.
+\newblock In \emph{NeurIPS}, 2023.
+
+\bibitem[Selbst et~al.(2019)]{selbst2019fairness}
+A.~D.~Selbst, D.~Boyd, S.~A.~Friedler, S.~Venkatasubramanian, and J.~Vertesi.
+\newblock Fairness and abstraction in sociotechnical systems.
+\newblock In \emph{FAT*}, 2019.
+
+\bibitem[{Stanford Encyclopedia of Philosophy}()]{sep_information}
+{Stanford Encyclopedia of Philosophy}.
+\newblock Information.
+\newblock \url{https://plato.stanford.edu/entries/information/}.
+
+\bibitem[Shannon(1948)]{shannon1948}
+C.~E.~Shannon.
+\newblock A mathematical theory of communication.
+\newblock \emph{Bell System Technical Journal}, 27(3):379--423, 1948.
+
+\bibitem[Rissanen(2004)]{rissanen2004mdl}
+J.~Rissanen.
+\newblock \emph{Stochastic Complexity in Statistical Inquiry}.
+\newblock World Scientific, 2004.
+
+\bibitem[Shao et~al.(2024)]{shao2024deepseekmath}
+Z.~Shao, P.~Wang, Q.~Zhu, et~al.
+\newblock {DeepSeekMath}: Pushing the limits of mathematical reasoning in open language models.
+\newblock \emph{arXiv preprint arXiv:2402.03300}, 2024.
+
+\bibitem[Shin et~al.(2020)]{shin2020autoprompt}
+T.~Shin, Y.~Razeghi, R.~L.~Logan~IV, E.~Wallace, and S.~Singh.
+\newblock {AutoPrompt}: Eliciting knowledge from language models with automatically generated prompts.
+\newblock In \emph{EMNLP}, 2020.
+
+\bibitem[Umbrello et~al.(2021)]{umbrello2021vsd}
+S.~Umbrello et~al.
+\newblock Value-sensitive design in {AI} and robotics.
+\newblock See also the Rutgers AI Ethics Lab overview of value-sensitive design, 2021.
+
+\bibitem[Vaswani et~al.(2017)]{vaswani2017attention}
+A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N.~Gomez, {\L}.~Kaiser, and I.~Polosukhin.
+\newblock Attention is all you need.
+\newblock In \emph{NeurIPS}, 2017.
+
+\end{thebibliography}
+
+%% ============================================================
+%% APPENDIX
+%% ============================================================
+\newpage
+\appendix
+
+\section{Prompts and Templates}
+\label{app:prompts}
+
+\paragraph{Instruction header.}
+``You are a moral reasoning assistant. Read the following scenario and trait. Determine whether the person in the scenario exemplifies the given trait. Answer with a single word: Yes or No.''
+
+\paragraph{Output cue.} ``Answer:''
+
+\paragraph{Seed prefix $P_0$.} ``Think carefully about whether this action is morally acceptable.''
+
+\paragraph{Editor rewrite prompt (verbatim).}
+``You are a prompt engineer. Below is a prefix string that is prepended to a moral reasoning task before the model sees the scenario. Your job is to rewrite this prefix to improve the model's moral classification accuracy. The new prefix must be at most \{L\} tokens long. Output only the new prefix text, nothing else.\textbackslash n\textbackslash nCurrent prefix:\textbackslash n\{current\_prefix\}\textbackslash n\textbackslash nRewritten prefix:''
+
+\paragraph{Neutral-prefix generation prompt.}
+``Write a passage of exactly \{L\} tokens about a factual, non-controversial topic (geography, cooking, or nature). Do not mention ethics, morality, right, wrong, or any evaluative language. Output only the passage.''
+
+\paragraph{Instruction-paraphrase generation prompt.}
+``You are a prompt engineer. Below is a task instruction for a moral reasoning classifier. Rewrite the instruction to improve the model's accuracy. Keep the same semantic role (it must still instruct the model to classify the scenario). Output only the new instruction, nothing else.\textbackslash n\textbackslash nCurrent instruction:\textbackslash n\{current\_instruction\}\textbackslash n\textbackslash nRewritten instruction:''
+
+\section{Run-Specific Data and Validation Notes}
+\label{app:data_validation}
+
+The finalized run used the local copy of the official ETHICS archive bundled with the experiment workspace.
+The realized split counts were:
+
+\begin{itemize}
+    \item $\Trainopt = 19{,}771$
+    \item $\Traindev = 8{,}474$
+    \item Test $= 4{,}975$
+    \item Test\_hard $= 4{,}780$
+\end{itemize}
+
+The hard-test count differs from some earlier planning documents that listed $4{,}975$ examples.
+We investigated this discrepancy before proceeding and confirmed that the local files matched the official ETHICS archive exactly.
+The split hashes used in the completed run were:
+
+\begin{table}[h]
+\centering
+\caption{Run-specific split hashes and realized counts.}
+\label{tab:split_hashes}
+\small
+\begin{tabular}{lp{0.68\linewidth}}
+\toprule
+Field & Value \\
+\midrule
+Train\_opt SHA-256 & \texttt{788571319104f862bc5ff0919dec13b8609a15aa86c951e5e90d6d05f97d06e8} \\
+Train\_dev SHA-256 & \texttt{d973ca71779c2989a1928b3ea9564bebed7b05d11a27b30c530b15bcd593d00f} \\
+Realized counts & $\Trainopt=19{,}771$, $\Traindev=8{,}474$, Test$=4{,}975$, Test\_hard$=4{,}780$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The final artifact validation report passed with no missing files:
+
+\begin{itemize}
+    \item GRPO runs present: $27/27$
+    \item Paraphrase runs present: $9/9$
+    \item Neutral-prefix evaluations present: $3/3$
+    \item Required tables and figures present: yes
+    \item Deliverables checklist status: passed
+\end{itemize}
+
+\section{Endnotes: Conceptual Ancestry of Key Claims}
+\label{app:endnotes}
+
+The following endnotes trace the intellectual lineage of the theoretical framework introduced in this paper. Terms such as ``Paradox of Policy Mimicry,'' ``Artificial Phronesis,'' ``Epiplexity'' (in the applied alignment sense), and ``Alignment Epiplexity'' are original contributions of this paper, built from the ingredients cited below.
+
+\begin{enumerate}
+\item On the limitations of ``ethical benchmarks,'' see \citet{lacroix2022benchmarking}. Ethics is not a tidy benchmark target in the way many technical tasks are, so high scores can give a false sense of moral adequacy.
+
+\item For a broader review of benchmark failure modes, see \citet{eriksson2024benchmarks}. Benchmarks often suffer from construct-validity problems, abstraction errors, and misaligned incentives.
+
+\item On the ``Waluigi Effect,'' see \citet{janus2023waluigi}. Models can display an unstable relation between an aligned surface persona and its inverse or adversarial counterpart.
+
+\item For the centrality of attention in modern language models, see \citet{vaswani2017attention}. Contemporary transformer systems are built around attention mechanisms.
+
+\item For the importance of retrieval and context selection, see \citet{lewis2020rag}. Retrieval decides which external information gets brought into generation.
+
+\item For evidence that models do not use all provided context equally well, see \citet{liu2024lost}. Relevant information can be present yet still be neglected, especially when it is not positioned advantageously.
+
+\item On value-sensitive design, see \citet{umbrello2021vsd}. Technical design choices are never neutral with respect to human values.
+
+\item On how technical abstraction can hide morally important features of sociotechnical systems, see \citet{selbst2019fairness}. Upstream design abstractions can erase the very context needed for sound normative judgment.
+
+\item On the difference between direct alignment and broader social alignment, see \citet{korinek2024aligned}. A system can satisfy its operator's proximate objective while still failing with respect to socially important consequences.
+
+\item For Arendt's classic formulation, see \citet{arendt1963eichmann}. Evil may appear in bureaucratically ordinary, disturbingly normal forms rather than only in spectacularly malicious ones.
+
+\item On Arendt's emphasis on ``thoughtlessness,'' see \citet{arendt2003responsibility}. The failure was not mere stupidity in the IQ sense, but a failure to think and judge morally.
+
+\item \citet{benhabib1988judgment} develops this line by stressing judgment, moral imagination, and the assessment of morally relevant situations. Arendt's insight leads naturally toward a theory of failed judgment, not just failed obedience.
+
+\item \citet{bernstein2002radical} argues that Arendt's reflections on evil remain relevant because they direct attention to evil deeds committed without grand evil motives. Modern systems can produce grave wrongs through normalized role-performance and moral blindness.
+
+\item On phronesis in Aristotelian virtue ethics, see \citet{aristotle_ne}. Practical wisdom concerns right deliberation about action in particular circumstances, not mere rule recitation.
+
+\item On information-theoretic entropy, see \citet{shannon1948}. Entropy gives a formal language for uncertainty, instability, and information structure.
+
+\item On algorithmic information and shortest-program ideas, see \citet{sep_information}. One standard way to think about structure is in terms of the shortest program capable of generating it.
+
+\item On compression as a model-selection principle, see the MDL literature, especially \citet{grunwald2007mdl}. Better models can be understood as ones that compress regularities into a compact, stable description.
+\end{enumerate}
+
+\section{Full Hyperparameter Sweep Results}
+\label{app:sweep}
+
+\begin{table}[h]
+\centering
+\caption{Full GRPO sweep for the virtue task and \texttt{Qwen/Qwen2.5-0.5B-Instruct}. Reported values are means across the 3 seeds in each cell.}
+\label{tab:full_sweep}
+\small
+\begin{tabular}{rrrrrr}
+\toprule
+$L$ & $K$ & $k$ & Mean $\Traindev$ Acc (\%) & Mean Test Acc (\%) & Mean $\Ldev$ \\
+\midrule
+100 & 10 & 3 & 9.0 & 20.17 & 9401.9 \\
+100 & 50 & 10 & 17.2 & 24.23 & 8274.2 \\
+100 & 100 & 20 & 9.0 & 20.18 & 9198.9 \\
+200 & 10 & 3 & 9.0 & 20.17 & 9726.7 \\
+200 & 50 & 10 & 9.2 & 20.27 & 8831.8 \\
+200 & 100 & 20 & 31.2 & 37.46 & 8147.9 \\
+400 & 10 & 3 & 9.0 & 20.18 & 9221.5 \\
+400 & 50 & 10 & 9.0 & 20.18 & 8836.4 \\
+400 & 100 & 20 & 9.0 & 20.18 & 9000.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Selection summary for the finalized run.}
+\label{tab:selection_summary}
+\small
+\begin{tabular}{lcccc}
+\toprule
+Condition & Selected setting & Mean $\Traindev$ Acc (\%) & Mean Test Acc (\%) & Test 95\% CI \\
+\midrule
+Best GRPO & $L{=}200,\;100{\to}20$ & 31.2 & 37.5 & [36.8, 38.1] \\
+Best paraphrase & $50{\to}10$ & 70.4 & 62.3 & [61.6, 63.0] \\
+Best neutral & $L{=}100$ & 9.1 & 20.2 & [19.1, 21.3] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Seed-level instability in the strongest GRPO and paraphrase settings.}
+\label{tab:seed_instability}
+\small
+\begin{tabular}{lrrr}
+\toprule
+Condition & Seed & $\Traindev$ Acc (\%) & Test Acc (\%) \\
+\midrule
+GRPO $L{=}200,\;100{\to}20$ & 0 & 9.1 & 20.18 \\
+GRPO $L{=}200,\;100{\to}20$ & 1 & 75.5 & 72.02 \\
+GRPO $L{=}200,\;100{\to}20$ & 2 & 9.0 & 20.18 \\
+Paraphrase $50{\to}10$ & 0 & 34.5 & 35.82 \\
+Paraphrase $50{\to}10$ & 1 & 87.1 & 74.23 \\
+Paraphrase $50{\to}10$ & 2 & 89.7 & 76.80 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Baseline and control results reproduced for appendix completeness.}
+\label{tab:appendix_controls}
+\small
+\begin{tabular}{lccc}
+\toprule
+Condition & Test Acc (\%) & Hard Acc (\%) & ECE \\
+\midrule
+Baseline & 20.20 & 20.23 & 0.498 \\
+Neutral prefix ($L{=}100$) & 20.18 & 20.42 & 0.530 \\
+Neutral prefix ($L{=}200$) & 20.18 & 20.36 & 0.510 \\
+Neutral prefix ($L{=}400$) & 20.18 & 20.38 & 0.499 \\
+Best GRPO & 37.46 & 37.50 & 0.374 \\
+Best paraphrase & 62.28 & 62.80 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Interpretive summary.}
+The sweep shows one dominant GRPO basin at moderate budget rather than a smooth monotonic gain with increased prefix length.
+This supports the use of the MDL proxy as a diagnostic, but the structure of the frontier is sparse and unstable rather than cleanly saturating.
+
+\section{Qualitative Prompt Examples}
+\label{app:qualitative}
+
+The qualitative prompt analysis was sufficiently rich that we prepared a separate companion Markdown file with the full raw strings and interpretations.
+For the appendix we summarize the main qualitative pattern:
+
+\begin{itemize}
+    \item The strongest GRPO seed contains rewrite-template fragments and multilingual residue rather than a clean, human-authored moral instruction.
+    \item The weaker seeds in the winning GRPO cell are generic policy or ethics prose and remain near baseline.
+    \item Neutral prefixes are fluent, non-moral passages and produce essentially no gain.
+    \item The strongest paraphrase seeds are heterogeneous: one is a plausible stricter evaluative instruction, while another is clearly off-task yet still performs very well.
+\end{itemize}
+
+This qualitative evidence reinforces the quantitative conclusion that the model is highly steerable but also highly sensitive to superficial framing artifacts.
+
+\section{Reproducibility Checklist}
+\label{app:reproducibility}
+
+For every run we log and publish:
+\begin{itemize}
+    \item Dataset: ETHICS v1.0, virtue task. SHA-256 hashes of $\Trainopt$ and $\Traindev$ index arrays.
+    \item Partition seed: \texttt{numpy.random.seed(42)}.
+    \item Frozen model: \texttt{Qwen/Qwen2.5-0.5B-Instruct}, \texttt{bfloat16}, greedy decoding.
+    \item Editor model: \texttt{Qwen/Qwen2.5-0.5B-Instruct}, temperature~$0.9$, top-$p = 0.95$. Rewrite prompt verbatim in \Cref{app:prompts}.
+    \item GRPO settings per run: $L$, $K$, $k$, $T = 10$, $|B| = 32$, run seed $\in \{0, 1, 2\}$.
+    \item Seed prefix $P_0$: ``Think carefully about whether this action is morally acceptable.''
+    \item Neutral-prefix generation prompt and instruction-paraphrase generation prompt: verbatim in \Cref{app:prompts}.
+    \item Full prefix trajectory $\{P_t\}_{t=0}^{T}$ for each run, saved as JSON.
+    \item Per-item predictions and label probabilities on Test, Test\_hard, and $\Traindev$, saved as CSV.
+    \item Wall-clock time per run.
+\end{itemize}
+
+\paragraph{Artifact completeness.}
+The finalized run produced the following summary artifacts in addition to the per-run files:
+
+\begin{itemize}
+    \item \texttt{results/version\_a/tables/table2\_main\_results.csv}
+    \item \texttt{results/version\_a/tables/table3\_hard\_test\_calibration.csv}
+    \item \texttt{results/version\_a/tables/full\_hyperparameter\_sweep.csv}
+    \item \texttt{results/version\_a/tables/selection\_summary.json}
+    \item \texttt{results/version\_a/tables/spearman\_table.csv}
+    \item \texttt{results/version\_a/figures/mdl\_curves.pdf}
+    \item \texttt{results/version\_a/figures/mdl\_curves.png}
+    \item \texttt{results/version\_a/deliverables\_checklist.json}
+\end{itemize}
+
+\paragraph{Artifact note.}
+The saved \texttt{spearman\_table.csv} now includes the point estimate and the 95\% bootstrap CI.
+The CI is computed from 10{,}000 bootstrap resamples after dropping undefined draws from constant-rank samples.
+
+\end{document}

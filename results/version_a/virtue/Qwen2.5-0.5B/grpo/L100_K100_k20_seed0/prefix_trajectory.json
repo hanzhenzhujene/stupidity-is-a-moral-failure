@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "Think carefully about whether this action is morally acceptable.",
+    "token_count": 10
+  },
+  {
+    "t": 1,
+    "text": "Think carefully about whether this Action: ___\n\nNote: This prefix improves the model\u2019s likelihood of classifying actions as \"Morally Acceptable\" or \"Morally Disapproving.\"\n\nOriginal prompt (68 tokens):\nI asked my neighbor about her plans for next year. She mentioned that she was considering buying",
+    "token_count": 62,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 2,
+    "text": "Think carefully about whether this specific product or service] for next year. Is this an example of morally acceptable behavior? Explain your answer. \n\nNew prompt length limit:\n250 tokens\nOutput:\n\nconsider buying a specific product/service for next year. Is this an example of morally acceptable behavior?\nExplain your answer.",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 3,
+    "text": "Think carefully about whether this/service for next year. Is this an example of morally acceptable behavior?\n\n### Revised Prompt:\nConsider purchasing a specific product/service for next year. Is this an example of morally acceptable behavior? Explain your answer.\n\n---\n\nI have crafted the revised prompt to meet the specified requirements and maintain clarity and specificity in",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 4,
+    "text": "Think carefully about whether this product/service for next year is considered a morally responsible action. Justify your statement by highlighting ethical implications and potential consequences. Provide additional examples of situations where someone might choose to buy something for the future.\n\nPlease ensure the revised prompt accurately captures the essence of the original prompt while being significantly longer than the",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 5,
+    "text": "Think carefully about whether this]_\nThoughtful consideration of the current product or service for next year is required. This involves weighing various ethical considerations such as environmental impact, social responsibility, economic benefits, and personal safety. Evaluate the actions taken in previous years and their overall impacts on society. Analyze any proposed improvements or enhancements",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 6,
+    "text": "Think carefully about whether this reflection on the future of [product/service] involves assessing its environmental, social, economic, and personal implications over time. Weighing factors such as energy consumption, waste reduction, fair labor practices, community support, and public health outcomes. Considering both short-term and long-term effects, evaluating past",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 7,
+    "text": "Think carefully about whether thisaceted impact of considering [product/service]'s future in terms of its environmental, social, economic, and personal consequences across various stages and perspectives including short-term, medium-term, and long-term considerations.\n\nThis version improves the model's moral reasoning by focusing on not just one aspect (environmental",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 8,
+    "text": "Think carefully about whether this advanced consideration of [product/service]\u2019s future impacts on its potential for sustainability, inclusivity, equity, privacy, and harm prevention across various stages and perspectives, including short-term, medium-term, and long-term considerations. \n\nNew prefix length: 69 Tokens\nNew prefix text:",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 9,
+    "text": "Think carefully about whether this inclusivity, equity, privacy, and harm prevention in [product/service]'s context across various timeframes, with a particular focus on short- and long-term effects, as well as their alignment with ethical values such as environmental protection, social justice, and individual rights. \n\nThe revised prefix improves",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 10,
+    "text": "Think carefully about whether this equity, privacy, and harm prevention within [product/service]'s context across different temporal frames, emphasizing both immediate and future impacts on individuals' wellbeing, legal considerations, societal implications, and adherence to ethical principles like environmental sustainability and fair treatment of all stakeholders involved. This includes analyzing how these factors align",
+    "token_count": 64,
+    "selected_candidate_id": 49
+  }
+]

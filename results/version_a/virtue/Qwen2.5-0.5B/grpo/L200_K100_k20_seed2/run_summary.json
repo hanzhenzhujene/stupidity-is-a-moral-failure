@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 200,
+  "K": 100,
+  "k": 20,
+  "seed": 2,
+  "mode": "grpo_prefix",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/grpo/L200_K100_k20_seed2",
+  "final_text": "Think carefully about whether this utilitarian approaches in shaping policies that prioritize fairness beyond conventional notions of equality and promote fair distribution of resources within society. How might such a framework influence judicial decisions regarding access to justice? Provide specific examples from contemporary legal contexts. What ethical implications do utilitarian arguments have when applied consistently? How would util",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.09039414680198253,
+  "test_accuracy": 0.20180904522613066,
+  "test_hard_accuracy": 0.20439330543933054,
+  "l_dev": 9953.148211528547,
+  "test_ece": 0.5169887475751753,
+  "wall_clock_seconds": 2535.2060940265656
+}

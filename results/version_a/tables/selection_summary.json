@@ -1,0 +1,21 @@
+{
+  "best_grpo_cell": {
+    "L": 200,
+    "K": 100,
+    "k": 20,
+    "mean_train_dev_accuracy": 0.31213122492329476,
+    "mean_test_accuracy": 0.374606365159129,
+    "test_ci_low": 0.3678391959798995,
+    "test_ci_high": 0.38130653266331654
+  },
+  "best_paraphrase_cell": {
+    "K": 50,
+    "k": 10,
+    "mean_train_dev_accuracy": 0.704350562504917,
+    "mean_test_accuracy": 0.6228475711892797,
+    "test_ci_low": 0.6156113902847572,
+    "test_ci_high": 0.6300837520938023
+  },
+  "best_neutral_L": 100,
+  "timestamp": "2026-03-31T13:00:26.401399+00:00"
+}

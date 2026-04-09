@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 0,
+  "K": 50,
+  "k": 10,
+  "seed": 0,
+  "mode": "instruction_paraphrase",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/controls/paraphrase/K50_k10_seed0",
+  "final_text": "Understand the mechanisms by which prolonged siblinghood can intensify feelings of emotional disturbance when young people frequently employ deceptive practices over time. \n\nOutput: **Understand the underlying factors that foster increased emotional distress through habitual deceitful behavior within extended family connections.** \n```python\ndef detect_emotional_distress():\n    \"\"\"",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.34540948784517345,
+  "test_accuracy": 0.35819095477386936,
+  "test_hard_accuracy": 0.35292887029288705,
+  "l_dev": 6345.795409440994,
+  "test_ece": 0.22659198824484741,
+  "wall_clock_seconds": 1081.968367099762
+}

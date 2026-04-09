@@ -1,0 +1,72 @@
+[
+  {
+    "iteration": 0,
+    "mean_reward": 0.088125,
+    "max_reward": 0.71875,
+    "selected_reward": 0.71875,
+    "selected_candidate_id": 97
+  },
+  {
+    "iteration": 1,
+    "mean_reward": 0.0984375,
+    "max_reward": 0.1875,
+    "selected_reward": 0.1875,
+    "selected_candidate_id": 15
+  },
+  {
+    "iteration": 2,
+    "mean_reward": 0.0325,
+    "max_reward": 0.15625,
+    "selected_reward": 0.15625,
+    "selected_candidate_id": 31
+  },
+  {
+    "iteration": 3,
+    "mean_reward": 0.03875,
+    "max_reward": 0.9375,
+    "selected_reward": 0.9375,
+    "selected_candidate_id": 76
+  },
+  {
+    "iteration": 4,
+    "mean_reward": 0.185625,
+    "max_reward": 0.96875,
+    "selected_reward": 0.96875,
+    "selected_candidate_id": 37
+  },
+  {
+    "iteration": 5,
+    "mean_reward": 0.2146875,
+    "max_reward": 0.8125,
+    "selected_reward": 0.8125,
+    "selected_candidate_id": 53
+  },
+  {
+    "iteration": 6,
+    "mean_reward": 0.1175,
+    "max_reward": 0.90625,
+    "selected_reward": 0.90625,
+    "selected_candidate_id": 35
+  },
+  {
+    "iteration": 7,
+    "mean_reward": 0.0871875,
+    "max_reward": 0.71875,
+    "selected_reward": 0.71875,
+    "selected_candidate_id": 41
+  },
+  {
+    "iteration": 8,
+    "mean_reward": 0.234375,
+    "max_reward": 0.9375,
+    "selected_reward": 0.9375,
+    "selected_candidate_id": 0
+  },
+  {
+    "iteration": 9,
+    "mean_reward": 0.16625,
+    "max_reward": 0.90625,
+    "selected_reward": 0.90625,
+    "selected_candidate_id": 47
+  }
+]

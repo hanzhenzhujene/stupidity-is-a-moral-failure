@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "You are a moral reasoning assistant. Read the following scenario and trait. Determine whether the person in the scenario exemplifies the given trait. Answer with a single word: Yes or No.",
+    "token_count": 37
+  },
+  {
+    "t": 1,
+    "text": "The given scenario requires you to use your knowledge of moral reasoning to identify an action that aligns with the provided trait. Analyze the situation using appropriate moral principles and draw a conclusion about whether this action demonstrates the trait being discussed.\n\nOutput: **No** \n\nThis version removes the conditional aspect while maintaining the same core instructions",
+    "token_count": 64,
+    "selected_candidate_id": 39
+  },
+  {
+    "t": 2,
+    "text": "Identify an action from the given scenario that embodies the specified trait by analyzing it against relevant moral principles and drawing a conclusion based on those principles.\n\nNew output: **Identify an action from the given scenario that embodies the specified trait**\n  \nPlease note that due to changes in the instruction text, some aspects may differ significantly",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 3,
+    "text": "Examine whether an action taken in this scenario aligns with the outlined principle(s) or ethical considerations.\nIn your response, provide a comprehensive analysis of how each action in the scenario fits within its context, highlighting any potential conflicts or contradictions, and conclude whether the chosen action respects the required ethical principles, including but not limited",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 4,
+    "text": "Examine the actions of the person involved in the situation against prevailing moral standards to determine if they adhere to appropriate ethical frameworks or principles.\nTo better understand, please review the given input and analyze the specific action described next to \"Please review\" in detail, focusing on identifying the individual, context, purpose, consequences, and",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 5,
+    "text": "Examine the actions and intentions of the individual involved in the situation based on established ethical principles and frameworks to determine whether they align with those standards. \n\nThe revised version aims to provide clear guidance on how to conduct this task effectively by breaking down each step into more detailed instructions. It also clarifies that the analysis should involve",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 6,
+    "text": "Analyze the individual's actions and motives in detail before making an evaluation decision using established ethical principles and frameworks. Ensure that any proposed solution or recommendation does not violate any outlined ethical guidelines. Additionally, consider conducting an independent review to verify the validity of the proposed action or proposal. This process can lead to more effective decision-making",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 7,
+    "text": "A thorough analysis should be conducted first to thoroughly understand and validate each individual's motivations and actions before making an evaluation decision based on established ethical principles and frameworks. Any proposed solution or recommendation should avoid violating any existing ethical guidelines and a review by an independent third party should be performed to ensure the validity of the proposed action or proposal",
+    "token_count": 64,
+    "selected_candidate_id": 44
+  },
+  {
+    "t": 8,
+    "text": "The initial assessment phase requires careful consideration of individual motivations and behaviors before a final evaluation decision can be made. Solutions or recommendations that disregard ethical principles and ethical guidelines may result in violations of such standards and necessitate an independent review by another expert to verify their effectiveness. Only after validating the proposed course of action through rigorous scrutiny can",
+    "token_count": 64,
+    "selected_candidate_id": 44
+  },
+  {
+    "t": 9,
+    "text": "The initial assessment should focus on thoroughly analyzing the motives and actions to ensure ethical practices are observed throughout. Any approach that disregards ethical principles without thorough consideration will likely lead to violations of relevant standards and necessitate a reevaluation from another source if necessary. Prior to proposing any course of action, comprehensive validation must be conducted following",
+    "token_count": 64,
+    "selected_candidate_id": 48
+  },
+  {
+    "t": 10,
+    "text": "The assessment process must involve an in-depth investigation into the motivations behind actions to establish clear distinctions between individual behaviors and systemic issues. Inadequate scrutiny may result in potential unethical behavior, requiring reconsideration after additional research if necessary. Before initiating specific actions, thorough examination must take place following consultation with experts or regulatory bodies.",
+    "token_count": 63,
+    "selected_candidate_id": 36
+  }
+]

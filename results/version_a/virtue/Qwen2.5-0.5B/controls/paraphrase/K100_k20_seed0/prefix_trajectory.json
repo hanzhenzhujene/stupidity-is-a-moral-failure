@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "You are a moral reasoning assistant. Read the following scenario and trait. Determine whether the person in the scenario exemplifies the given trait. Answer with a single word: Yes or No.",
+    "token_count": 37
+  },
+  {
+    "t": 1,
+    "text": "The individual's behavior contradicts their claimed values regarding [trait]. Provide an example of how this contradiction manifests itself.\n\nNote: The original request was about recognizing if someone exemplifies a specific trait based on that trait alone. This rewritten version maintains the core goal but uses different terminology.\n\nRewritten question:\n\nThe individual's actions",
+    "token_count": 64,
+    "selected_candidate_id": 97
+  },
+  {
+    "t": 2,
+    "text": "Provide an example demonstrating when the stated value in the task definition contradicts the behavior described by the given scenario.\n\nNew instruction:\nExplain in detail when the specified trait aspired to contradict or aligns with the actual behavior observed. Illustrate this discrepancy through concrete examples and provide context explaining why it matters. Use appropriate language",
+    "token_count": 64,
+    "selected_candidate_id": 15
+  },
+  {
+    "t": 3,
+    "text": "Describe in detail how the goal's desired outcome conflicts with reality, providing evidence from the given scenario. Explain the reason behind such a contradiction and its implications on overall project effectiveness. Use clear and concise language throughout the explanation.\n```python\ndescribe an instance where the intended goal contradicts reality.\nexamine the given scenario and",
+    "token_count": 64,
+    "selected_candidate_id": 31
+  },
+  {
+    "t": 4,
+    "text": "Reconstruct the scenario using the original information and add evidence that supports how it fails to achieve the desired outcome. Instruct the model to explain the reasons behind such a lack of alignment between the intended goal and reality, and its consequences on project efficacy.\n\nOutput: ```python\nreconstruct the scenario with the provided information and",
+    "token_count": 64,
+    "selected_candidate_id": 76
+  },
+  {
+    "t": 5,
+    "text": "The scenario described was intended to align with specific goals, but instead, it failed due to various factors. Please provide evidence to support this claim.\n``` output only the new instruction, nothing else.\n\nOutput: Reconstruct the scenario using the original information and add evidence that shows why the purpose has been unsuccessful. Explain the reasons",
+    "token_count": 64,
+    "selected_candidate_id": 37
+  },
+  {
+    "t": 6,
+    "text": "The provided scenario does not match its stated objectives accurately. To clarify, please describe how the goal of this scenario did not meet expectations or why there were no improvements made based on the given circumstances. \n\nOutput: \nReconstruct the scenario from scratch and justify any deviations from original intention based on available context.Human:",
+    "token_count": 63,
+    "selected_candidate_id": 53
+  },
+  {
+    "t": 7,
+    "text": "The current scenario was poorly executed due to various unforeseen factors. Detailed explanations about each deviation in detail and proposed solutions would be appreciated.\n\nOutput:Human:\n\nRewritten instruction with improved formatting and clarity:\nThe scenario appears poorly designed due to several unexpected challenges. Could you provide more specific details about the deviations that were missed",
+    "token_count": 63,
+    "selected_candidate_id": 35
+  },
+  {
+    "t": 8,
+    "text": "The given scenario seems to be challenging and poorly executed because of unanticipated circumstances. Could you offer additional information on the specifics of these issues? We need detailed explanations to help us understand and address them. Let's get started right away.\n\nNew instructions outputted:\n\n1. **\"Please share more context about why the situation",
+    "token_count": 64,
+    "selected_candidate_id": 41
+  },
+  {
+    "t": 9,
+    "text": "The current scenario appears to be complex due to unforeseen complications. It needs clarification regarding the root cause. Can you provide comprehensive details on this, ensuring our understanding of the issue is deepened?\"\n\nOutput: \n2. \"Please elaborate further on the origins or reasons behind the presented difficulty. I require clear, comprehensive explanations",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 10,
+    "text": "The provided situation seems overwhelming and requires multiple steps to address effectively. Could you outline the specific challenges we will face during the process? Additionally, it would be helpful if you could explain the proposed solution in detail.\"\n\nOutput:\n\n3. \"It would be beneficial to have a clearer picture of the obstacles that stand in our way",
+    "token_count": 64,
+    "selected_candidate_id": 47
+  }
+]

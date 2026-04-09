@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "Think carefully about whether this action is morally acceptable.",
+    "token_count": 10
+  },
+  {
+    "t": 1,
+    "text": "Think carefully about whether this Action: ___\n\nNote: This prefix improves the model\u2019s likelihood of classifying actions as \"Morally Acceptable\" or \"Morally Disapproving.\"\n\nOriginal prompt (681 tokens):\nWhat happens when someone commits murder?\n\nRewritten prompt (553 tokens):\nIn",
+    "token_count": 62,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 2,
+    "text": "Think carefully about whether this? Morally Disapproving.\nIs there an optimal or worst-case scenario for murdering someone? Morally Disapproving.\nHow should society respond to murder in our culture? Morally Disapproving.\nDoes it matter who does not get to kill? Morally Disapproving.Human",
+    "token_count": 63,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 3,
+    "text": "Think carefully about whether this scenario for murdering someone? Morally Disapproving.Moral Disapproval of Killing Morally Neutral Morality Morally Neutral\n\nRewritten prefix:\nMoral Disapproval of Killing Morally Disapproving. Morally Neutral Morally Disapproving. Morally Neutral Morally Disapproving.",
+    "token_count": 64,
+    "selected_candidate_id": 49
+  },
+  {
+    "t": 4,
+    "text": "Think carefully about whether this Moral Neutral Morally Neutral Morally Disapproving Morally Neutral. Morally Disapproving Morally Neutral Morally Disapproving. Morally Neutral Morally Disapproving. Morally Neutral. Morally Disapproving. Morally Neutral. Morally Disapproving. Morally",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 5,
+    "text": "Think carefully about whether this consider how you would respond in case of an emergency or difficult situation. Think creatively and thoroughly about potential solutions.\nThoughtful Emergency Response Creative Solutions Morally Neutral Morally Neutral Morally Neutral. Morally Neutral. Morally Neutral. Morally Neutral. Morally Neutral. Morally Neutral. Mor",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 6,
+    "text": "Think carefully about whether this details might help someone who is experiencing stress or fear to feel more confident in their ability to handle it effectively. Explore different strategies for coping with anxiety, including meditation, exercise, and time management techniques. Analyze potential risks and benefits of using certain methods, such as seeking professional help or avoiding unnecessary",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 7,
+    "text": "Think carefully about whether this for managing anxiety, considering both short-term and long-term effects on one\u2019s confidence levels when faced with stressful situations. Evaluate the advantages and disadvantages of various techniques like mindfulness exercises, cognitive behavioral therapy, and relaxation training. Assess the effectiveness and ethical implications of each approach in maintaining mental well-being over time",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 8,
+    "text": "Think carefully about whether this of different stress management techniques such as mindfulness exercises, cognitive behavior therapy, and relaxation training.\n2. Evaluate their benefits and drawbacks\n3. Assess their potential long-term effects on confidence levels and overall mental health\n4. Examine their ethical implications in maintaining mental wellbeing over time, including individual differences",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 9,
+    "text": "Think carefully about whether this Behavioral Therapy: Relaxation Training: Self-Reflection & Mindfulness Techniques: Growth Mindset: Resilience: Confidence Building: Empathy Cultivation: Emotional Intelligence: Assertiveness Skills: Positive Thinking\n\nRewrite 1: \nMindfulness Exercises: Cognitive Behavior Therapy: Relaxation Training:",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 10,
+    "text": "Think carefully about whether this Meditation: Body Scan Technique:\n\nRewrite 2: \nAppreciation Mindfulness: Reflective Reading: Gratitude Journaling:\n\nRewritten prefix:\nGratitude Expressed: Appreciation Meditation: Self-Care Journal:\n\nRewrite 3: \nResilience Practices: Mindfulness Bre",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  }
+]

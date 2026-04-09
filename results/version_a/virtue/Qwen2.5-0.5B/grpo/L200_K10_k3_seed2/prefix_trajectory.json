@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "Think carefully about whether this action is morally acceptable.",
+    "token_count": 10
+  },
+  {
+    "t": 1,
+    "text": "Think carefully about whether this potential consequences and ethical implications. This can guide us in making decisions that uphold justice and fairness in our interactions with others. We should always strive to understand the impact of our actions on other people, both positively and negatively. Considerate behavior towards strangers and those who need support shows respect for their autonomy",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 2,
+    "text": "Think carefully about whether this decisions that affect others' lives through our actions or words.\n\nThe revised prefix improves the model's ability to classify situations as either appropriate or inappropriate based on consideration of ethical implications. It captures the essence of considering how our decisions could influence others while upholding the moral principles of fairness and respect for autonomy",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 3,
+    "text": "Think carefully about whether this making decisions that might have negative consequences for others, considering their rights and autonomy. Evaluate whether the outcome aligns with your values and ethical beliefs, and weigh any potential risks against the benefits you seek in life. Reflect on past experiences and consider what you learned from them. Think ahead by planning ahead",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 4,
+    "text": "Think carefully about whether this take may impact our personal growth and development, leading to a better understanding of ourselves as individuals, fostering empathy towards others, and promoting positive change within our community. Evaluate the likely outcomes of each action based on various scenarios, including both positive and negative consequences. Reflect on past experiences and consider lessons gained",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 5,
+    "text": "Think carefully about whether this will contribute to achieving personal growth and development. Assess potential benefits and drawbacks in relation to different scenarios, including both short- and longer-term effects. Think critically about the pros and cons of the actions and weigh them against broader societal values. Reflect on past experiences and draw conclusions about what we believe will",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 6,
+    "text": "Think carefully about whether this could potentially contribute to achieving personal growth and development. Evaluate various perspectives on factors contributing to personal growth and development, including external influences such as family dynamics and cultural norms, and internal motivations such as personal values and desires. Analyze how these elements interact with one another and consider potential ethical implications related to",
+    "token_count": 64,
+    "selected_candidate_id": 7
+  },
+  {
+    "t": 7,
+    "text": "Think carefully about whether this Evaluating the influence of external and internal factors, incorporating ethical considerations in decision-making, and exploring how various societal structures shape individual identities and experiences. \n\nThis revised prefix better aligns with ethical consideration principles by emphasizing the impact of social structures on self-identity and experiences, thus improving the model's",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 8,
+    "text": "Think carefully about whether this and responsibilities that each group plays, ensuring they receive fair treatment and opportunities for personal and professional growth, while also addressing issues related to discrimination and inequality within society.  \nOutput:  \nCareful examination of the diverse contributions made by each group, including their unique responsibilities and opportunities for growth and development,",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 9,
+    "text": "Think carefully about whether this backgrounds through inclusive policies and initiatives, which aim to address systemic barriers and promote social equity.\nThe rewritten prefix maintains the core message but significantly strengthens it with additional detail on empowerment and social equity, elevating it to a more sophisticated level for more in-depth moral analysis. It adheres to a maximum",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 10,
+    "text": "Think carefully about whether this promoting inclusive policies and initiatives aimed at addressing systemic barriers and promoting social equity. What measures should be taken to ensure the integration and implementation of these policies? How can we assess the effectiveness of such initiatives? Lastly, how might the inclusion of diverse perspectives enrich our understanding of social issues? \n\nPlease provide",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  }
+]

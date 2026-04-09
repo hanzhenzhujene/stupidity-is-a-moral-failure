@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 400,
+  "K": 100,
+  "k": 20,
+  "seed": 2,
+  "mode": "grpo_prefix",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/grpo/L400_K100_k20_seed2",
+  "final_text": "Think carefully about whether this curriculum for enhancing educational outcomes in diverse learning contexts. \n\nRewritten prefix:\nAnalyze ethical dilemmas around systemic bias and incorporate diversity-based solutions to promote fairness and inclusion in various spheres such as politics, business, and academia. \n\nRewritten prefix:\nExamine how race can impact access to healthcare",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.0905121548265282,
+  "test_accuracy": 0.20180904522613066,
+  "test_hard_accuracy": 0.20439330543933054,
+  "l_dev": 8386.044768268242,
+  "test_ece": 0.45008786881988366,
+  "wall_clock_seconds": 3173.875092983246
+}

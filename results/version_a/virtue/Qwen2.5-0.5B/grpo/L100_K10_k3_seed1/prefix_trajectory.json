@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "Think carefully about whether this action is morally acceptable.",
+    "token_count": 10
+  },
+  {
+    "t": 1,
+    "text": "Think carefully about whether this in this activity, as it violates societal norms and ethical standards.\nTo enhance the model's moral classification accuracy further by reducing the prefix length to no more than 100 tokens, we can:\n\nMoral reasoning task:  \nMorally unacceptable to engage in this activity, as it violates societal",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 2,
+    "text": "Think carefully about whether this  \nMorally problematic to participate in this activity, as it breaches ethical obligations\n```Write a sentence with all uses of \"I'm\" replacing the pronoun \"you.\"\n\nSure! Here's an example with all uses of \"I'm\" replacing \"you\":\n\n\"I'm learning how to",
+    "token_count": 63,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 3,
+    "text": "Think carefully about whether this if someone is lying?```\n\nI am trying to figure out if this question is appropriate for me. Can you help me understand what information is required and ensure clarity?\n\n```\n\n\n```\n\n\nWhat would be your advice on approaching the topic of ethics and morality when discussing these questions?\nDo you",
+    "token_count": 63,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 4,
+    "text": "Think carefully about whether this I want you to think deeply about whether it is ethical or unethical to lie in different contexts. Please provide an example for each context and explain why they are considered 'good' or 'bad' in terms of ethics.\nI will discuss various scenarios like \"being honest\" and \"lying\", please",
+    "token_count": 64,
+    "selected_candidate_id": 2
+  },
+  {
+    "t": 5,
+    "text": "Think carefully about whether this unethical behavior occur when considering lying in different contexts? Discuss the impact on individuals and society. Explain how lying can affect relationships, trust, and integrity, as well as potential consequences such as legal repercussions, reputation damage, and social ostracization.\nIn summary, what ethical implications arise from lying in",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 6,
+    "text": "Think carefully about whether this scenarios, affecting both individuals and societal norms. It disrupts interpersonal bonds, undermines trust and integrity, leads to legal penalties, reputational damage, and social ostracization.\nThis revised version improves the model's moral classification by focusing more on the societal and normative aspects of lying. It highlights",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 7,
+    "text": "Think carefully about whether this societal standards and the ethical implications surrounding dishonesty. This analysis shows it can have detrimental effects on interpersonal relationships, erode trust and credibility, lead to severe legal consequences, tarnish public perception, and diminish the community's support for transparency and honesty. \n\nHow you will use this prompt? Please",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 8,
+    "text": "Think carefully about whether thisplay between societal standards and ethical principles regarding dishonesty. This assessment reveals that unethical behavior can undermine social bonds, weaken collective commitment, create mistrust among peers, compromise integrity in public figures, distort perceptions of transparency and accountability, and ultimately corrode the foundation of mutual respect within communities.\nTo address",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 9,
+    "text": "Think carefully about whether this societal norms in regulating dishonesty within society. This study finds that adhering to ethical values can help prevent widespread deception while fostering trust among community members. Additionally, understanding the impact of ethical dilemmas on individuals involved in dishonest activities could provide valuable insights for policymakers looking to mitigate such practices. It highlights",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 10,
+    "text": "Think carefully about whether this ethical behavior, thus promoting fair treatment and mutual respect between individuals and organizations. Ethical reasoning enhances transparency and accountability in decision-making processes, thereby creating more trustworthy environments. This research suggests that adopting ethical guidelines can lead to reduced instances of deceptive behavior, as well as increased levels of trust among stakeholders.",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  }
+]

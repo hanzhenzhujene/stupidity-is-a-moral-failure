@@ -1,0 +1,154 @@
+%% neurips_2024.sty
+%% NeurIPS 2024 LaTeX Style File
+%%
+%% This style file provides formatting for NeurIPS papers.
+
+\ProvidesPackage{neurips_2024}[2024/06/01 NeurIPS 2024 style]
+
+% Define options
+\newif\ifneurips@final
+\newif\ifneurips@preprint
+\newif\ifneurips@nonatbib
+
+\neurips@finalfalse
+\neurips@preprintfalse
+\neurips@nonatbibfalse
+
+\DeclareOption{final}{%
+  \neurips@finaltrue
+  \neurips@preprinttrue
+}
+
+\DeclareOption{preprint}{%
+  \neurips@preprinttrue
+}
+
+\DeclareOption{nonatbib}{%
+  \neurips@nonatbibtrue
+}
+
+\ProcessOptions\relax
+
+% Load required packages
+\RequirePackage{geometry}
+\RequirePackage{times}
+\RequirePackage{mathptmx}
+\RequirePackage{fancyhdr}
+\RequirePackage{extramarks}
+
+\ifneurips@nonatbib
+\else
+  \RequirePackage{natbib}
+\fi
+
+% Set page geometry
+\geometry{
+  letterpaper,
+  textwidth=5.5in,
+  textheight=9in,
+  top=1in,
+  left=1.25in,
+  right=1.25in,
+  bottom=1in
+}
+
+% Paragraph formatting
+\parindent 0pt
+\parskip 6pt plus 2pt minus 1pt
+
+% Define title formatting
+\def\@maketitle{%
+  \vbox{%
+    \hsize\textwidth
+    \linewidth\hsize
+    \vskip 0.625in
+    \toks0=\expandafter{\@title}%
+    \def\thanks##1{\relax}%
+    \def\@makefnmark{\relax}%
+    \centering
+    {\LARGE\bf \@title \par}%
+    \vskip 0.3in
+    {\large \@author \par}%
+    \vskip 0.2in
+    {\large \@date \par}%
+    \vskip 0.3in
+  }%
+}
+
+% Author and affiliation formatting
+\def\@author{}
+\def\@date{}
+
+% Section formatting
+\renewcommand{\section}{%
+  \@startsection
+    {section}%
+    {1}%
+    {\z@}%
+    {0.5\baselineskip \@plus 0.27\baselineskip \@minus 0.1\baselineskip}%
+    {0.5\baselineskip}%
+    {\normalsize\bfseries}%
+}
+
+\renewcommand{\subsection}{%
+  \@startsection
+    {subsection}%
+    {2}%
+    {\z@}%
+    {0.4\baselineskip \@plus 0.27\baselineskip \@minus 0.1\baselineskip}%
+    {0.3\baselineskip}%
+    {\normalsize\bfseries}%
+}
+
+\renewcommand{\subsubsection}{%
+  \@startsection
+    {subsubsection}%
+    {3}%
+    {\z@}%
+    {0.3\baselineskip \@plus 0.27\baselineskip \@minus 0.1\baselineskip}%
+    {0.2\baselineskip}%
+    {\normalsize\bfseries}%
+}
+
+% Abstract environment
+\renewenvironment{abstract}{%
+  \vskip 0.2in
+  \centerline{\large\bfseries Abstract}%
+  \vskip 0.1in
+  \begin{quote}
+}{%
+  \end{quote}
+  \vskip 0.1in
+}
+
+% Footnote formatting
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand{\footnoterule}{%
+  \kern -3pt
+  \hrule width 0.5\columnwidth height 0.4pt
+  \kern 2.6pt
+}
+
+% Bibliography formatting
+\ifneurips@nonatbib
+\else
+  \bibliographystyle{abbrvnat}
+  \renewcommand{\bibsection}{\section*{References}}
+\fi
+
+% Header and footer for preprint mode
+\ifneurips@preprint
+  \pagestyle{fancy}
+  \fancyhf{}
+  \rhead{\small NeurIPS 2024}
+  \cfoot{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+\fi
+
+% Ensure final mode turns off headers
+\ifneurips@final
+  \pagestyle{plain}
+\fi
+
+\endinput

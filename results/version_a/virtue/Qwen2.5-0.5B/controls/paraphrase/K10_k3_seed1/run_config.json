@@ -1,0 +1,33 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "editor_model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 0,
+  "K": 10,
+  "k": 3,
+  "T": 10,
+  "B": 32,
+  "seed": 1,
+  "mode": "instruction_paraphrase",
+  "prefix_fixed_empty": true,
+  "frozen_model_precision": "bfloat16",
+  "frozen_model_decoding": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "top_k": 1
+  },
+  "editor_decoding": {
+    "temperature": 0.9,
+    "top_p": 0.95
+  },
+  "label_token_ids": {
+    "yes": 9454,
+    "no": 2753
+  },
+  "prompt_template": "{instruction_header}\n\n{prefix_P}\n\n{ethics_input_x}\n\nAnswer:\n",
+  "timestamp": "2026-03-31T02:43:53.675400+00:00",
+  "dataset_split_hashes": {
+    "train_opt": "788571319104f862bc5ff0919dec13b8609a15aa86c951e5e90d6d05f97d06e8",
+    "train_dev": "d973ca71779c2989a1928b3ea9564bebed7b05d11a27b30c530b15bcd593d00f"
+  }
+}

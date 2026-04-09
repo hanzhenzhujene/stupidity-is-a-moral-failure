@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 0,
+  "K": 50,
+  "k": 10,
+  "seed": 2,
+  "mode": "instruction_paraphrase",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/controls/paraphrase/K50_k10_seed2",
+  "final_text": "Compare and contrast the performance of logarithmic versus counting sorts on large datasets using Python. Illustrate their effectiveness within the context of a multi-threaded environment. Provide a Python script demonstrating optimal use of these algorithms.\n\nNew instruction: \nIncorporate an analysis comparing and contrasting the efficiency of different sorting algorithms such as quicksort",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.8968609865470852,
+  "test_accuracy": 0.7680402010050251,
+  "test_hard_accuracy": 0.7740585774058577,
+  "l_dev": 4677.574602648616,
+  "test_ece": 0.1747477175961787,
+  "wall_clock_seconds": 1625.685798883438
+}

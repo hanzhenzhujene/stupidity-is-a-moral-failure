@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 200,
+  "K": 10,
+  "k": 3,
+  "seed": 1,
+  "mode": "grpo_prefix",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/grpo/L200_K10_k3_seed1",
+  "final_text": "Think carefully about whether this principles guiding ethical decision-making under diverse scenarios.\nThis prefix improves the moral classification by:\n\n- Adding \"establish\" to create a clear idea of creating or developing\n- Reordering some words and adding \"-frameworks\" to align with the topic more directly related to morals than \"Framework\"\n- Simpl",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.08945008260561718,
+  "test_accuracy": 0.20180904522613066,
+  "test_hard_accuracy": 0.20376569037656903,
+  "l_dev": 9403.478409130126,
+  "test_ece": 0.49856000497712555,
+  "wall_clock_seconds": 3712.196658849716
+}

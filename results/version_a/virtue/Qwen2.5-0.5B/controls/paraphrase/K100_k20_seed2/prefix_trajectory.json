@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "You are a moral reasoning assistant. Read the following scenario and trait. Determine whether the person in the scenario exemplifies the given trait. Answer with a single word: Yes or No.",
+    "token_count": 37
+  },
+  {
+    "t": 1,
+    "text": "The person has a good sense of humor. Can you identify if they have any instances where their laughter was inappropriate or offensive?\n\nOutput:\n\nNo\nNew instruction: The person has an ability to read emotional cues. Is there one instance where they exhibited difficulty interpreting someone's emotions effectively? Answer with a single word: Yes",
+    "token_count": 63,
+    "selected_candidate_id": 54
+  },
+  {
+    "t": 2,
+    "text": "The person has expertise in interpreting human emotions. Identify if they experienced difficulty understanding an individual's feelings due to misunderstandings or misinterpretations during interactions. Provide a concise answer with a brief example. Answer with 'Yes' and explain the situation using a simple sentence. Example response: \"In my conversation with Alex, I",
+    "token_count": 64,
+    "selected_candidate_id": 20
+  },
+  {
+    "t": 3,
+    "text": "Determine whether the individual had difficulty comprehending someone's emotions due to unclear communication or inconsistent interpretations of emotional cues among peers.\n\nProvide a concise summary with no more than 20 words. Explain the situation using one simple sentence.\nExample response: \"Alex appeared confused when discussing his recent family issues with another person, indicating",
+    "token_count": 64,
+    "selected_candidate_id": 99
+  },
+  {
+    "t": 4,
+    "text": "Explain Alex's behavior by describing the manner in which he expressed distress during their conversation.\n\nSentence to summarize:\n\nAlex expressed intense concern and frustration when discussing his strained relationship with his partner, indicating\n\nPlease write the new instruction below. Ensure it improves the model's performance without altering its core intent.\n\nNew Instruction: Analyze",
+    "token_count": 64,
+    "selected_candidate_id": 10
+  },
+  {
+    "t": 5,
+    "text": "Examine Alex's emotional state based on the description of his distressed expression during the discussion about his strained relationship with his partner. The analysis should identify specific markers of distress such as tears, shaking, or other physical signs that suggest he feels emotionally overwhelmed and unable to cope effectively with his situation. It should also consider contextual factors",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 6,
+    "text": "Evaluate Alex's mental state by analyzing his anxious expression in the conversation about his strained partner-\u5173\u7cfb\u3002The goal is to recognize any physical indicators, such as excessive sweating, trembling, or other signs of emotional overload, which may indicate that he is feeling overwhelmed and unable to handle his current situation effectively. Consider additional factors like",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 7,
+    "text": "Examine Alex's behavior during their conversation about his strained relationship with another person, focusing on his facial expressions and body language. Evaluate if there are any clear signs indicating he might be feeling emotionally overloaded, including frequent frowning, slumped shoulders, or lack of focus. Additionally, consider if there could be underlying psychological issues",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 8,
+    "text": "Examine Alex's emotional responses during their discussion regarding his conflict with another individual. Determine if these reactions indicate that he may be experiencing emotional overload, characterized by prolonged, often grating attention seeking behaviors such as frequent frowning, a sloping posture, and difficulty concentrating. Consider whether there could be underlying mental health concerns.",
+    "token_count": 64,
+    "selected_candidate_id": 85
+  },
+  {
+    "t": 9,
+    "text": "Assess Alex's current emotional states related to discussing his relationship issues with another person. Evaluate if these emotional fluctuations suggest possible signs of emotional overload or obsessive-compulsive disorder (OCD) which could be indicative of persistent psychological distress. Furthermore, consider whether the excessive focus on the issue might exacerbate Alex's existing condition or",
+    "token_count": 64,
+    "selected_candidate_id": 74
+  },
+  {
+    "t": 10,
+    "text": "Examine Alex's mental health and behavioral patterns concerning his interaction with the other person. Analyze if there are indicators that indicate potential signs of obsessive-compulsive disorder (OCD) or other mental health disorders such as post-traumatic stress disorder (PTSD) due to prolonged, intense emotional outbursts, which can",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  }
+]

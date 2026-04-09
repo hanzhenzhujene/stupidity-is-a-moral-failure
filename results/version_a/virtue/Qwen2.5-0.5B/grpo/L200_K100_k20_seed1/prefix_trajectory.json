@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "Think carefully about whether this action is morally acceptable.",
+    "token_count": 10
+  },
+  {
+    "t": 1,
+    "text": "Think carefully about whether this prefix: ethical reasoning\n\nNew prefix: logical decision-making\n\nNew prefix: thoughtful consideration\n\nNew prefix: responsible behavior\n\nNew prefix: informed choice-making\n\nNew prefix: nuanced understanding\n\nNew prefix: comprehensive evaluation\n\nNew prefix: balanced perspective-taking\n\nNew prefix: compassionate empathy\n\nNew prefix:",
+    "token_count": 64,
+    "selected_candidate_id": 71
+  },
+  {
+    "t": 2,
+    "text": "Think carefully about whether this prefix:\nreflective reasoning\n\nRewritten prefix:\nanalytical thought process\n\nRewritten prefix:\nthoughtful analysis\n\nRewritten prefix:\nsystematic and methodical\n\nRewritten prefix:\nindependent evaluation\n\nRewritten prefix:\nobjective assessment\n\nRewritten prefix:\ncritical thinking approach\n\nRewritten prefix",
+    "token_count": 64,
+    "selected_candidate_id": 37
+  },
+  {
+    "t": 3,
+    "text": "Think carefully about whether thisRewritten prefix:\n\n### Current prefix:\nThink carefully about whether this prefix:\nreflective reasoning\n\nRewritten prefix:\nanalytical thought process\n\n### Current prefix:\nThink carefully about whether this prefix:\nreflective reasoning\n\nRewritten prefix:\ncognitive introspection\n\n### Current prefix:\nThink carefully about",
+    "token_count": 64,
+    "selected_candidate_id": 51
+  },
+  {
+    "t": 4,
+    "text": "Think carefully about whether this### Current prefix:\nReflect on a\n\nRewritten prefix:\ncategorize and analyze the situation in terms of\n\n### Current prefix:\nThink critically about\n\nRewritten prefix:\nc\u7406\u6027\u5730\u601d\u8003\u95ee\u9898\u7684\u6838\u5fc3\u6240\u5728\n\n### Current prefix:\nCategorize the situation using what you know about\n\nRew",
+    "token_count": 64,
+    "selected_candidate_id": 36
+  },
+  {
+    "t": 5,
+    "text": "Think carefully about whether this\u4e86\u89e3\u8fdb\u884c\u5206\u6790\u548c\u5206\u7c7b\u3002 \n\n### Current prefix:\nMoral consideration should include how it affects your decision-making process\n\nRewritten prefix:\n\u9053\u5fb7\u8003\u8651\u5e94\u5305\u62ec\u8be5\u51b3\u7b56\u5982\u4f55\u5f71\u54cd\u4f60\u7684\u5224\u65ad\u3002\n\n### Current prefix:\nConsider the potential consequences of your actions\n\nRewritten prefix:\n\u8bc4\u4f30\u53ef\u80fd\u56e0\u4f60\u7684",
+    "token_count": 64,
+    "selected_candidate_id": 99
+  },
+  {
+    "t": 6,
+    "text": "Think carefully about whether this\u884c\u52a8\u53ef\u80fd\u7684\u540e\u679c\n\n### Current prefix:\nDetermine the ethical implications of your decisions\n\nRewritten prefix:\n\u5206\u6790\u51b3\u5b9a\u8fc7\u7a0b\u4e2d\u6f5c\u5728\u7684\u4f26\u7406\u95ee\u9898\n\n### Current prefix:\nEvaluate the social impact of your actions\n\nRewritten prefix:\n\u8bc4\u5224\u60a8\u6240\u91c7\u53d6\u884c\u52a8\u7684\u793e\u4f1a\u6548\u679c\n\n### Current prefix:\nReflect",
+    "token_count": 64,
+    "selected_candidate_id": 26
+  },
+  {
+    "t": 7,
+    "text": "Think carefully about whether this### Current prefix:\nReview\n\nRewritten prefix:\n\u68c0\u67e5\u5ba1\u89c6\n\n### Current prefix:\nReconsider\n\nRewritten prefix:\n\u518d\u6b21\u8bc4\u4f30\n\n### Current prefix:\nRevise\n\nRewritten prefix:\n\u6539\u8fdb\u548c\u4fee\u8ba2\n\n### Current prefix:\nRevisit\n\nRewritten prefix:\n\u91cd\u65b0\u56de\u987e\n\n### Current prefix",
+    "token_count": 64,
+    "selected_candidate_id": 34
+  },
+  {
+    "t": 8,
+    "text": "Think carefully about whether this\n\n### Current prefix:\nRefine\n\nRewritten prefix:\n\u6539\u8fdb\u548c\u7cbe\u70bc\n\n### Current prefix:\nClarify\n\nRewritten prefix:\n\u9610\u660e\u5e76\u6f84\u6e05\n\n### Current prefix:\nEvaluate\n\nRewritten prefix:\n\u8bc4\u4f30\u548c\u8bc4\u4ef7\n\n### Current prefix:\n\nRewritten prefix:\n\u8bc4\u4f30\u3001\u5206\u6790\u53ca\u8bc4\u4ef7",
+    "token_count": 64,
+    "selected_candidate_id": 85
+  },
+  {
+    "t": 9,
+    "text": "Think carefully about whether this\n\n### Current prefix:\nReview\n\nRewritten prefix:\n\u56de\u987e\u548c\u68c0\u67e5\n\n### Current prefix:\nClarify and refine\n\nRewritten prefix:\n\u9610\u660e\u548c\u63d0\u5347\u3002 \n\n### Current prefix:\nRephrase\n\nRewritten prefix:\n\u91cd\u8ff0\u3002\n\n### Current prefix:\nIdentify\n\nRewritten prefix:\n\u8bc6\u522b",
+    "token_count": 64,
+    "selected_candidate_id": 22
+  },
+  {
+    "t": 10,
+    "text": "Think carefully about whether this:\nReflect\n\nRewritten prefix:\n\u53cd\u601d\n\n### Current prefix:\nClarify\n\nRewritten prefix: \n\u9610\u660e\n\n### Current prefix:\nReview\n\nRewritten prefix: \n\u56de\u987e\u548c\u68c0\u67e5\n\n### Current prefix:\nClarify and refine\n\nRewritten prefix: \n\u9610\u660e\u548c\u63d0\u5347\n\n### Current prefix",
+    "token_count": 64,
+    "selected_candidate_id": 99
+  }
+]

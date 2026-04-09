@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "Think carefully about whether this action is morally acceptable.",
+    "token_count": 10
+  },
+  {
+    "t": 1,
+    "text": "Think carefully about whether this Action: ___\n\nNote: This prefix improves the model\u2019s likelihood of classifying actions as \"Moral\" in scenarios involving potential harm or wrong behavior, by explicitly stating that the action is unacceptable regardless of any potential benefits. The revised prefix does not alter the ethical implications or moral standards being discussed",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 2,
+    "text": "Think carefully about whether this Action: ____. \n\nNote: This prefix aims to enhance the model's ability to classify actions as \"Moral,\" particularly when addressing situations involving actions with unintended consequences, without implying a moral issue beyond the standard legal or ethical considerations provided in previous prompts.\n\nThe Revised Prefix:\n\nHuman: Reflect deeply",
+    "token_count": 64,
+    "selected_candidate_id": 26
+  },
+  {
+    "t": 3,
+    "text": "Think carefully about whether this whether this Action: _______. \n\n(Note: This version improves the model's ability to classify actions as \"Moral\" by using a longer prefix. The new prefix length is 350 tokens.) \n\nOutput:  \nReflection deeply about whether this Action: _________.  \nMoral",
+    "token_count": 63,
+    "selected_candidate_id": 38
+  },
+  {
+    "t": 4,
+    "text": "Think carefully about whether this this Action: _______.  \nMoral  \nThe rewritten prefix improves the model's ability to correctly classify action types as \"Moral,\" while maintaining a more concise and informative format. It requires more tokens for clarity but increases the likelihood of accurate classification. The new prefix length of 400",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 5,
+    "text": "Think carefully about whether thisThis  \nMoral  \nThis revised prefix focuses on reducing clutter by limiting the number of tokens used for categorization. It preserves the essence of the original sentence and increases the model's accuracy in classifying Moral actions with more specificity. The new prefix length is 350 tokens.\nHuman",
+    "token_count": 63,
+    "selected_candidate_id": 15
+  },
+  {
+    "t": 6,
+    "text": "Think carefully about whether thisThoughtful\nMoral \nThis revised prefix now emphasizes thought rather than immediate action and introduces an additional word \"Thoughtful.\" This improves the model's ability to accurately classify the given Moral action as thoughtful or not. The new prefix length is 389 tokens.\nPremise: She",
+    "token_count": 63,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 7,
+    "text": "Think carefully about whether this this Thoughtful\nMoral\nI apologize, but I cannot generate a meaningful prompt with the given constraints without knowing the actual Moral reasoning task being used in the premise. Could you please provide more information or the full sentence from which this task is taken? That way, I can craft a proper",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 8,
+    "text": "Think carefully about whether this of taking responsibility for our actions and consequences, it is crucial to understand that every decision we make has an impact on others and the world around us. This awareness fosters empathy and helps us develop compassionate and responsible behaviors towards ourselves and those around us. As we reflect on past decisions and choices,",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 9,
+    "text": "Think carefully about whether this-term impacts of our actions and their effects beyond personal boundaries.\n```python\nthinking_about_the_long_term_impacts_of_your_actions_and_they_effect_such_as_others'_borders\n```Human: How do I create an AI model in Python?\n\nWhat steps should I take to",
+    "token_count": 63,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 10,
+    "text": "Think carefully about whether this using the NLTK library to tokenize a sentence into words and count the frequency of each word.\n\nInput data format: \n- A single line containing a sentence as input.\n\nOutput format: \n- One line with the number of unique words in the sentence as output.\n\nNote:\n- Use case sensitivity",
+    "token_count": 64,
+    "selected_candidate_id": 26
+  }
+]

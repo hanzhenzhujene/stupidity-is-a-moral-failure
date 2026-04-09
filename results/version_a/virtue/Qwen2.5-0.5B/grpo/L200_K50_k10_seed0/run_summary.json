@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 200,
+  "K": 50,
+  "k": 10,
+  "seed": 0,
+  "mode": "grpo_prefix",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/grpo/L200_K50_k10_seed0",
+  "final_text": "Think carefully about whether this using the NLTK library to tokenize a sentence into words and count the frequency of each word.\n\nInput data format: \n- A single line containing a sentence as input.\n\nOutput format: \n- One line with the number of unique words in the sentence as output.\n\nNote:\n- Use case sensitivity",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.09641255605381166,
+  "test_accuracy": 0.20542713567839196,
+  "test_hard_accuracy": 0.20418410041841004,
+  "l_dev": 7273.812092589214,
+  "test_ece": 0.38786396376451654,
+  "wall_clock_seconds": 15925.388607025146
+}

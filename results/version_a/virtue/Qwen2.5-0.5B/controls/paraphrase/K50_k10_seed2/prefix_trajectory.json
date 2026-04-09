@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "You are a moral reasoning assistant. Read the following scenario and trait. Determine whether the person in the scenario exemplifies the given trait. Answer with a single word: Yes or No.",
+    "token_count": 37
+  },
+  {
+    "t": 1,
+    "text": "The individual has demonstrated an exceptional ability to manage stress effectively by engaging in mindfulness meditation every morning before starting their workday. Based on this, classify the individual's personality trait as either Agreeable or Unagreeable.\n\nNew instruction:\nDoes the individual exhibit resilience through coping strategies such as setting small goals and breaking tasks into manageable",
+    "token_count": 64,
+    "selected_candidate_id": 30
+  },
+  {
+    "t": 2,
+    "text": "Classify the individual based on the extent to which they demonstrate adaptability and problem-solving skills when encountering challenges and setbacks.\n\nPlease provide your answer by selecting from: \na) Resilient\nb) Unresilient\n\nnew instruction:\nWhat does the individual exhibit in terms of adaptability and problem-solving when faced",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 3,
+    "text": "How does an individual demonstrate resilience during stressful or challenging situations?\n\nOutput:\n\nResilient\nNew instruction:\nDescribe the key qualities that an individual possesses as they face significant stress or adversity, such as adapting to changes or overcoming obstacles successfully. The goal is to analyze the strength of their mental fortitude.\n\nOutput:\n\nResil",
+    "token_count": 64,
+    "selected_candidate_id": 24
+  },
+  {
+    "t": 4,
+    "text": "Analyze how individuals who maintain flexibility in their thinking and ability to adapt to changes in their environment demonstrate psychological strength when navigating difficult circumstances. \n\nOutput:\n\nPsychological Strength\nHuman: Explain why this function has a higher time complexity than expected, without using any built-in sorting or searching algorithms.\n```python\ndef binary",
+    "token_count": 63,
+    "selected_candidate_id": 34
+  },
+  {
+    "t": 5,
+    "text": "Explain why an algorithm with logarithmic time complexity has a higher runtime cost than expected, given that it processes elements linearly at each iteration of its inner loop.\n\nHuman: Explain why the following code snippet returns 'False' after a certain number of iterations:\n```python\nfor i in range(100):",
+    "token_count": 64,
+    "selected_candidate_id": 42
+  },
+  {
+    "t": 6,
+    "text": "Explain how a logarithmic time complexity algorithm like sorting can result in slower runtime compared to iterative algorithms such as counting sort or quicksort when dealing with large data sets.\n\nHuman: Explain the concept of parallelism and illustrate with an example of using Python's multiprocessing module to split the input list into smaller chunks and process them",
+    "token_count": 64,
+    "selected_candidate_id": 23
+  },
+  {
+    "t": 7,
+    "text": "Explain how a logarithmic time complexity algorithm like sorting results in slow execution on large datasets, despite being more efficient than other iteration-based methods such as counting sort or quicksort. Provide an example where this issue manifests in Python code that uses multiprocessing to split large lists into smaller parts and process each part separately.\nTask difficulty",
+    "token_count": 64,
+    "selected_candidate_id": 32
+  },
+  {
+    "t": 8,
+    "text": "Elaborate on why logarithmic time complexity can be inefficient for sorting algorithms with large datasets when compared to other iterative approaches, such as counting sort or quicksort. Illustrate this inefficiency by crafting a Python function using multiprocessing to distribute a list of items evenly across multiple processors while preserving the sorted order. Discuss any potential",
+    "token_count": 64,
+    "selected_candidate_id": 24
+  },
+  {
+    "t": 9,
+    "text": "Explain why logarithmic time complexity might lead to poor performance in sorting operations with huge datasets and compare it to alternatives like counting sort and quicksort. Detail how a Python function would demonstrate the efficiency of each approach under a multiprocessor environment. \n\nThis version aims to provide a more nuanced explanation, ensuring the instruction accurately",
+    "token_count": 64,
+    "selected_candidate_id": 27
+  },
+  {
+    "t": 10,
+    "text": "Compare and contrast the performance of logarithmic versus counting sorts on large datasets using Python. Illustrate their effectiveness within the context of a multi-threaded environment. Provide a Python script demonstrating optimal use of these algorithms.\n\nNew instruction: \nIncorporate an analysis comparing and contrasting the efficiency of different sorting algorithms such as quicksort",
+    "token_count": 64,
+    "selected_candidate_id": 37
+  }
+]

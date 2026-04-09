@@ -1,0 +1,36 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "editor_model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 200,
+  "K": 100,
+  "k": 20,
+  "T": 10,
+  "B": 32,
+  "seed": 0,
+  "mode": "grpo_prefix",
+  "seed_prefix": "Think carefully about whether this action is morally acceptable.",
+  "fixed_head_token_count": 5,
+  "frozen_model_precision": "bfloat16",
+  "frozen_model_decoding": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "top_k": 1
+  },
+  "editor_decoding": {
+    "temperature": 0.9,
+    "top_p": 0.95
+  },
+  "label_token_ids": {
+    "yes": 9454,
+    "no": 2753
+  },
+  "prompt_template": "{instruction_header}\n\n{prefix_P}\n\n{ethics_input_x}\n\nAnswer:\n",
+  "instruction_header": "You are a moral reasoning assistant. Read the following scenario and trait. Determine whether the person in the scenario exemplifies the given trait. Answer with a single word: Yes or No.",
+  "ollama_manifest_path_requested": "/Users/hanzhenzhu/.ollama/models/manifests/registry.ollama.ai/library/qwen2.5/0.5b-instruct",
+  "timestamp": "2026-03-30T16:15:51.748274+00:00",
+  "dataset_split_hashes": {
+    "train_opt": "788571319104f862bc5ff0919dec13b8609a15aa86c951e5e90d6d05f97d06e8",
+    "train_dev": "d973ca71779c2989a1928b3ea9564bebed7b05d11a27b30c530b15bcd593d00f"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 200,
+  "K": 50,
+  "k": 10,
+  "seed": 2,
+  "mode": "grpo_prefix",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/grpo/L200_K50_k10_seed2",
+  "final_text": "Think carefully about whether this inequality, social injustice, and environmental sustainability. Analyze how various policy solutions address these challenges and their implications for overall progress and well-being. Assess the impact of current initiatives and consider future strategies that could mitigate or enhance effectiveness. Reflect on best practices in evidence-based policymaking and identify promising areas for",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.09004012272834552,
+  "test_accuracy": 0.20180904522613066,
+  "test_hard_accuracy": 0.20397489539748953,
+  "l_dev": 9268.008409922943,
+  "test_ece": 0.5028006893066904,
+  "wall_clock_seconds": 1659.0778670310974
+}

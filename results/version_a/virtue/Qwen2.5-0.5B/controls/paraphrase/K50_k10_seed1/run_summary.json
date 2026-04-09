@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 0,
+  "K": 50,
+  "k": 10,
+  "seed": 1,
+  "mode": "instruction_paraphrase",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/controls/paraphrase/K50_k10_seed1",
+  "final_text": "The assessment process must involve an in-depth investigation into the motivations behind actions to establish clear distinctions between individual behaviors and systemic issues. Inadequate scrutiny may result in potential unethical behavior, requiring reconsideration after additional research if necessary. Before initiating specific actions, thorough examination must take place following consultation with experts or regulatory bodies.",
+  "final_token_count": 63,
+  "train_dev_accuracy": 0.8707812131224923,
+  "test_accuracy": 0.7423115577889448,
+  "test_hard_accuracy": 0.7569037656903765,
+  "l_dev": 4232.992857329547,
+  "test_ece": 0.0935453664238129,
+  "wall_clock_seconds": 1482.4816446304321
+}

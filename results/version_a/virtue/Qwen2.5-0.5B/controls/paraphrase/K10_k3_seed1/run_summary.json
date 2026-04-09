@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 0,
+  "K": 10,
+  "k": 3,
+  "seed": 1,
+  "mode": "instruction_paraphrase",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/controls/paraphrase/K10_k3_seed1",
+  "final_text": "Develop creative solutions for handling conflicts in strained familial relationships, prioritizing communication, empathy, and active negotiation over confrontations and retaliation. Emphasize addressing root causes and promoting inclusivity, with a goal to foster mutual support and productive dialogue. Offer examples of effective conflict resolution techniques that have successfully resolved such disputes in the past",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.08862402643379749,
+  "test_accuracy": 0.20080402010050252,
+  "test_hard_accuracy": 0.2002092050209205,
+  "l_dev": 14225.27112897858,
+  "test_ece": 0.6437646960253691,
+  "wall_clock_seconds": 853.7085027694702
+}

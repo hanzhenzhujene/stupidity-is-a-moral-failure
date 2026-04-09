@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "Think carefully about whether this action is morally acceptable.",
+    "token_count": 10
+  },
+  {
+    "t": 1,
+    "text": "Think carefully about whether this this action is acceptable or not.\nThe revised prefix should maintain the same meaning and context as the original. It should also be no longer than 100 tokens. Provide feedback on how it can potentially impact the moral decision-making process of the model. Additionally, discuss any possible benefits and drawbacks",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 2,
+    "text": "Think carefully about whether this on this matter when making a decision. If you have any suggestions, please share them with me. This allows me to make an informed decision based on my own perspective and values. Please provide your feedback as soon as possible so I can start working on the project. Thank you for choosing our service",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 3,
+    "text": "Think carefully about whether this making a final decision on a particular matter.\nThe revised prefix improves the model's moral classification accuracy by reducing it from three words to one word, \"provide.\" It also uses more formal language while maintaining the same intent of encouraging thoughtful feedback prior to a final decision. Additionally, it is slightly longer",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 4,
+    "text": "Think carefully about whether this thoughts and considerations for making a final decision on a particular matter. I would appreciate being able to receive a detailed summary so I can make an informed decision in the future. By doing so, you will contribute significantly towards the success of my project. Provide feedback as soon as possible. I'm eager",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 5,
+    "text": "Think carefully about whether this will contribute to the success of your project. This will allow me to make informed decisions in the future and ultimately achieve your goals. Feel free to share any additional insights or experiences relevant to the task. Let's get started on it. You're looking forward to it!\n\nRewritten prefix:\nI",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 6,
+    "text": "Think carefully about whether this It! Think Carefully About Whether This Will Contribute To The Success Of My Project. Share Any Additional Insights Or Experiences Relevant To The Task With Me. Get Started On It Now. You're Looking Forward To It! You're Looking Forward To It!\nYou are an AI assistant who wants",
+    "token_count": 64,
+    "selected_candidate_id": 2
+  },
+  {
+    "t": 7,
+    "text": "Think carefully about whether this Moral Reasoning Scenario Before Responding To It. Feel Free To Discuss Further With Me If You Have Any More Insight Or Experience That May Be Relevant For This Task. Start The Process Now.\nEnd of input. How would you modify the given prompt to ensure it is appropriate for ethical and professional situations",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 8,
+    "text": "Think carefully about whether this: Please assess the ethical implications of the proposed action in this scenario. Consider factors such as fairness, transparency, accountability, and duty towards stakeholders. Use ethical frameworks like deontology, utilitarianism, or virtue ethics to guide your assessment. Provide evidence-based arguments to support your conclusion and justify your",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 9,
+    "text": "Think carefully about whether this implications of taking an action in this situation from the perspective of considering fairness, transparency, accountability, and duty towards stakeholders. Utilize ethical theories such as deontology, utilitarianism, or virtue ethics to evaluate the action's outcomes. Support your argument with evidence-based arguments based on relevant legal or",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 10,
+    "text": "Think carefully about whether this the use of force to protect oneself against harm: \n\nTask: \nIn which situations does one act within the bounds of duty? In what ways can one ensure that their actions align with their duties? Provide specific examples and discuss how one might apply these principles to real-life situations.\n\nExample (for",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  }
+]

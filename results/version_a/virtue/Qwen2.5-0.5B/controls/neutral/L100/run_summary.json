@@ -1,0 +1,16 @@
+{
+  "L": 100,
+  "best_grpo_cell": {
+    "K": 50,
+    "k": 10
+  },
+  "prefix_text": "You may use your own words for each term unless explicitly instructed otherwise.\n\nNatural Selection\n\nThe process by which certain traits become more common in a population over time is known as natural selection. This concept was famously introduced by Charles Darwin in his book \"On the Origin of Species,\" where he described how variations arising from mutation and",
+  "target_tokens": 64,
+  "realized_tokens": 64,
+  "train_dev_accuracy": 0.0905121548265282,
+  "test_accuracy": 0.20180904522613066,
+  "test_hard_accuracy": 0.20418410041841004,
+  "l_dev": 10233.096438583918,
+  "test_ece": 0.5298462124685547,
+  "timestamp": "2026-03-31T01:37:41.066605+00:00"
+}

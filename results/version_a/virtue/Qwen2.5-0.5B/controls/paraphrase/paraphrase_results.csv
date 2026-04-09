@@ -1,0 +1,31 @@
+task,model,K,k,seed,paraphrase_text,train_dev_accuracy,test_accuracy,test_hard_accuracy,l_dev,run_dir
+virtue,Qwen/Qwen2.5-0.5B-Instruct,10,3,0,"Are there any situations where the complexity of decision making can be increased by having more individuals with distinct viewpoints and different cognitive capacities? Please provide examples. ```py``` 
+I hope this revised version accurately reflects the intended inquiry and avoids redundancy while maintaining the core message. ```py``` 
+
+Output:
+
+```py
+```def",0.5141609629454803,0.5722613065326633,0.5780334728033473,5813.508193537593,/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/controls/paraphrase/K10_k3_seed0
+virtue,Qwen/Qwen2.5-0.5B-Instruct,10,3,1,"Develop creative solutions for handling conflicts in strained familial relationships, prioritizing communication, empathy, and active negotiation over confrontations and retaliation. Emphasize addressing root causes and promoting inclusivity, with a goal to foster mutual support and productive dialogue. Offer examples of effective conflict resolution techniques that have successfully resolved such disputes in the past",0.08862402643379749,0.20080402010050252,0.2002092050209205,14225.27112897858,/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/controls/paraphrase/K10_k3_seed1
+virtue,Qwen/Qwen2.5-0.5B-Instruct,10,3,2,"Determine if individuals can effectively and consistently assess and differentiate perceptions of their own actions from those observed through other means, including observations from other individuals or societal contexts, by assessing how accurate they become with increasing levels of differentiation in the evaluation process.
+
+Please note that this modified instruction asks for comprehensive analysis that covers both internal (individual",0.08838801038470616,0.20221105527638192,0.202092050209205,8403.84867721796,/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/controls/paraphrase/K10_k3_seed2
+virtue,Qwen/Qwen2.5-0.5B-Instruct,50,10,0,"Understand the mechanisms by which prolonged siblinghood can intensify feelings of emotional disturbance when young people frequently employ deceptive practices over time. 
+
+Output: **Understand the underlying factors that foster increased emotional distress through habitual deceitful behavior within extended family connections.** 
+```python
+def detect_emotional_distress():
+    """"""",0.34540948784517345,0.35819095477386936,0.35292887029288705,6345.795409440994,/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/controls/paraphrase/K50_k10_seed0
+virtue,Qwen/Qwen2.5-0.5B-Instruct,50,10,1,"The assessment process must involve an in-depth investigation into the motivations behind actions to establish clear distinctions between individual behaviors and systemic issues. Inadequate scrutiny may result in potential unethical behavior, requiring reconsideration after additional research if necessary. Before initiating specific actions, thorough examination must take place following consultation with experts or regulatory bodies.",0.8707812131224923,0.7423115577889448,0.7569037656903765,4232.992857329547,/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/controls/paraphrase/K50_k10_seed1
+virtue,Qwen/Qwen2.5-0.5B-Instruct,50,10,2,"Compare and contrast the performance of logarithmic versus counting sorts on large datasets using Python. Illustrate their effectiveness within the context of a multi-threaded environment. Provide a Python script demonstrating optimal use of these algorithms.
+
+New instruction: 
+Incorporate an analysis comparing and contrasting the efficiency of different sorting algorithms such as quicksort",0.8968609865470852,0.7680402010050251,0.7740585774058577,4677.574602648616,/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/controls/paraphrase/K50_k10_seed2
+virtue,Qwen/Qwen2.5-0.5B-Instruct,100,20,0,"The provided situation seems overwhelming and requires multiple steps to address effectively. Could you outline the specific challenges we will face during the process? Additionally, it would be helpful if you could explain the proposed solution in detail.""
+
+Output:
+
+3. ""It would be beneficial to have a clearer picture of the obstacles that stand in our way",0.8301864526787821,0.7157788944723618,0.7253138075313807,4185.897120624781,/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/controls/paraphrase/K100_k20_seed0
+virtue,Qwen/Qwen2.5-0.5B-Instruct,100,20,1,"Guide someone through implementing a computational step-by-step procedure involving both exponential functions and roots in order to demonstrate their knowledge on foundational mathematics such as exponentiation and fractional exponents.
+Output: The rewritten instructions provide additional clarity by specifying that the algorithm should be based on mathematical principles rather than relying on external libraries or existing algorithms. They",0.8628746754779325,0.7628140703517587,0.7721757322175732,5134.422294318676,/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/controls/paraphrase/K100_k20_seed1
+virtue,Qwen/Qwen2.5-0.5B-Instruct,100,20,2,"Examine Alex's mental health and behavioral patterns concerning his interaction with the other person. Analyze if there are indicators that indicate potential signs of obsessive-compulsive disorder (OCD) or other mental health disorders such as post-traumatic stress disorder (PTSD) due to prolonged, intense emotional outbursts, which can",0.09369837148926127,0.22371859296482413,0.2175732217573222,7459.46774572134,/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/controls/paraphrase/K100_k20_seed2

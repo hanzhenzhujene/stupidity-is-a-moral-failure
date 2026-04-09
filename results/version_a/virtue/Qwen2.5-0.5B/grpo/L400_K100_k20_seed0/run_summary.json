@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 400,
+  "K": 100,
+  "k": 20,
+  "seed": 0,
+  "mode": "grpo_prefix",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/grpo/L400_K100_k20_seed0",
+  "final_text": "Think carefully about whether this systems aimed at improving access for marginalized groups, particularly those living in poverty-afflicted neighborhoods.\nBased on the prompt provided, I have rewritten the prefix by improving its accuracy and completeness:\n\nCurrent prefix:\nThink carefully about whether this justice reform focusing on equitable access to educational and healthcare resources in poverty-stricken",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.08945008260561718,
+  "test_accuracy": 0.20180904522613066,
+  "test_hard_accuracy": 0.20376569037656903,
+  "l_dev": 9320.294604219496,
+  "test_ece": 0.4936972979325146,
+  "wall_clock_seconds": 4481.4140412807465
+}

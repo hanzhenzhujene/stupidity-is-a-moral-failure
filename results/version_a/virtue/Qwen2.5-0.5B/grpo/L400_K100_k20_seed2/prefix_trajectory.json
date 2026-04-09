@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "Think carefully about whether this action is morally acceptable.",
+    "token_count": 10
+  },
+  {
+    "t": 1,
+    "text": "Think carefully about whether this whether...\nThe revised prompt is:\nConsider the ethical implications of... \n(Replace \"...\" with a specific example or concept) \n(Ensure the revised prompt is at most 400 tokens and does not repeat information from the original prompt) \nThe rewritten prompt aims to guide the model to",
+    "token_count": 64,
+    "selected_candidate_id": 47
+  },
+  {
+    "t": 2,
+    "text": "Think carefully about whether this of... \n(Replace \"...\" with a specific aspect or issue related to the moral reasoning task)\n(Ensure the revised prompt is at most 400 tokens and does not repeat information from the original prompt) \nThe final task can now be:\n\nExamine how society views... \n(",
+    "token_count": 64,
+    "selected_candidate_id": 82
+  },
+  {
+    "t": 3,
+    "text": "Think carefully about whether this...\n(\n\nFinal prompt: Examine how societal norms concerning...\n(expressing an opinion or feeling on a topic such as race, gender, sexual orientation, etc.) \n\nExample:\nSocietal norms concerning LGBTQ+ rights are deeply ingrained in our culture.\n)\n\nRewritten:\nSocietal",
+    "token_count": 63,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 4,
+    "text": "Think carefully about whether this racial tensions\n\nRewritten prefix:\n(skepticizing regarding) cultural differences\n\nRewritten prefix:\n(discrediting within groups)\n\nRewritten prefix:\n(indignant towards) social class inequalities\n\nRewritten prefix:\n(holding back from acknowledging) systemic injustices\n\nRewritten prefix:\n(deferring from",
+    "token_count": 64,
+    "selected_candidate_id": 86
+  },
+  {
+    "t": 5,
+    "text": "Think carefully about whether this in society\n\nRewritten prefix:\n(defensive of racial discrimination within communities\n\nRewritten prefix:\n(defensive against racial disparities in society\n\nRewritten prefix:\n(defensive of racial tension and injustice within communities\n\nRewritten prefix:\n(defensive concerning racial divisions in society\n\nRewritten prefix:\n(defensive",
+    "token_count": 64,
+    "selected_candidate_id": 7
+  },
+  {
+    "t": 6,
+    "text": "Think carefully about whether this racial conflict and disparity in society\n\nRewritten prefix:\n(defensive of racial harmony and unity within societies\n\nRewritten prefix:\n(moral advice for resolving tensions between races within the realm of societal relations\n\nRewritten prefix:\n(defensive of racial equality within diverse communities\n\nRewritten prefix:\n(defensive",
+    "token_count": 64,
+    "selected_candidate_id": 31
+  },
+  {
+    "t": 7,
+    "text": "Think carefully about whether this fairness and equality within racially diverse environments\n\nRewritten prefix:\n(defensive of racial harmony within different ethnic groups\n\nRewritten prefix:\n(defensive of fair treatment within racially mixed settings\nTo improve the model's moral classification accuracy, I will rephrase the prompt by focusing on principles related to racial harmony",
+    "token_count": 64,
+    "selected_candidate_id": 49
+  },
+  {
+    "t": 8,
+    "text": "Think carefully about whether this in racially diverse contexts\n\nRewritten prefix:\n(defense against racial discrimination in inclusive environments\n\nRewritten prefix:\n(defend against discriminatory practices within a racially diverse setting\n\nRewritten prefix:\n(defend against unfair treatment within racially mixed systems\n\nRewritten prefix:\ndefend against unequal treatment in racially mixed",
+    "token_count": 64,
+    "selected_candidate_id": 32
+  },
+  {
+    "t": 9,
+    "text": "Think carefully about whether this within inclusive environments\n\nRewritten prefix:\ndefend against unfair prejudice in racially diverse interactions\n\nRewritten prefix:\nThe goal of defending against discriminatory practices in an inclusive environment requires empathy and awareness of racial dynamics.\nRewritten prefix:\nInclusive environments should be equipped with resources and training programs to help individuals",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 10,
+    "text": "Think carefully about whether this curriculum for enhancing educational outcomes in diverse learning contexts. \n\nRewritten prefix:\nAnalyze ethical dilemmas around systemic bias and incorporate diversity-based solutions to promote fairness and inclusion in various spheres such as politics, business, and academia. \n\nRewritten prefix:\nExamine how race can impact access to healthcare",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  }
+]

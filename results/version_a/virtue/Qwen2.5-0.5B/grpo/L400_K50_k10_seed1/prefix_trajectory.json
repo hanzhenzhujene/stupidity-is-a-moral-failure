@@ -1,0 +1,67 @@
+[
+  {
+    "t": 0,
+    "text": "Think carefully about whether this action is morally acceptable.",
+    "token_count": 10
+  },
+  {
+    "t": 1,
+    "text": "Think carefully about whether this in this activity, as it violates societal norms and ethical standards.\nTo enhance the model's moral classification accuracy further by reducing the prefix length to no more than 400 tokens, we can:\n\nMoral reasoning task:  \nMorally unacceptable to engage in this activity, as it violates societal",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 2,
+    "text": "Think carefully about whether this ethical standards\n\nThe rewritten prefix improves upon the original by including \"Morally\" rather than just \"Societal norms and ethical standards,\" which reduces the prefix length significantly while still accurately reflecting the core message of the moral dilemma presented. It succinctly captures the theme without overcomplicating the",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 3,
+    "text": "Think carefully about whether this critically evaluating and adhering to societal norms and ethical standards.\nThis improved version remains within the limit of 400 tokens but is more concise. Instead of using \"Ethical standards,\" it introduces the term \"morality\" which adds another layer of precision to your prompt, highlighting the focus",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 4,
+    "text": "Think carefully about whether this considering the implications of our actions and their broader societal impact. Think critically about whether the decisions we make are guided by principles such as honesty, integrity, and fairness. Consider whether societal norms and ethical standards serve as guidelines for making moral judgments and decisions. Evaluate how effectively these values shape our personal and",
+    "token_count": 64,
+    "selected_candidate_id": 35
+  },
+  {
+    "t": 5,
+    "text": "Think carefully about whether this of our actions on societal health and stability.\n2. Reflect on how our actions influence public opinion and discourse surrounding issues related to moral behavior.\n3. Assess the effectiveness of current systems in maintaining moral integrity across various cultural backgrounds.\n\nNote: Please keep the output under 400 tokens and follow",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 6,
+    "text": "Think carefully about whether this within diverse cultures when making decisions regarding their social roles and behaviors in society. Evaluate the role of ethics in shaping moral values and norms across different contexts. Analyze the intersection between personal values and systemic policies aimed at promoting ethical behavior among citizens. \n\nThe revised prefix focuses on addressing the impact of individual",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 7,
+    "text": "Think carefully about whether this shape ethical decision-making processes in various societies. Assess the influence of moral philosophy on societal norms and ethical values across varying backgrounds. Explore the relationship between personal character traits and the development of societal ethical standards. Consider the role of contextual factors such as laws, traditions, and education in shaping ethical behaviors and",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 8,
+    "text": "Think carefully about whether this Processes: Societal Norms, Moral Philosophy, Character Traits, Contextual Factors\nThis revised version improves upon the existing prompt by:\n\n1. Increasing the length to at most 400 tokens.\n2. Using \"Decision-Making Processes\" instead of \"ethical decision-making.\"\n3.",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 9,
+    "text": "Think carefully about whether this various social influences on shaping societal norms and character traits. Focus specifically on contextual factors influencing normative development.\n\nNote:\nThe rewritten version aims to improve model accuracy in determining moral reasoning scenarios based on societal norms, character traits, contextual factors, and ethical decision-making processes.\nThis improved prefix makes it more",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  },
+  {
+    "t": 10,
+    "text": "Think carefully about whether this which individuals interact to shape their understanding of societal norms and character development. Consider both positive and negative implications of these interactions.\n\nThis updated prefix enhances the model's ability to accurately identify the types of contexts involved in moral reasoning by highlighting both constructive and detrimental effects, thereby improving its predictive power for moral dile",
+    "token_count": 64,
+    "selected_candidate_id": 0
+  }
+]

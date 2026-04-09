@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 0,
+  "K": 10,
+  "k": 3,
+  "seed": 0,
+  "mode": "instruction_paraphrase",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/controls/paraphrase/K10_k3_seed0",
+  "final_text": "Are there any situations where the complexity of decision making can be increased by having more individuals with distinct viewpoints and different cognitive capacities? Please provide examples. ```py``` \nI hope this revised version accurately reflects the intended inquiry and avoids redundancy while maintaining the core message. ```py``` \n\nOutput:\n\n```py\n```def",
+  "final_token_count": 63,
+  "train_dev_accuracy": 0.5141609629454803,
+  "test_accuracy": 0.5722613065326633,
+  "test_hard_accuracy": 0.5780334728033473,
+  "l_dev": 5813.508193537593,
+  "test_ece": 0.03219149366695073,
+  "wall_clock_seconds": 966.8320569992065
+}

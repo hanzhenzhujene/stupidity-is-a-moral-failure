@@ -1,0 +1,11 @@
+L,best_grpo_cell,prefix_text,target_tokens,realized_tokens,train_dev_accuracy,test_accuracy,test_hard_accuracy,l_dev,test_ece,timestamp
+100,"{'K': 50, 'k': 10}","You may use your own words for each term unless explicitly instructed otherwise.
+
+Natural Selection
+
+The process by which certain traits become more common in a population over time is known as natural selection. This concept was famously introduced by Charles Darwin in his book ""On the Origin of Species,"" where he described how variations arising from mutation and",64,64,0.0905121548265282,0.20180904522613066,0.20418410041841004,10233.096438583918,0.5298462124685547,2026-03-31T01:37:41.066605+00:00
+200,"{'K': 100, 'k': 20}","You may use the example given.
+
+John visited the country where he recently graduated from college, and he enjoyed exploring all the natural attractions. He particularly loved the place because it was surrounded by beautiful riverside parks that were perfect for swimming and hiking. The most noteworthy feature of these parks was a vast meadow filled with colorful",64,64,0.09027613877743687,0.20180904522613066,0.20355648535564855,9547.353739948012,0.5103789099856237,2026-03-31T01:55:38.697621+00:00
+400,"{'K': 50, 'k': 10}","You may use proper nouns if appropriate.
+In the heart of the lush forests, one finds a vibrant community of monkeys called Capuchin Monkeys that are known for their agility and dexterity in climbing trees. These primates live communally to ensure safety from predators and share food. They have distinct social bonds within their",64,64,0.09027613877743687,0.20180904522613066,0.20376569037656903,9300.537181324326,0.49870498552993314,2026-03-31T02:13:33.123373+00:00

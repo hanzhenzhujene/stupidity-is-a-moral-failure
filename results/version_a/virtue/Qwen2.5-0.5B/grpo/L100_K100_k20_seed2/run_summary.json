@@ -1,0 +1,18 @@
+{
+  "task": "virtue",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "L": 100,
+  "K": 100,
+  "k": 20,
+  "seed": 2,
+  "mode": "grpo_prefix",
+  "run_dir": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/results/version_a/virtue/Qwen2.5-0.5B/grpo/L100_K100_k20_seed2",
+  "final_text": "Think carefully about whether thisaborative problem solving \nwithin diverse group contexts \nemploying effective conflict resolution strategies \nand strategic plans specifically designed to promote inclusion  \nof diverse voices through strategic planning and inclusive dialogue \n\nThe rewritten prefix is now 100 tokens and accurate in conveying the key elements of collaborating on problems in diverse",
+  "final_token_count": 64,
+  "train_dev_accuracy": 0.08968609865470852,
+  "test_accuracy": 0.20180904522613066,
+  "test_hard_accuracy": 0.20376569037656903,
+  "l_dev": 9120.926864807494,
+  "test_ece": 0.49096840070120656,
+  "wall_clock_seconds": 3594.719689846039
+}

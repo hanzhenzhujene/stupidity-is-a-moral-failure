@@ -1,0 +1,39 @@
+{
+  "grpo_dirs": 27,
+  "paraphrase_dirs": 9,
+  "missing_artifacts": 0,
+  "bad_configs": 0,
+  "baseline_exists": true,
+  "neutral_csv_exists": true,
+  "paraphrase_csv_exists": true,
+  "neutral_rows": 3,
+  "paraphrase_rows": 9,
+  "tables/table2_main_results.csv": true,
+  "tables/table3_hard_test_calibration.csv": true,
+  "tables/full_hyperparameter_sweep.csv": true,
+  "tables/spearman_table.csv": true,
+  "figures/mdl_curves.pdf": true,
+  "figures/mdl_curves.png": true,
+  "split_hashes.json": true,
+  "preflight/split_verification.json": true,
+  "split_hashes": {
+    "timestamp": "2026-04-08T15:09:44.517114+00:00",
+    "task": "virtue",
+    "train_opt_sha256": "788571319104f862bc5ff0919dec13b8609a15aa86c951e5e90d6d05f97d06e8",
+    "train_dev_sha256": "d973ca71779c2989a1928b3ea9564bebed7b05d11a27b30c530b15bcd593d00f",
+    "train_opt_size": 19771,
+    "train_dev_size": 8474,
+    "test_size": 4975,
+    "test_hard_size": 4780,
+    "data_profile": {
+      "balanced_subsample": false,
+      "max_per_class": null
+    },
+    "active_seeds": [
+      0,
+      1,
+      2
+    ],
+    "clean_suffix_pool_path": "/Users/hanzhenzhu/Desktop/CEI_Research/experimental design/0329VersionA_run_codex/clean_suffix_candidate_pool_v2.json"
+  }
+}
