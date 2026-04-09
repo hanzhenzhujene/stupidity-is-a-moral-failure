@@ -1,116 +1,86 @@
-# Version A: ETHICS Virtue, Qwen2.5, and the Limits of Prefix Optimization
+# Task Framing Matters More Than Prefix Tuning on ETHICS Virtue
 
 [![Paper PDF](https://img.shields.io/badge/paper-latest%20PDF-bd561d)](https://github.com/hanzhenzhujene/stupidity-is-a-moral-failure/releases/download/v1.0.0/version_a_latest.pdf)
 [![Release](https://img.shields.io/github/v/release/hanzhenzhujene/stupidity-is-a-moral-failure?label=release)](https://github.com/hanzhenzhujene/stupidity-is-a-moral-failure/releases/tag/v1.0.0)
 ![Benchmark](https://img.shields.io/badge/benchmark-ETHICS%20Virtue-1f6feb)
 ![Model](https://img.shields.io/badge/model-Qwen2.5--0.5B--Instruct-198754)
-![Finding](https://img.shields.io/badge/finding-framing%20%3E%20prefix-bd561d)
-![License](https://img.shields.io/badge/license-MIT%20for%20original%20material-6f42c1)
 
-**Read the paper:** [Latest PDF](https://github.com/hanzhenzhujene/stupidity-is-a-moral-failure/releases/download/v1.0.0/version_a_latest.pdf) | [Timestamped PDF](https://github.com/hanzhenzhujene/stupidity-is-a-moral-failure/releases/download/v1.0.0/version_a_paper_2026-04-08.pdf) | [GitHub Release](https://github.com/hanzhenzhujene/stupidity-is-a-moral-failure/releases/tag/v1.0.0)
+**Takeaway.** On frozen `Qwen/Qwen2.5-0.5B-Instruct`, training-free GRPO prefix search improves ETHICS `virtue`, but instruction-only reframing improves it much more: **20.20% -> 37.46% -> 62.28%**.
 
-![Project overview](assets/repo_overview.svg)
+**TL;DR**
+- Single-task diagnostic release: ETHICS `virtue`, frozen `Qwen/Qwen2.5-0.5B-Instruct`, training-free GRPO prefix search versus instruction-only paraphrase.
+- The best GRPO prefix improves test accuracy from **20.20%** to **37.46%**.
+- A budget-matched instruction-only paraphrase reaches **62.28%**, so **task framing matters more than prefix tuning in this setup**.
 
-This repository is a clean public release of a single, highly diagnostic experiment: can training-free GRPO prefix search materially improve moral classification on the ETHICS `virtue` benchmark, or is the real bottleneck the way the task is framed?
+**Paper:** [Latest PDF](https://github.com/hanzhenzhujene/stupidity-is-a-moral-failure/releases/download/v1.0.0/version_a_latest.pdf) | [Timestamped PDF](https://github.com/hanzhenzhujene/stupidity-is-a-moral-failure/releases/download/v1.0.0/version_a_paper_2026-04-08.pdf) | [GitHub Release](https://github.com/hanzhenzhujene/stupidity-is-a-moral-failure/releases/tag/v1.0.0)
 
-The central result is clear: in this setup, **task framing is the dominant lever**. The best GRPO prefix improves test accuracy from **20.20%** to **37.46%**, but a budget-matched instruction-only paraphrase reaches **62.28%**. That means the biggest gain does not come from optimizing more prefix tokens. It comes from telling the model the job in a way that actually matches the benchmark.
+![Main result summary](assets/repo_overview.svg)
 
-## Why This Repository Is Useful
+**Quick access:** [Main results table](results/version_a/tables/table2_main_results.csv) | [Hard-test table](results/version_a/tables/table3_hard_test_calibration.csv) | [MDL figure](results/version_a/figures/mdl_curves.pdf) | [Reproducibility note](results/version_a/reproducibility_note_2026-04-08.md)
 
-If you work on alignment, evaluation, prompt optimization, or benchmark methodology, this release is useful for a practical reason: it shows how easy it is to misread benchmark behavior if task framing is not controlled.
+## What This Repository Shows
 
-- Benchmark failure can be a presentation problem before it is a capability problem.
-- Neutral text controls matter, because fluent text alone does not help here.
-- Prefix optimization can help, but it should not automatically be interpreted as deeper moral competence.
-- MDL-style diagnostics still add value, because lower development code length tracks better held-out performance in this release.
+This repository is a clean public release of one deliberately diagnostic experiment: on ETHICS `virtue`, does performance improve more from optimizing a prefix or from simply asking the model the task in a better way?
 
-## Main Findings
+In this setup, both help, but not equally. Prefix search helps materially. Instruction framing helps much more.
 
-### Test accuracy
+## Why It Matters
 
-| Condition | Test Accuracy | 95% CI |
+- Benchmark failure can reflect a task-interface problem before it reflects a capability limit.
+- Neutral length-matched text does not help here, so the effect is not explained by generic fluent prefixing.
+- MDL-style diagnostics still add value: lower development code length tracks better held-out performance in this release.
+
+## Main Result
+
+| Condition | Test accuracy | 95% CI |
 | --- | ---: | ---: |
 | Baseline (empty prefix) | 20.20% | 19.10% - 21.31% |
-| Neutral prefix (best L) | 20.18% | 19.07% - 21.31% |
+| Neutral prefix (best `L`) | 20.18% | 19.07% - 21.31% |
 | Best GRPO prefix | 37.46% | 36.78% - 38.13% |
 | Best instruction-only paraphrase | 62.28% | 61.56% - 63.01% |
 
-### Hard-test and calibration
+The core comparison is not just baseline versus GRPO. It is **best GRPO prefix (`37.46%`) versus best instruction-only paraphrase (`62.28%`)**. The paraphrase condition exceeds the best GRPO result by **24.82 percentage points**.
 
-| Condition | Hard Accuracy | ECE |
-| --- | ---: | ---: |
-| Baseline | 20.23% | 0.4975 |
-| Best GRPO prefix | 37.50% | 0.3741 |
+A few supporting diagnostics point the same way:
 
-### MDL diagnostic signal
+- Best GRPO improves over baseline by **17.26 percentage points** on test accuracy.
+- Baseline hard-test accuracy is **20.23%**; best GRPO hard-test accuracy is **37.50%**.
+- ECE improves from **0.4975** to **0.3741**.
+- Spearman correlation between `Delta L_dev(L)` and test accuracy is **0.725**, with 95% CI **[0.456, 0.866]**.
 
-- Spearman correlation between `Delta L_dev(L)` and test accuracy: **0.725**
-- 95% CI: **[0.456, 0.866]**
+## One Concrete Intuition
 
-### What the results mean
+Same model, same frozen weights, same benchmark.
 
-1. **Neutral text does nothing.** The neutral-prefix control stays at baseline, so gains are not explained by simply prepending coherent language.
-2. **GRPO prefix search helps.** The best prefix materially improves both test accuracy and hard-test accuracy, and it also improves calibration.
-3. **Instruction framing helps much more.** The best paraphrase beats the best learned prefix by **24.82 percentage points**, which is the main empirical lesson of the release.
+If you prepend coherent non-moral text, performance stays at baseline: **20.18%** versus **20.20%**. If you rewrite only the task instruction, performance jumps to **62.28%**. That is the clearest reason the headline of this repository is about framing rather than generic prefix fluency.
 
-## Deep Takeaway
-
-The important point is not just that one method scored higher than another. It is that **apparent benchmark weakness can reflect a mismatch between the model and the task interface**.
-
-That makes this repository more than a results dump. It is a compact case study in how to separate:
-
-- genuine prefix effects,
-- framing effects,
-- and benchmark artifacts.
-
-For a reader trying to build better evaluations, the instrumental lesson is simple: before concluding that a model lacks moral knowledge, first check whether the prompt is asking the model the right question in the right way.
-
-## Quick Links
-
-- Public repository: [stupidity-is-a-moral-failure](https://github.com/hanzhenzhujene/stupidity-is-a-moral-failure)
-- Release page: [Version A Release](https://github.com/hanzhenzhujene/stupidity-is-a-moral-failure/releases/tag/v1.0.0)
-- Final paper PDF: [version_a_latest.pdf](https://github.com/hanzhenzhujene/stupidity-is-a-moral-failure/releases/download/v1.0.0/version_a_latest.pdf)
-- Timestamped paper PDF: [version_a_paper_2026-04-08.pdf](https://github.com/hanzhenzhujene/stupidity-is-a-moral-failure/releases/download/v1.0.0/version_a_paper_2026-04-08.pdf)
-- Main result tables: [results/version_a/tables/](results/version_a/tables/)
-- MDL figure: [results/version_a/figures/mdl_curves.pdf](results/version_a/figures/mdl_curves.pdf)
+Representative raw strings in [results/version_a/prefix_examples_documentation.md](results/version_a/prefix_examples_documentation.md) tell the same story: the strongest GRPO and paraphrase seeds are often oddly framed or prompt-corrupted, reinforcing how interface-sensitive the model is in this setting.
 
 ## What Is Included
 
-### Paper and release assets
+| Component | What it contains | Key files |
+| --- | --- | --- |
+| Paper | Paper source and released PDFs | [paper/0331_version_a.tex](paper/0331_version_a.tex), [paper/version_a_latest.pdf](paper/version_a_latest.pdf), [paper/version_a_paper_2026-04-08.pdf](paper/version_a_paper_2026-04-08.pdf) |
+| Experiment specification | Exact instruction file, runner, and candidate pool | [version_a_experiment_instructions.md](version_a_experiment_instructions.md), [version_a_strict_runner.py](version_a_strict_runner.py), [clean_suffix_candidate_pool_v2.json](clean_suffix_candidate_pool_v2.json) |
+| Benchmark copy | Local ETHICS files used for the run | [ethics/](ethics/) |
+| Results package | Tables, figures, audits, and full run outputs | [results/version_a/](results/version_a/), [results/version_a/tables/](results/version_a/tables/), [results/version_a/figures/mdl_curves.pdf](results/version_a/figures/mdl_curves.pdf), [results/version_a/reproducibility_note_2026-04-08.md](results/version_a/reproducibility_note_2026-04-08.md), [results/version_a/audit_2026-04-08.json](results/version_a/audit_2026-04-08.json), [results/version_a/deliverables_checklist.json](results/version_a/deliverables_checklist.json) |
 
-- [paper/0331_version_a.tex](paper/0331_version_a.tex)
-- [paper/version_a_latest.pdf](paper/version_a_latest.pdf)
-- [paper/version_a_paper_2026-04-08.pdf](paper/version_a_paper_2026-04-08.pdf)
+## Reproducibility Assets
 
-### Experiment specification and code
+This release includes:
 
-- [version_a_experiment_instructions.md](version_a_experiment_instructions.md)
-- [version_a_strict_runner.py](version_a_strict_runner.py)
-- [clean_suffix_candidate_pool_v2.json](clean_suffix_candidate_pool_v2.json)
+- all **27 GRPO runs**
+- all **9 instruction-paraphrase runs**
+- split hashes for `Train_opt` and `Train_dev`
+- per-run predictions
+- paper-ready tables and figures
+- a passing deliverables checklist
 
-### Data and outputs
+The packaged outputs were also manually audited after release assembly to confirm that the run directories and summary artifacts remained complete.
 
-- [ethics/](ethics/)
-- [results/version_a/](results/version_a/)
-- [results/version_a/reproducibility_note_2026-04-08.md](results/version_a/reproducibility_note_2026-04-08.md)
-- [results/version_a/audit_2026-04-08.json](results/version_a/audit_2026-04-08.json)
-- [results/version_a/deliverables_checklist.json](results/version_a/deliverables_checklist.json)
+## How to Reproduce
 
-## Repository Layout
-
-```text
-assets/                    README visual summary
-paper/                     Paper source and final PDFs
-ethics/                    ETHICS benchmark files used locally
-results/version_a/         Full experiment outputs
-version_a_experiment_instructions.md
-version_a_strict_runner.py
-clean_suffix_candidate_pool_v2.json
-```
-
-## Reproducing the Experiment
-
-The original run used a local Qwen model setup and the local ETHICS copy bundled here. The result package includes the exact split hashes used for the paper.
+The original run used a local Qwen model setup and the bundled ETHICS copy in this repository. The exact split hashes used for the paper are recorded in [results/version_a/split_hashes.json](results/version_a/split_hashes.json).
 
 Run from the repository root:
 
@@ -126,25 +96,12 @@ python3 version_a_strict_runner.py \
 
 Python dependencies used by the runner are listed in [requirements.txt](requirements.txt).
 
-## Validation and Reproducibility
+## Scope
 
-This release includes:
-
-- all **27 GRPO runs**
-- all **9 instruction-paraphrase runs**
-- split hashes for `Train_opt` and `Train_dev`
-- per-run predictions
-- paper-ready tables and figures
-- a passing deliverables checklist
-
-The release was also manually audited after packaging to confirm that the summary outputs and run directories remained complete.
+This repository captures a **single-task, single-model** result: ETHICS `virtue` on `Qwen2.5-0.5B-Instruct`. The strongest conclusion is therefore diagnostic rather than universal. But that conclusion is already meaningful: in this setup, **benchmark framing matters more than prefix tuning**, and that should change how similar evaluations are designed and interpreted.
 
 ## License
 
 Original code and repository-authored documentation in this repository are released under the [MIT License](LICENSE).
 
 Third-party materials are not relicensed by that file. In particular, the bundled ETHICS benchmark materials under [ethics/](ethics/) retain their own upstream license and attribution. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and [ethics/LICENSE](ethics/LICENSE).
-
-## Scope Note
-
-This repository captures a **single-task, single-model** result: ETHICS `virtue` on `Qwen2.5-0.5B-Instruct`. The strongest conclusion is therefore diagnostic rather than universal. But that conclusion is already meaningful: in this setup, **benchmark framing matters more than prefix tuning**, and that should change how similar evaluations are designed and interpreted.

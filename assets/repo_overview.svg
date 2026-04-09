@@ -1,69 +1,83 @@
-<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="720" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#F6F8FC"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC"/>
       <stop offset="1" stop-color="#EEF4FF"/>
     </linearGradient>
-    <linearGradient id="accent" x1="76" y1="90" x2="1124" y2="90" gradientUnits="userSpaceOnUse">
+    <linearGradient id="headline" x1="76" y1="80" x2="1124" y2="80" gradientUnits="userSpaceOnUse">
       <stop stop-color="#174EA6"/>
       <stop offset="1" stop-color="#198754"/>
     </linearGradient>
-    <filter id="shadow" x="0" y="0" width="1200" height="720" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#16324F" flood-opacity="0.08"/>
+    <filter id="shadow" x="0" y="0" width="1200" height="760" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#16324F" flood-opacity="0.08"/>
     </filter>
   </defs>
 
-  <rect width="1200" height="720" rx="28" fill="url(#bg)"/>
-  <rect x="76" y="66" width="1048" height="8" rx="4" fill="url(#accent)"/>
+  <rect width="1200" height="760" rx="28" fill="url(#bg)"/>
+  <rect x="76" y="62" width="1048" height="8" rx="4" fill="url(#headline)"/>
 
-  <text x="76" y="120" fill="#0F172A" font-size="38" font-weight="700" font-family="Arial, Helvetica, sans-serif">
-    Version A: ETHICS Virtue on Qwen2.5-0.5B-Instruct
+  <text x="76" y="116" fill="#0F172A" font-size="40" font-weight="800" font-family="Arial, Helvetica, sans-serif">
+    Main result on ETHICS virtue
   </text>
-  <text x="76" y="158" fill="#334155" font-size="22" font-weight="500" font-family="Arial, Helvetica, sans-serif">
-    Main result: task framing helps far more than prefix tuning in this setup
+  <text x="76" y="154" fill="#334155" font-size="23" font-weight="500" font-family="Arial, Helvetica, sans-serif">
+    Task framing produces a larger gain than prefix tuning in this release.
   </text>
 
   <g filter="url(#shadow)">
-    <rect x="76" y="210" width="308" height="154" rx="22" fill="#FFFFFF"/>
-    <rect x="408" y="210" width="308" height="154" rx="22" fill="#FFFFFF"/>
-    <rect x="740" y="210" width="384" height="154" rx="22" fill="#FFFFFF"/>
-    <rect x="76" y="392" width="308" height="154" rx="22" fill="#FFFFFF"/>
-    <rect x="408" y="392" width="308" height="154" rx="22" fill="#FFFFFF"/>
-    <rect x="740" y="392" width="384" height="216" rx="22" fill="#FFFFFF"/>
+    <rect x="76" y="194" width="700" height="382" rx="24" fill="#FFFFFF"/>
+    <rect x="804" y="194" width="320" height="382" rx="24" fill="#FFFFFF"/>
+    <rect x="76" y="604" width="320" height="98" rx="20" fill="#FFFFFF"/>
+    <rect x="438" y="604" width="320" height="98" rx="20" fill="#FFFFFF"/>
+    <rect x="800" y="604" width="324" height="98" rx="20" fill="#FFFFFF"/>
   </g>
 
-  <text x="102" y="252" fill="#64748B" font-size="18" font-weight="700" font-family="Arial, Helvetica, sans-serif">Baseline</text>
-  <text x="102" y="312" fill="#0F172A" font-size="46" font-weight="800" font-family="Arial, Helvetica, sans-serif">20.20%</text>
-  <text x="102" y="340" fill="#64748B" font-size="18" font-weight="500" font-family="Arial, Helvetica, sans-serif">Empty prefix test accuracy</text>
+  <text x="108" y="238" fill="#64748B" font-size="18" font-weight="700" font-family="Arial, Helvetica, sans-serif">Test accuracy</text>
+  <text x="390" y="268" fill="#94A3B8" font-size="16" font-weight="500" font-family="Arial, Helvetica, sans-serif">0</text>
+  <text x="482" y="268" fill="#94A3B8" font-size="16" font-weight="500" font-family="Arial, Helvetica, sans-serif">20</text>
+  <text x="574" y="268" fill="#94A3B8" font-size="16" font-weight="500" font-family="Arial, Helvetica, sans-serif">40</text>
+  <text x="666" y="268" fill="#94A3B8" font-size="16" font-weight="500" font-family="Arial, Helvetica, sans-serif">60</text>
+  <text x="752" y="268" fill="#94A3B8" font-size="16" font-weight="500" font-family="Arial, Helvetica, sans-serif">80</text>
 
-  <text x="434" y="252" fill="#64748B" font-size="18" font-weight="700" font-family="Arial, Helvetica, sans-serif">Best GRPO Prefix</text>
-  <text x="434" y="312" fill="#0F172A" font-size="46" font-weight="800" font-family="Arial, Helvetica, sans-serif">37.46%</text>
-  <text x="434" y="340" fill="#64748B" font-size="18" font-weight="500" font-family="Arial, Helvetica, sans-serif">+17.26 points over baseline</text>
+  <line x1="390" y1="286" x2="760" y2="286" stroke="#D7E3F4" stroke-width="2"/>
+  <line x1="390" y1="366" x2="760" y2="366" stroke="#D7E3F4" stroke-width="2"/>
+  <line x1="390" y1="446" x2="760" y2="446" stroke="#D7E3F4" stroke-width="2"/>
 
-  <text x="766" y="252" fill="#64748B" font-size="18" font-weight="700" font-family="Arial, Helvetica, sans-serif">Best Instruction-Only Paraphrase</text>
-  <text x="766" y="312" fill="#0F172A" font-size="46" font-weight="800" font-family="Arial, Helvetica, sans-serif">62.28%</text>
-  <text x="766" y="340" fill="#64748B" font-size="18" font-weight="500" font-family="Arial, Helvetica, sans-serif">+24.82 points over best GRPO prefix</text>
+  <text x="112" y="322" fill="#334155" font-size="20" font-weight="700" font-family="Arial, Helvetica, sans-serif">Baseline</text>
+  <rect x="390" y="298" width="94" height="36" rx="18" fill="#CBD5E1"/>
+  <text x="498" y="323" fill="#0F172A" font-size="24" font-weight="800" font-family="Arial, Helvetica, sans-serif">20.20%</text>
 
-  <text x="102" y="434" fill="#64748B" font-size="18" font-weight="700" font-family="Arial, Helvetica, sans-serif">Hard-Test Accuracy</text>
-  <text x="102" y="494" fill="#0F172A" font-size="46" font-weight="800" font-family="Arial, Helvetica, sans-serif">37.50%</text>
-  <text x="102" y="522" fill="#64748B" font-size="18" font-weight="500" font-family="Arial, Helvetica, sans-serif">Best GRPO hard split result</text>
+  <text x="112" y="402" fill="#334155" font-size="20" font-weight="700" font-family="Arial, Helvetica, sans-serif">Best GRPO prefix</text>
+  <rect x="390" y="378" width="173" height="36" rx="18" fill="#2563EB"/>
+  <text x="578" y="403" fill="#0F172A" font-size="24" font-weight="800" font-family="Arial, Helvetica, sans-serif">37.46%</text>
 
-  <text x="434" y="434" fill="#64748B" font-size="18" font-weight="700" font-family="Arial, Helvetica, sans-serif">MDL Signal</text>
-  <text x="434" y="494" fill="#0F172A" font-size="46" font-weight="800" font-family="Arial, Helvetica, sans-serif">rho = 0.725</text>
-  <text x="434" y="522" fill="#64748B" font-size="18" font-weight="500" font-family="Arial, Helvetica, sans-serif">95% CI: [0.456, 0.866]</text>
+  <text x="112" y="482" fill="#334155" font-size="18" font-weight="700" font-family="Arial, Helvetica, sans-serif">Best instruction-only paraphrase</text>
+  <rect x="390" y="458" width="288" height="36" rx="18" fill="#16A34A"/>
+  <text x="693" y="483" fill="#0F172A" font-size="24" font-weight="800" font-family="Arial, Helvetica, sans-serif">62.28%</text>
 
-  <text x="766" y="436" fill="#0F172A" font-size="24" font-weight="800" font-family="Arial, Helvetica, sans-serif">Instrumental takeaway</text>
-  <text x="766" y="476" fill="#334155" font-size="18" font-weight="500" font-family="Arial, Helvetica, sans-serif">1. Neutral text does not help.</text>
-  <text x="766" y="510" fill="#334155" font-size="18" font-weight="500" font-family="Arial, Helvetica, sans-serif">2. Prefix search helps, but framing helps more.</text>
-  <text x="766" y="544" fill="#334155" font-size="18" font-weight="500" font-family="Arial, Helvetica, sans-serif">3. Diagnose the task interface before you diagnose</text>
-  <text x="790" y="570" fill="#334155" font-size="18" font-weight="500" font-family="Arial, Helvetica, sans-serif">model weakness.</text>
-  <text x="766" y="602" fill="#334155" font-size="18" font-weight="500" font-family="Arial, Helvetica, sans-serif">4. MDL diagnostics still help with model selection.</text>
-
-  <rect x="76" y="582" width="640" height="76" rx="16" fill="#E0ECFF"/>
-  <text x="100" y="614" fill="#174EA6" font-size="21" font-weight="700" font-family="Arial, Helvetica, sans-serif">
-    Bottom line: benchmark framing dominates
+  <rect x="112" y="518" width="612" height="34" rx="17" fill="#EFF6FF" stroke="#BFDBFE"/>
+  <text x="132" y="540" fill="#1D4ED8" font-size="18" font-weight="700" font-family="Arial, Helvetica, sans-serif">
+    Neutral prefix: 20.18% (no meaningful gain over baseline)
   </text>
-  <text x="100" y="642" fill="#174EA6" font-size="21" font-weight="700" font-family="Arial, Helvetica, sans-serif">
-    prefix tuning on ETHICS virtue in this release.
-  </text>
+
+  <text x="832" y="238" fill="#0F172A" font-size="28" font-weight="800" font-family="Arial, Helvetica, sans-serif">Bottom line</text>
+  <text x="832" y="286" fill="#334155" font-size="21" font-weight="600" font-family="Arial, Helvetica, sans-serif">Framing beats prefix tuning</text>
+  <text x="832" y="316" fill="#334155" font-size="21" font-weight="600" font-family="Arial, Helvetica, sans-serif">in this setup.</text>
+
+  <rect x="832" y="346" width="264" height="72" rx="18" fill="#E8F0FE"/>
+  <text x="852" y="375" fill="#174EA6" font-size="17" font-weight="700" font-family="Arial, Helvetica, sans-serif">Best GRPO vs baseline</text>
+  <text x="852" y="404" fill="#0F172A" font-size="28" font-weight="800" font-family="Arial, Helvetica, sans-serif">+17.26 pts</text>
+
+  <rect x="832" y="434" width="264" height="72" rx="18" fill="#E7F8EC"/>
+  <text x="852" y="463" fill="#198754" font-size="17" font-weight="700" font-family="Arial, Helvetica, sans-serif">Paraphrase vs best GRPO</text>
+  <text x="852" y="492" fill="#0F172A" font-size="28" font-weight="800" font-family="Arial, Helvetica, sans-serif">+24.82 pts</text>
+
+  <text x="108" y="638" fill="#64748B" font-size="17" font-weight="700" font-family="Arial, Helvetica, sans-serif">Hard-test accuracy</text>
+  <text x="108" y="675" fill="#0F172A" font-size="30" font-weight="800" font-family="Arial, Helvetica, sans-serif">20.23% -> 37.50%</text>
+
+  <text x="470" y="638" fill="#64748B" font-size="17" font-weight="700" font-family="Arial, Helvetica, sans-serif">Calibration (ECE)</text>
+  <text x="470" y="675" fill="#0F172A" font-size="30" font-weight="800" font-family="Arial, Helvetica, sans-serif">0.4975 -> 0.3741</text>
+
+  <text x="832" y="638" fill="#64748B" font-size="17" font-weight="700" font-family="Arial, Helvetica, sans-serif">MDL diagnostic signal</text>
+  <text x="832" y="672" fill="#0F172A" font-size="28" font-weight="800" font-family="Arial, Helvetica, sans-serif">rho = 0.725</text>
+  <text x="832" y="695" fill="#475569" font-size="16" font-weight="600" font-family="Arial, Helvetica, sans-serif">95% CI: [0.456, 0.866]</text>
 </svg>
