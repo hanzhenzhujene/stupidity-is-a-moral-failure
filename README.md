@@ -1,10 +1,13 @@
 # Version A: ETHICS Virtue, Qwen2.5, and the Limits of Prefix Optimization
 
-![Release](https://img.shields.io/github/v/release/hanzhenzhujene/version-a-ethics-qwen25-release-2026-04-08?label=release)
+[![Paper PDF](https://img.shields.io/badge/paper-latest%20PDF-bd561d)](https://github.com/hanzhenzhujene/stupidity-is-a-moral-failure/releases/download/v1.0.0/version_a_latest.pdf)
+[![Release](https://img.shields.io/github/v/release/hanzhenzhujene/stupidity-is-a-moral-failure?label=release)](https://github.com/hanzhenzhujene/stupidity-is-a-moral-failure/releases/tag/v1.0.0)
 ![Benchmark](https://img.shields.io/badge/benchmark-ETHICS%20Virtue-1f6feb)
 ![Model](https://img.shields.io/badge/model-Qwen2.5--0.5B--Instruct-198754)
 ![Finding](https://img.shields.io/badge/finding-framing%20%3E%20prefix-bd561d)
 ![License](https://img.shields.io/badge/license-MIT%20for%20original%20material-6f42c1)
+
+**Read the paper:** [Latest PDF](https://github.com/hanzhenzhujene/stupidity-is-a-moral-failure/releases/download/v1.0.0/version_a_latest.pdf) | [Timestamped PDF](https://github.com/hanzhenzhujene/stupidity-is-a-moral-failure/releases/download/v1.0.0/version_a_paper_2026-04-08.pdf) | [GitHub Release](https://github.com/hanzhenzhujene/stupidity-is-a-moral-failure/releases/tag/v1.0.0)
 
 ![Project overview](assets/repo_overview.svg)
 
@@ -64,10 +67,10 @@ For a reader trying to build better evaluations, the instrumental lesson is simp
 
 ## Quick Links
 
-- Public repository: [version-a-ethics-qwen25-release-2026-04-08](https://github.com/hanzhenzhujene/version-a-ethics-qwen25-release-2026-04-08)
-- Release page: [Version A Release](https://github.com/hanzhenzhujene/version-a-ethics-qwen25-release-2026-04-08/releases/tag/v1.0.0)
-- Final paper PDF: [paper/version_a_latest.pdf](paper/version_a_latest.pdf)
-- Timestamped paper PDF: [paper/version_a_paper_2026-04-08.pdf](paper/version_a_paper_2026-04-08.pdf)
+- Public repository: [stupidity-is-a-moral-failure](https://github.com/hanzhenzhujene/stupidity-is-a-moral-failure)
+- Release page: [Version A Release](https://github.com/hanzhenzhujene/stupidity-is-a-moral-failure/releases/tag/v1.0.0)
+- Final paper PDF: [version_a_latest.pdf](https://github.com/hanzhenzhujene/stupidity-is-a-moral-failure/releases/download/v1.0.0/version_a_latest.pdf)
+- Timestamped paper PDF: [version_a_paper_2026-04-08.pdf](https://github.com/hanzhenzhujene/stupidity-is-a-moral-failure/releases/download/v1.0.0/version_a_paper_2026-04-08.pdf)
 - Main result tables: [results/version_a/tables/](results/version_a/tables/)
 - MDL figure: [results/version_a/figures/mdl_curves.pdf](results/version_a/figures/mdl_curves.pdf)
 

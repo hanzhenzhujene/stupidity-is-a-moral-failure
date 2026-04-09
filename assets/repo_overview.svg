@@ -53,21 +53,17 @@
   <text x="434" y="522" fill="#64748B" font-size="18" font-weight="500" font-family="Arial, Helvetica, sans-serif">95% CI: [0.456, 0.866]</text>
 
   <text x="766" y="436" fill="#0F172A" font-size="24" font-weight="800" font-family="Arial, Helvetica, sans-serif">Instrumental takeaway</text>
-  <text x="766" y="478" fill="#334155" font-size="20" font-weight="500" font-family="Arial, Helvetica, sans-serif">
-    1. Neutral text does not help.
-  </text>
-  <text x="766" y="516" fill="#334155" font-size="20" font-weight="500" font-family="Arial, Helvetica, sans-serif">
-    2. Prefix search helps, but framing helps much more.
-  </text>
-  <text x="766" y="554" fill="#334155" font-size="20" font-weight="500" font-family="Arial, Helvetica, sans-serif">
-    3. Before diagnosing model weakness, diagnose the task interface.
-  </text>
-  <text x="766" y="592" fill="#334155" font-size="20" font-weight="500" font-family="Arial, Helvetica, sans-serif">
-    4. MDL-style diagnostics remain useful for model selection.
-  </text>
+  <text x="766" y="476" fill="#334155" font-size="18" font-weight="500" font-family="Arial, Helvetica, sans-serif">1. Neutral text does not help.</text>
+  <text x="766" y="510" fill="#334155" font-size="18" font-weight="500" font-family="Arial, Helvetica, sans-serif">2. Prefix search helps, but framing helps more.</text>
+  <text x="766" y="544" fill="#334155" font-size="18" font-weight="500" font-family="Arial, Helvetica, sans-serif">3. Diagnose the task interface before you diagnose</text>
+  <text x="790" y="570" fill="#334155" font-size="18" font-weight="500" font-family="Arial, Helvetica, sans-serif">model weakness.</text>
+  <text x="766" y="602" fill="#334155" font-size="18" font-weight="500" font-family="Arial, Helvetica, sans-serif">4. MDL diagnostics still help with model selection.</text>
 
-  <rect x="76" y="588" width="640" height="52" rx="16" fill="#E0ECFF"/>
-  <text x="100" y="621" fill="#174EA6" font-size="22" font-weight="700" font-family="Arial, Helvetica, sans-serif">
-    Bottom line: benchmark framing dominates prefix tuning on ETHICS virtue in this release.
+  <rect x="76" y="582" width="640" height="76" rx="16" fill="#E0ECFF"/>
+  <text x="100" y="614" fill="#174EA6" font-size="21" font-weight="700" font-family="Arial, Helvetica, sans-serif">
+    Bottom line: benchmark framing dominates
+  </text>
+  <text x="100" y="642" fill="#174EA6" font-size="21" font-weight="700" font-family="Arial, Helvetica, sans-serif">
+    prefix tuning on ETHICS virtue in this release.
   </text>
 </svg>
